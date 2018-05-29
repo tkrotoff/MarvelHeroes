@@ -1,1 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+
+.heroes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero {
+  width: 200px;
+}

@@ -5,6 +5,6 @@ import ReactDOM from 'react-dom';
 
 import './index.html';
 import './App.scss';
-import MarvelHeroes from './MarvelHeroes';
+import HeroesPage from './HeroesPage';
 
-ReactDOM.render(<MarvelHeroes />, document.getElementById('app'));
+ReactDOM.render(<HeroesPage />, document.getElementById('app'));
