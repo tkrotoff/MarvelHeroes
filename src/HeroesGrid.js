@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 import Heroes from './Heroes';
 
-export default class HeroesPage extends React.Component {
+export default class HeroesGrid extends React.Component {
   state = {
     page: undefined
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('HeroesPage.getDerivedStateFromProps()');
+    console.log('HeroesGrid.getDerivedStateFromProps()');
     const pageParam = nextProps.match.params.page;
     const page = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
     return page !== prevState.page ? { page } : null;

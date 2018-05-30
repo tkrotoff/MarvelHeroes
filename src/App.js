@@ -7,7 +7,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import './index.html';
 import './App.scss';
 
-import HeroesPage from './HeroesPage';
+import HeroesGrid from './HeroesGrid';
 import Hero from './Hero';
 
 const NoMatch = ({ location }) => (
@@ -32,7 +32,7 @@ const App = () => {
     <HashRouter>
       <Layout>
         <Switch>
-          <Route exact path="/:page?" component={HeroesPage} />
+          <Route exact path="/:page?" component={HeroesGrid} />
           <Route path="/heroes/:id" component={Hero} />
 
           <Route component={NoMatch} />
