@@ -1,49 +1,58 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import * as Marvel from './Marvel';
+import * as Marvel from './http/Marvel';
 
 export default class Heroes extends React.Component {
   state = {
-    characters: [],
-    fetching: false
+    characters: undefined
   };
 
-  async fetch(offset) {
+  async fetch(page) {
     this.setState({
-      characters: [],
-      fetching: true
+      characters: undefined
     });
 
-    const characters = await Marvel.fetchCharacters(offset);
+    const nbElementsPerPage = 50;
+    const characters = await Marvel.fetchCharacters(page * nbElementsPerPage);
 
     this.setState({
-      characters,
-      fetching: false
+      characters
     });
   }
 
-  async componentDidMount() {
-    this.fetch(this.props.offset);
+  componentDidMount() {
+    console.log('Heroes.componentDidMount()');
+    this.fetch(this.props.page);
   }
 
-  async componentWillReceiveProps(nextProps) {
-    this.fetch(nextProps.offset);
+  componentDidUpdate(prevProps) {
+    console.log('Heroes.componentDidUpdate()');
+    const { page } = this.props;
+    if (page !== prevProps.page) {
+      this.fetch(page);
+    }
   }
 
-  render() {
-    const heroes = this.state.characters.map(character => (
+  renderHeroes() {
+    return this.state.characters.map(character => (
       <div key={character.id} className="hero card m-3">
         <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
         </div>
         <div className="card-footer border-top-0">
-          <a href="#" className="card-link">Details</a>
-          {/*<Link to={`/character/${character.id}`}>Details</Link>*/}
+          <Link to={`/heroes/${character.id}`}>Details</Link>
         </div>
       </div>
     ));
+  }
 
-    return this.state.fetching ? <p>Please wait...</p> : <div className="heroes">{heroes}</div>;
+  render() {
+    return this.state.characters !== undefined ? (
+      <div className="heroes">{this.renderHeroes()}</div>
+    ) : (
+      <p>Please wait...</p>
+    );
   }
 }

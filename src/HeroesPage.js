@@ -1,34 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Heroes from './Heroes';
 
 export default class HeroesPage extends React.Component {
   state = {
-    offset: 0
+    page: undefined
   };
 
-  handlePrevButtonClick = () => {
-    this.setState(prevState => ({
-      offset: prevState.offset - 50
-    }));
-  };
-
-  handleNextButtonClick = () => {
-    this.setState(prevState => ({
-      offset: prevState.offset + 50
-    }));
-  };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('HeroesPage.getDerivedStateFromProps()');
+    const pageParam = nextProps.match.params.page;
+    const page = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
+    return page !== prevState.page ? { page } : null;
+  }
 
   render() {
-    const { offset } = this.state;
+    const { page } = this.state;
 
     return (
-      <div className="container-fluid">
+      <div>
         <h3>Marvel Heroes</h3>
-        <button onClick={this.handlePrevButtonClick} disabled={offset === 0} className="btn btn-primary">&laquo; Previous</button>
-        {' '}
-        <button onClick={this.handleNextButtonClick} className="btn btn-primary">Next &raquo;</button>
-        <Heroes offset={offset} />
+        <Link to={`/${page - 1}`} disabled={page === undefined || page === 0} className="btn btn-primary">
+          &laquo; Previous
+        </Link>{' '}
+        <Link to={`/${page + 1}`} className="btn btn-primary">
+          Next &raquo;
+        </Link>
+        {page !== undefined ? <Heroes page={page} /> : null}
       </div>
     );
   }

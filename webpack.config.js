@@ -11,6 +11,10 @@ module.exports = {
     filename: '[name].js'
   },
 
+  devServer: {
+    historyApiFallback: true
+  },
+
   plugins: [
     new MiniCssExtractPlugin({filename: '[name].css'})
   ],
@@ -18,7 +22,6 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.js$/, loader: 'source-map-loader' },
       { test: /\.(html|css|png)$/, loader: 'file-loader', options: {name: '[name].[ext]'} },
       {
         // FIXME Don't know how to make source maps work

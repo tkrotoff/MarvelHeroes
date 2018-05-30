@@ -18,7 +18,7 @@ export async function fetchCharacters(offset) {
   return res.data.data.results;
 }
 
-export async function fetchCharacterDetail(id) {
+export async function fetchCharacter(id) {
   const res = await axios(`${BASE_URL}/v1/public/characters/${id}`, getParams());
-  return res.data.data.results;
+  return res.data.data.results[0];
 }

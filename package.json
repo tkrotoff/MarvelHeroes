@@ -4,6 +4,7 @@
     "clean": "del-cli build",
     "build": "cross-env NODE_ENV=development webpack -d",
     "build:watch": "cross-env NODE_ENV=development webpack -d --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "test": "jest",
     "prettier": "prettier --single-quote --print-width=120 --write \"src/**/*.js\""
   },
@@ -32,10 +33,12 @@
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "prettier": "^1.13.2",
+    "react-router-dom": "^4.2.2",
     "sass-loader": "^7.0.1",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.10.1",
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   }
 }
