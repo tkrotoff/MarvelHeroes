@@ -18,10 +18,14 @@ export default class HeroesPage extends React.Component {
   render() {
     const { page } = this.state;
 
+    // See Disabled href tag https://stackoverflow.com/q/13955667
+    let prevButtonClasses = 'btn btn-primary';
+    if (page === 0) prevButtonClasses += ' disabled';
+
     return (
       <div>
         <h3>Marvel Heroes</h3>
-        <Link to={`/${page - 1}`} disabled={page === undefined || page === 0} className="btn btn-primary">
+        <Link to={`/${page - 1}`} className={prevButtonClasses}>
           &laquo; Previous
         </Link>{' '}
         <Link to={`/${page + 1}`} className="btn btn-primary">
