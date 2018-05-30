@@ -13,8 +13,8 @@ export default class Heroes extends React.Component {
       characters: undefined
     });
 
-    const nbElementsPerPage = 50;
-    const characters = await Marvel.fetchCharacters(page * nbElementsPerPage);
+    const nbCharactersPerPage = 50;
+    const characters = await Marvel.fetchCharacters(page * nbCharactersPerPage);
 
     this.setState({
       characters
@@ -36,7 +36,7 @@ export default class Heroes extends React.Component {
 
   renderHeroes() {
     return this.state.characters.map(character => (
-      <div key={character.id} className="hero card m-3">
+      <div key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
@@ -50,7 +50,7 @@ export default class Heroes extends React.Component {
 
   render() {
     return this.state.characters !== undefined ? (
-      <div className="heroes">{this.renderHeroes()}</div>
+      <div className="d-flex flex-wrap">{this.renderHeroes()}</div>
     ) : (
       <p>Please wait...</p>
     );
