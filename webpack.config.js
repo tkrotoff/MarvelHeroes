@@ -11,10 +11,6 @@ module.exports = {
     filename: '[name].js'
   },
 
-  devServer: {
-    historyApiFallback: true
-  },
-
   plugins: [
     new MiniCssExtractPlugin({filename: '[name].css'})
   ],
