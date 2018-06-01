@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Heroes from './Heroes';
 
-export default class HeroesGrid extends React.Component {
+export default class HeroesPagination extends React.Component {
   state = {
     page: undefined
   };

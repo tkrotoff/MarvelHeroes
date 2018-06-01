@@ -2,9 +2,9 @@
 
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
-### HeroesGrid component screenshot
+### HeroesPagination/Heroes component screenshot
 
-![HeroesGrid component screenshot](doc/HeroesGrid.png)
+![HeroesPagination/Heroes component screenshot](doc/HeroesPagination.png)
 
 ### Hero component screenshot
 

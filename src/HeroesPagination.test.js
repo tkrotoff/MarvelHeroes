@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HeroesGrid from './HeroesGrid';
+import HeroesPagination from './HeroesPagination';
 
 test('render()', () => {
-  const wrapper = shallow(<HeroesGrid />);
+  const wrapper = shallow(<HeroesPagination />);
   const app = wrapper.instance();
 
   expect(wrapper.html()).toBeTruthy();
