@@ -28,7 +28,7 @@ export default class Hero extends React.Component {
     const { character } = this.state;
     return (
       <div>
-        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} style={{maxWidth: "100%"}} />
         <div>
           <h3>{character.name}</h3>
           <p>{character.description}</p>
