@@ -9,7 +9,6 @@ export default class HeroesPagination extends React.Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('HeroesGrid.getDerivedStateFromProps()');
     const pageParam = nextProps.match.params.page;
     const page = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
     return page !== prevState.page ? { page } : null;

@@ -22,12 +22,10 @@ export default class Heroes extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Heroes.componentDidMount()');
     this.fetch(this.props.page);
   }
 
   componentDidUpdate(prevProps) {
-    console.log('Heroes.componentDidUpdate()');
     const { page } = this.props;
     if (page !== prevProps.page) {
       this.fetch(page);

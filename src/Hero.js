@@ -8,7 +8,6 @@ export default class Hero extends React.Component {
   };
 
   componentDidMount() {
-    console.log('Hero.componentDidMount()');
     this.fetch(this.props.match.params.id);
   }
 
