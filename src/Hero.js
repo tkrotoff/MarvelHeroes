@@ -27,7 +27,10 @@ export default class Hero extends React.Component {
     const { character } = this.state;
     return (
       <div>
-        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} style={{maxWidth: "100%"}} />
+        <img
+          src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          style={{ maxWidth: '100%' }}
+        />
         <div>
           <h3>{character.name}</h3>
           <p>{character.description}</p>
@@ -45,10 +48,20 @@ export default class Hero extends React.Component {
   renderCategory(category) {
     const { character } = this.state;
 
-    return <ul>{character[category].items.map((item, index) => <li key={`${category}.${index}`}>{item.name}</li>)}</ul>;
+    return (
+      <ul>
+        {character[category].items.map((item, index) => (
+          <li key={`${category}.${index}`}>{item.name}</li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
-    return this.state.character !== undefined ? <div className="hero">{this.renderHero()}</div> : <p>Please wait...</p>;
+    return this.state.character !== undefined ? (
+      <div className="hero">{this.renderHero()}</div>
+    ) : (
+      <p>Please wait...</p>
+    );
   }
 }

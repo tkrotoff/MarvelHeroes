@@ -35,7 +35,10 @@ export default class Heroes extends React.Component {
   renderHeroes() {
     return this.state.characters.map(character => (
       <div key={character.id} className="card m-3" style={{ width: '200px' }}>
-        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} className="card-img-top" />
+        <img
+          src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          className="card-img-top"
+        />
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
         </div>

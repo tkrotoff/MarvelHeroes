@@ -1,0 +1,8 @@
+.git/
+.gitignore
+.prettierignore
+*.yml
+
+build/
+*.png
+*.html
