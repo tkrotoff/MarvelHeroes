@@ -3,12 +3,20 @@ import { Link } from 'react-router-dom';
 
 import * as Marvel from './http/Marvel';
 
-export default class Heroes extends React.Component {
-  state = {
+export interface Props {
+  page: number;
+}
+
+export interface State {
+  characters: Marvel.Characters | undefined;
+}
+
+export default class Heroes extends React.Component<Props, State> {
+  state: State = {
     characters: undefined
   };
 
-  async fetch(page) {
+  async fetch(page: number) {
     this.setState({
       characters: undefined
     });
@@ -25,15 +33,15 @@ export default class Heroes extends React.Component {
     this.fetch(this.props.page);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     const { page } = this.props;
     if (page !== prevProps.page) {
       this.fetch(page);
     }
   }
 
-  renderHeroes() {
-    return this.state.characters.map(character => (
+  static renderHeroes(characters: Marvel.Characters) {
+    return characters.map(character => (
       <div key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
@@ -50,8 +58,10 @@ export default class Heroes extends React.Component {
   }
 
   render() {
-    return this.state.characters !== undefined ? (
-      <div className="d-flex flex-wrap">{this.renderHeroes()}</div>
+    const { characters } = this.state;
+
+    return characters !== undefined ? (
+      <div className="d-flex flex-wrap">{Heroes.renderHeroes(characters)}</div>
     ) : (
       <p>Please wait...</p>
     );

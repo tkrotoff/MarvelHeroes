@@ -1,9 +1,20 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
 import * as Marvel from './http/Marvel';
 
-export default class Hero extends React.Component {
-  state = {
+export interface QueryParams {
+  id: string;
+}
+
+export interface Props extends RouteComponentProps<QueryParams> {}
+
+export interface State {
+  character: Marvel.Character | undefined;
+}
+
+export default class Hero extends React.Component<Props, State> {
+  state: State = {
     character: undefined
   };
 
@@ -11,7 +22,7 @@ export default class Hero extends React.Component {
     this.fetch(this.props.match.params.id);
   }
 
-  async fetch(id) {
+  async fetch(id: string) {
     this.setState({
       character: undefined
     });
@@ -23,8 +34,7 @@ export default class Hero extends React.Component {
     });
   }
 
-  renderHero() {
-    const { character } = this.state;
+  static renderHero(character: Marvel.Character) {
     return (
       <div>
         <img
@@ -35,22 +45,20 @@ export default class Hero extends React.Component {
           <h3>{character.name}</h3>
           <p>{character.description}</p>
           <h6>Comics</h6>
-          {this.renderCategory('comics')}
+          {Hero.renderCategory(character, 'comics')}
           <h6>Series</h6>
-          {this.renderCategory('series')}
+          {Hero.renderCategory(character, 'series')}
           <h6>Stories</h6>
-          {this.renderCategory('stories')}
+          {Hero.renderCategory(character, 'stories')}
         </div>
       </div>
     );
   }
 
-  renderCategory(category) {
-    const { character } = this.state;
-
+  static renderCategory(character: Marvel.Character, category: string) {
     return (
       <ul>
-        {character[category].items.map((item, index) => (
+        {(character[category] as Marvel.CharacterCategory).items.map((item, index) => (
           <li key={`${category}.${index}`}>{item.name}</li>
         ))}
       </ul>
@@ -58,8 +66,10 @@ export default class Hero extends React.Component {
   }
 
   render() {
-    return this.state.character !== undefined ? (
-      <div className="hero">{this.renderHero()}</div>
+    const { character } = this.state;
+
+    return character !== undefined ? (
+      <div className="hero">{Hero.renderHero(character)}</div>
     ) : (
       <p>Please wait...</p>
     );

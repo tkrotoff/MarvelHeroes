@@ -10,7 +10,8 @@
         debug: false
       }
     ],
-    '@babel/react'
+    '@babel/react',
+    '@babel/typescript'
   ],
-  plugins: ['@babel/proposal-class-properties']
+  plugins: ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread']
 }

@@ -1,14 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 import Heroes from './Heroes';
 
-export default class HeroesPagination extends React.Component {
-  state = {
-    page: undefined
+export interface QueryParams {
+  page?: string;
+}
+
+export interface Props extends RouteComponentProps<QueryParams> {}
+
+export interface State {
+  page: number;
+}
+
+export default class HeroesPagination extends React.Component<Props, State> {
+  state: State = {
+    page: 0
   };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps: Props, prevState: State) {
     const pageParam = nextProps.match.params.page;
     const page = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
     return page !== prevState.page ? { page } : null;
@@ -30,7 +40,7 @@ export default class HeroesPagination extends React.Component {
         <Link to={`/${page + 1}`} className="btn btn-primary">
           Next &raquo;
         </Link>
-        {page !== undefined ? <Heroes page={page} /> : null}
+        <Heroes page={page} />
       </div>
     );
   }

@@ -2,13 +2,19 @@
   "name": "marvel-heroes",
   "scripts": {
     "clean": "del-cli build",
-    "build": "cross-env NODE_ENV=development webpack -d",
-    "build:watch": "cross-env NODE_ENV=development webpack -d --watch",
+    "tsc": "tsc",
+    "build": "npm run tsc && cross-env NODE_ENV=development webpack -d",
+    "build:watch": "npm run tsc && cross-env NODE_ENV=development webpack -d --watch",
     "test": "jest",
     "prettier": "prettier --write \"**/*\""
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-0",
+    "@types/axios": "^0.14.0",
+    "@types/blueimp-md5": "^2.7.0",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-router-dom": "^4.2.7",
     "axios": "^0.18.0",
     "blueimp-md5": "^2.10.0",
     "bootstrap": "^4.1.1",
@@ -19,8 +25,13 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.0.0-0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-0",
     "@babel/preset-env": "^7.0.0-0",
     "@babel/preset-react": "^7.0.0-0",
+    "@babel/preset-typescript": "^7.0.0-0",
+    "@types/enzyme": "^3.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
+    "@types/jest": "^23.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-0",
@@ -33,10 +44,11 @@
     "jest": "^23.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
-    "prettier": "^1.13.4",
+    "prettier": "^1.13.5",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack": "^4.11.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
     "webpack-cli": "^2.1.5"
   }
 }

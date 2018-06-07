@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    App: './src/App.js'
+    App: './src/App.tsx'
   },
 
   output: {
@@ -11,11 +11,15 @@ module.exports = {
     filename: '[name].js'
   },
 
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
+  },
+
   plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
 
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.(js|tsx?)$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.(html|css|png)$/, loader: 'file-loader', options: { name: '[name].[ext]' } },
       {
         // FIXME Don't know how to make source maps work
