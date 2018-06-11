@@ -1,14 +1,31 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
+import flushPromises from './flushPromises';
 import mockRouteComponentProps from './mockRouteComponentProps';
 import Hero from './Hero';
 
-test('render()', () => {
-  const wrapper = shallow(<Hero {...mockRouteComponentProps({ id: 'fakeId' })} />);
+jest.mock('./http/Marvel');
 
-  expect(wrapper.html()).toBeTruthy();
-  console.log(wrapper.html());
+test('render()', async () => {
+  const wrapper = mount(<Hero {...mockRouteComponentProps({ id: '1011334' })} />);
+
+  const pleaseWait = '<p>Please wait...</p>';
+
+  expect(wrapper.html()).toEqual(pleaseWait);
+
+  await flushPromises();
+  expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>3-D Man<\/h3>.*<\/div>$/);
+
+  wrapper.setProps({ ...mockRouteComponentProps({ id: '1017100' }) });
+  expect(wrapper.html()).toEqual(pleaseWait);
+  await flushPromises();
+  expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>A-Bomb \(HAS\)<\/h3>.*<\/div>$/);
+
+  wrapper.setProps({ ...mockRouteComponentProps({ id: '1009144' }) });
+  expect(wrapper.html()).toEqual(pleaseWait);
+  await flushPromises();
+  expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>A\.I\.M\.<\/h3>.*<\/div>$/);
 
   wrapper.unmount();
 });
