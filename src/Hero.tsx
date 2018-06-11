@@ -18,10 +18,6 @@ export default class Hero extends React.Component<Props, State> {
     character: undefined
   };
 
-  componentDidMount() {
-    this.fetch(this.props.match.params.id);
-  }
-
   async fetch(id: string) {
     this.setState({
       character: undefined
@@ -32,6 +28,17 @@ export default class Hero extends React.Component<Props, State> {
     this.setState({
       character
     });
+  }
+
+  componentDidMount() {
+    this.fetch(this.props.match.params.id);
+  }
+
+  componentDidUpdate(prevProps: Props) {
+    const { id } = this.props.match.params;
+    if (id !== prevProps.match.params.id) {
+      this.fetch(id);
+    }
   }
 
   static renderHero(character: Marvel.Character) {
