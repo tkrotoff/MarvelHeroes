@@ -4,5 +4,6 @@
 *.yml
 
 build/
+coverage/
 *.png
 *.html

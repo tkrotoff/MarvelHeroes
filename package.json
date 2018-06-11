@@ -1,11 +1,12 @@
 {
   "name": "marvel-heroes",
   "scripts": {
-    "clean": "del-cli build",
+    "clean": "del-cli build coverage",
     "tsc": "tsc",
     "build": "npm run tsc && cross-env NODE_ENV=development webpack -d",
     "build:watch": "npm run tsc && cross-env NODE_ENV=development webpack -d --watch",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "prettier": "prettier --write \"**/*\""
   },
   "dependencies": {
