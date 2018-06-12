@@ -16,3 +16,14 @@ React app that displays the Marvel characters thanks to https://developer.marvel
 npm run build
 open build/index.html
 ```
+
+## Libraries used
+
+- React 16
+- No Redux, just `setState()`
+- TypeScript with `strict: true`
+- Babel 7 with `@babel/preset-typescript`
+- React Router 4
+- Jest + Enzyme => 100% code coverage
+- Fetch API + polyfill whatwg-fetch
+- Bootstrap 4
