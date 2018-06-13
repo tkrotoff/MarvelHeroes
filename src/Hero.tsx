@@ -46,7 +46,8 @@ export default class Hero extends React.Component<Props, State> {
       <div>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-          style={{ maxWidth: '100%' }}
+          alt={character.name}
+          style={{ maxWidth: '100%' }} // Resize image on mobile
         />
         <div>
           <h3>{character.name}</h3>

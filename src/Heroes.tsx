@@ -45,6 +45,7 @@ export default class Heroes extends React.Component<Props, State> {
       <div key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          alt={character.name}
           className="card-img-top"
           style={{
             // Fix for IE 11
