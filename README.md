@@ -1,5 +1,8 @@
 # Marvel Heroes
 
+[![Build Status](https://travis-ci.org/tkrotoff/MarvelHeroes.svg?branch=master)](https://travis-ci.org/tkrotoff/MarvelHeroes)
+[![codecov](https://codecov.io/gh/tkrotoff/MarvelHeroes/branch/master/graph/badge.svg)](https://codecov.io/gh/tkrotoff/MarvelHeroes)
+
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
 - Supports IE >= 10
