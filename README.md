@@ -2,6 +2,8 @@
 
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
+Supports IE >= 10
+
 ### HeroesPagination/Heroes component screenshot
 
 ![HeroesPagination/Heroes component screenshot](doc/HeroesPagination.png)

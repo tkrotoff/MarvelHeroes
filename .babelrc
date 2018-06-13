@@ -4,9 +4,10 @@
       '@babel/env',
       {
         targets: {
-          browsers: ['> 1% in FR']
+          browsers: ['> 1% in FR', 'IE >= 10']
         },
-        useBuiltIns: 'usage',
+        // Cannot use 'usage' otherwise IE 10 fails with "'Set' is undefined"
+        useBuiltIns: 'entry',
         debug: false
       }
     ],

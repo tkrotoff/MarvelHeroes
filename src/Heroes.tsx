@@ -46,6 +46,14 @@ export default class Heroes extends React.Component<Props, State> {
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           className="card-img-top"
+          style={{
+            // Fix for IE 11
+            // See Flexbox on IE11: image stretched for no reason? https://stackoverflow.com/q/36822370
+            flexShrink: 0,
+
+            // Fix for IE 10
+            height: 'auto'
+          }}
         />
         <div className="card-body">
           <h5 className="card-title">{character.name}</h5>
