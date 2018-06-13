@@ -1,4 +1,4 @@
-import mockFetch from '../mockFetch';
+import mockFetch from '../utils/mockFetch';
 import * as Marvel from './Marvel';
 
 test('getQueryParams()', () => {

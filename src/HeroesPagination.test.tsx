@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
-import flushPromises from './flushPromises';
-import mockRouteComponentProps from './mockRouteComponentProps';
+import flushPromises from './utils/flushPromises';
+import mockRouteComponentProps from './utils/mockRouteComponentProps';
 import HeroesPagination from './HeroesPagination';
 
 jest.mock('./http/Marvel');

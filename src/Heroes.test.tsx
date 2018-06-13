@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
-import flushPromises from './flushPromises';
+import flushPromises from './utils/flushPromises';
 import Heroes from './Heroes';
 
 jest.mock('./http/Marvel');

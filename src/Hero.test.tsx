@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import flushPromises from './flushPromises';
-import mockRouteComponentProps from './mockRouteComponentProps';
+import flushPromises from './utils/flushPromises';
+import mockRouteComponentProps from './utils/mockRouteComponentProps';
 import Hero from './Hero';
 
 jest.mock('./http/Marvel');
