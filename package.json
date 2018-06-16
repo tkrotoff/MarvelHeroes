@@ -3,8 +3,11 @@
   "scripts": {
     "clean": "del-cli build coverage",
     "tsc": "tsc",
-    "build": "npm run tsc && cross-env NODE_ENV=development webpack -d",
-    "build:watch": "npm run tsc && cross-env NODE_ENV=development webpack -d --watch",
+    "build": "npm run tsc && webpack --mode development -d",
+    "build:watch": "npm run tsc && webpack --mode development -d --watch",
+    "build:prod": "npm run tsc && webpack --mode production -p",
+    "start": "webpack-dev-server --host 0.0.0.0 --mode development -d",
+    "start:prod": "webpack-dev-server --host 0.0.0.0 --mode production -p",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "prettier": "prettier --write \"**/*\""
@@ -12,14 +15,14 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-0",
     "@types/blueimp-md5": "^2.7.0",
-    "@types/react": "^16.3.17",
+    "@types/react": "^16.3.18",
     "@types/react-dom": "^16.0.6",
     "@types/react-router-dom": "^4.2.7",
     "blueimp-md5": "^2.10.0",
     "bootstrap": "^4.1.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-router-dom": "^4.2.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
@@ -31,11 +34,11 @@
     "@babel/preset-typescript": "^7.0.0-0",
     "@types/enzyme": "^3.1.10",
     "@types/enzyme-adapter-react-16": "^1.0.2",
-    "@types/jest": "^23.0.0",
+    "@types/jest": "^23.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-0",
-    "cross-env": "^5.1.6",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "del-cli": "^1.1.0",
     "enzyme": "^3.3.0",
@@ -44,11 +47,13 @@
     "jest": "^23.1.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
     "prettier": "^1.13.5",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "typescript": "^2.9.1",
+    "typescript": "^2.9.2",
     "webpack": "^4.12.0",
-    "webpack-cli": "^2.1.5"
+    "webpack-cli": "^3.0.7",
+    "webpack-dev-server": "^3.1.4"
   }
 }
