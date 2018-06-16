@@ -25,30 +25,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 //
 // WTF
 
-// webpack-dev-server output is bigger than a regular build because it includes:
-// - node_modules/ansi-html/index.js
-// - node_modules/ansi-regex/index.js
-// - node_modules/events/events.js
-// - node_modules/html-entities/index.js
-// - node_modules/html-entities/lib/html4-entities.js
-// - node_modules/html-entities/lib/html5-entities.js
-// - node_modules/html-entities/lib/xml-entities.js
-// - node_modules/loglevel/lib/loglevel.js
-// - node_modules/node-libs-browser/node_modules/punycode/punycode.js
-// - node_modules/querystring-es3/decode.js
-// - node_modules/querystring-es3/encode.js
-// - node_modules/querystring-es3/index.js
-// - node_modules/sockjs-client/dist/sockjs.js
-// - node_modules/strip-ansi/index.js
-// - node_modules/url/url.js
-// - node_modules/url/util.js
-// - node_modules/webpack-dev-server/client/index.js
-// - node_modules/webpack-dev-server/client/overlay.js
-// - node_modules/webpack-dev-server/client/socket.js
-// - node_modules/webpack/buildin/module.js
-// - node_modules/webpack/hot
-// - node_modules/webpack/hot/emitter.js
-// - node_modules/webpack/hot/log.js
+// webpack-dev-server output is bigger than a regular build because it includes a lot of things
 
 module.exports = {
   entry: {
