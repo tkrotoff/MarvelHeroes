@@ -32,7 +32,7 @@ export default class HeroesPagination extends React.Component<Props, State> {
     if (page === 0) prevButtonClasses += ' disabled';
 
     return (
-      <div>
+      <>
         <h3>Marvel Heroes</h3>
         <Link to={`/${page - 1}`} className={prevButtonClasses}>
           &laquo; Previous
@@ -41,7 +41,7 @@ export default class HeroesPagination extends React.Component<Props, State> {
           Next &raquo;
         </Link>
         <Heroes page={page} />
-      </div>
+      </>
     );
   }
 }

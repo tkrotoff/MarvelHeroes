@@ -43,23 +43,21 @@ export default class Hero extends React.Component<Props, State> {
 
   static renderHero(character: Marvel.Character) {
     return (
-      <div>
+      <>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={character.name}
           className="img-fluid" // Resize image on mobile
         />
-        <div>
-          <h3>{character.name}</h3>
-          <p>{character.description}</p>
-          <h6>Comics</h6>
-          {Hero.renderCategory(character, 'comics')}
-          <h6>Series</h6>
-          {Hero.renderCategory(character, 'series')}
-          <h6>Stories</h6>
-          {Hero.renderCategory(character, 'stories')}
-        </div>
-      </div>
+        <h3>{character.name}</h3>
+        <p>{character.description}</p>
+        <h6>Comics</h6>
+        {Hero.renderCategory(character, 'comics')}
+        <h6>Series</h6>
+        {Hero.renderCategory(character, 'series')}
+        <h6>Stories</h6>
+        {Hero.renderCategory(character, 'stories')}
+      </>
     );
   }
 
