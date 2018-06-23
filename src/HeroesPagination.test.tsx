@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router';
 
 import flushPromises from './utils/flushPromises';
 import mockRouteComponentProps from './utils/mockRouteComponentProps';
-import HeroesPagination from './HeroesPagination';
+import HeroesPagination from './HeroesPaginationEnzymeFix';
 
 jest.mock('./http/Marvel');
 
