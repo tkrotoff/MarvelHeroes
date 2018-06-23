@@ -1,6 +1,7 @@
 .git/
 .gitignore
 .prettierignore
+LICENSE
 *.yml
 
 build/

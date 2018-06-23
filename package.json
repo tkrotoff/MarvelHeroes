@@ -1,5 +1,11 @@
 {
   "name": "marvel-heroes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkrotoff/MarvelHeroes.git"
+  },
+  "description": "Marvel Heroes",
+  "license": "MIT",
   "scripts": {
     "clean": "del-cli build coverage",
     "tsc": "tsc",
