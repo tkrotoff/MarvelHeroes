@@ -1,3 +1,7 @@
+import Raven from 'raven-js';
+
+Raven.config('https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526').install();
+
 import '@babel/polyfill';
 import 'whatwg-fetch';
 
@@ -8,4 +12,4 @@ import './index.html';
 import './App.scss';
 import Router from './Router';
 
-ReactDOM.render(<Router />, document.getElementById('app'));
+Raven.context(() => ReactDOM.render(<Router />, document.getElementById('app')));
