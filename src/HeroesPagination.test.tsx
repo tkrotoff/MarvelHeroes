@@ -11,7 +11,7 @@ jest.mock('./http/Marvel');
 test('render()', async () => {
   const wrapper = mount(
     <MemoryRouter>
-      <HeroesPagination {...mockRouteComponentProps({})} />
+      <HeroesPagination {...mockRouteComponentProps({ match: { params: {} } })} />
     </MemoryRouter>
   );
 
@@ -25,10 +25,10 @@ test('render()', async () => {
   );
 
   // See Can't set the props or state of a component inside MemoryRouter https://github.com/airbnb/enzyme/issues/1384
-  //wrapper.find(HeroesPagination).setProps({...mockRouteComponentProps({ page: 1 })});
+  //wrapper.find(HeroesPagination).setProps({ ...mockRouteComponentProps({ match: { params: { page: 1 } } }) });
   wrapper.setProps({
     children: React.cloneElement(wrapper.props().children, {
-      ...mockRouteComponentProps({ page: 1 })
+      ...mockRouteComponentProps({ match: { params: { page: 1 } } })
     })
   });
   expect(wrapper.html()).toEqual(

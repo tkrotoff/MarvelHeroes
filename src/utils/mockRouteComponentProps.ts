@@ -1,15 +1,10 @@
-import { RouteComponentProps, match } from 'react-router';
-import * as H from 'history';
+import { RouteComponentProps } from 'react-router';
 
-export default function mockRouteComponentProps<P>(params: P) {
-  const props: RouteComponentProps<P> = {
-    history: {} as H.History,
-    location: {} as H.Location,
-    match: {
-      params
-    } as match<P>,
-    staticContext: undefined
-  };
+// See Recursive Partial<T> in TypeScript 2.1 https://stackoverflow.com/q/41980195
+type DeepPartial<T> = { [P in keyof T]?: DeepPartial<T[P]> };
 
-  return props;
-}
+const mockRouteComponentProps = <P>(props: DeepPartial<RouteComponentProps<P>>) => {
+  return (props as any) as RouteComponentProps<P>;
+};
+
+export default mockRouteComponentProps;

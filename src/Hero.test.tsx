@@ -8,7 +8,9 @@ import Hero from './Hero';
 jest.mock('./http/Marvel');
 
 test('render()', async () => {
-  const wrapper = mount(<Hero {...mockRouteComponentProps({ id: '1011334' })} />);
+  const wrapper = mount(
+    <Hero {...mockRouteComponentProps({ match: { params: { id: '1011334' } } })} />
+  );
 
   const pleaseWait = '<p>Please wait...</p>';
 
@@ -17,12 +19,12 @@ test('render()', async () => {
   await flushPromises();
   expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>3-D Man<\/h3>.*<\/div>$/);
 
-  wrapper.setProps({ ...mockRouteComponentProps({ id: '1017100' }) });
+  wrapper.setProps({ ...mockRouteComponentProps({ match: { params: { id: '1017100' } } }) });
   expect(wrapper.html()).toEqual(pleaseWait);
   await flushPromises();
   expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>A-Bomb \(HAS\)<\/h3>.*<\/div>$/);
 
-  wrapper.setProps({ ...mockRouteComponentProps({ id: '1009144' }) });
+  wrapper.setProps({ ...mockRouteComponentProps({ match: { params: { id: '1009144' } } }) });
   expect(wrapper.html()).toEqual(pleaseWait);
   await flushPromises();
   expect(wrapper.html()).toMatch(/^<div class="hero">.*<h3>A\.I\.M\.<\/h3>.*<\/div>$/);
