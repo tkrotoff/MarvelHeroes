@@ -1,17 +1,19 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount as _mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 
 import flushPromises from './utils/flushPromises';
 import mockRouteComponentProps from './utils/mockRouteComponentProps';
-import HeroesPagination from './HeroesPaginationEnzymeFix';
+import HeroesPagination, { Props, QueryParams } from './HeroesPaginationEnzymeFix';
 
 jest.mock('./http/Marvel');
+
+const mount = (node: React.ReactElement<Props>) => _mount<Props>(node);
 
 test('render()', async () => {
   const wrapper = mount(
     <MemoryRouter>
-      <HeroesPagination {...mockRouteComponentProps({ match: { params: {} } })} />
+      <HeroesPagination {...mockRouteComponentProps<QueryParams>({ match: { params: {} } })} />
     </MemoryRouter>
   );
 
@@ -25,10 +27,11 @@ test('render()', async () => {
   );
 
   // See Can't set the props or state of a component inside MemoryRouter https://github.com/airbnb/enzyme/issues/1384
-  //wrapper.find(HeroesPagination).setProps({ ...mockRouteComponentProps({ match: { params: { page: 1 } } }) });
-  wrapper.setProps({
-    children: React.cloneElement(wrapper.props().children, {
-      ...mockRouteComponentProps({ match: { params: { page: 1 } } })
+  //wrapper.find(HeroesPagination).setProps({ ...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } }) });
+  // FIXME See Enzyme ReactWrapper.setProps() cannot be used with children https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26795
+  wrapper.setProps<any>({
+    children: React.cloneElement((wrapper.props() as any).children, {
+      ...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } })
     })
   });
   expect(wrapper.html()).toEqual(
