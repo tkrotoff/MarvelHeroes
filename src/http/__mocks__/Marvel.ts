@@ -1,7 +1,7 @@
 import characters_offset_0 from './characters_offset_0.json';
 import characters_offset_50 from './characters_offset_50.json';
 
-export function fetchCharacters(offset: number) {
+const fetchCharacters = (offset: number) => {
   let characters;
 
   switch (offset) {
@@ -15,13 +15,13 @@ export function fetchCharacters(offset: number) {
       throw new Error(`Unknown offset ${offset}`);
   }
   return characters;
-}
+};
 
 import character_id_1011334 from './character_id_1011334.json';
 import character_id_1017100 from './character_id_1017100.json';
 import character_id_1009144 from './character_id_1009144.json';
 
-export function fetchCharacter(id: string) {
+const fetchCharacter = (id: string) => {
   let character;
 
   switch (id) {
@@ -39,4 +39,6 @@ export function fetchCharacter(id: string) {
   }
 
   return character;
-}
+};
+
+export { fetchCharacters, fetchCharacter };
