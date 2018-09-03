@@ -55,8 +55,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/64790",
-              "name":
-                "Avengers by Brian Michael Bendis: The Complete Collection Vol. 2 (Trade Paperback)"
+              "name": "Avengers by Brian Michael Bendis: The Complete Collection Vol. 2 (Trade Paperback)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/1170",
@@ -312,18 +311,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/77/aim.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/77/aim.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/A.I.M.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/A.I.M.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009144/aim.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009144/aim.?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       }

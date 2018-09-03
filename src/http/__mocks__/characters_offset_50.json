@@ -77,18 +77,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/155/anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/155/anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011301/anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011301/anole?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -390,18 +387,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/1010802/ant-man_eric_ogrady/featured?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/1010802/ant-man_eric_ogrady/featured?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Ant-Man_(Eric_O%27Grady)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Ant-Man_(Eric_O%27Grady)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010802/ant-man_eric_ogrady?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010802/ant-man_eric_ogrady?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -714,18 +708,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/comics/characters/1010801/ant-man_scott_lang?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010801/ant-man_scott_lang?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Ant-Man_(Scott_Lang)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Ant-Man_(Scott_Lang)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010801/ant-man_scott_lang?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010801/ant-man_scott_lang?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -766,18 +757,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/158/anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/158/anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011208/anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011208/anthem?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -873,8 +861,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/1749",
-              "name":
-                "Official Handbook of the Marvel Universe (2004) #11 (X-MEN - AGE OF APOCALYPSE)"
+              "name": "Official Handbook of the Marvel Universe (2004) #11 (X-MEN - AGE OF APOCALYPSE)"
             }
           ],
           "returned": 20
@@ -1104,18 +1091,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/166/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/166/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Apocalypse_(En_Sabah_Nur)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Apocalypse_(En_Sabah_Nur)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009156/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009156/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1156,18 +1140,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/166/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/166/apocalypse?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Apocalypse%20(Ultimate)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Apocalypse%20(Ultimate)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011253/apocalypse_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011253/apocalypse_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1208,18 +1189,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/169/aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/169/aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010866/aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010866/aqueduct?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1335,18 +1313,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/173/arachne?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/173/arachne?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Arachne_(Julia_Carpenter)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Arachne_(Julia_Carpenter)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010773/arachne?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010773/arachne?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1540,13 +1515,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/176/araa?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/176/araa?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1017438/araa?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1017438/araa?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1856,18 +1829,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/178/arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/178/arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009158/arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009158/arcade?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -1932,13 +1902,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/179/arcana?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/179/arcana?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010686/arcana?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010686/arcana?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -2316,18 +2284,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/comics/characters/1009159/archangel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009159/archangel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Angel_(Warren_Worthington_III)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Angel_(Warren_Worthington_III)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009159/archangel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009159/archangel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -2524,18 +2489,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/182/arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/182/arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009160/arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009160/arclight?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -2860,18 +2822,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/comics/characters/1010784/ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010784/ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010784/ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010784/ares?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -2912,18 +2871,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/184/argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/184/argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011275/argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011275/argent?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -2964,18 +2920,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/189/armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/189/armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011012/armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011012/armadillo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3223,18 +3176,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/191/armor?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/191/armor?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Armor_(Hisako_Ichiki)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Armor_(Hisako_Ichiki)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011298/armor_hisako_ichiki?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011298/armor_hisako_ichiki?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3304,21 +3254,18 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/193/armory?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/193/armory?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010827/armory?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010827/armory?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
       {
         "id": 1009740,
         "name": "Arnim Zola",
-        "description":
-          "The frail, dwarfish Arnim Zola was born in 1930s Switzerland where he became the world's leading biochemist and genetic engineer.",
+        "description": "The frail, dwarfish Arnim Zola was born in 1930s Switzerland where he became the world's leading biochemist and genetic engineer.",
         "modified": "2012-03-20T12:33:28-0400",
         "thumbnail": {
           "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/b0/4c00393a4cb7c",
@@ -3574,18 +3521,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/2790/arnim_zola?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/2790/arnim_zola?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Zola,_Arnim?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Zola,_Arnim?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009740/arnim_zola?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009740/arnim_zola?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3626,18 +3570,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/197/arsenic?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/197/arsenic?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Arsenic_(and_Old_Lace)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Arsenic_(and_Old_Lace)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010748/arsenic?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010748/arsenic?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3678,13 +3619,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/198/artiee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/198/artiee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009161/artiee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009161/artiee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3725,18 +3664,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/201/asgardian?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/201/asgardian?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Lorelei_%28Asgardian%29?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Lorelei_%28Asgardian%29?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010718/asgardian?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010718/asgardian?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3777,13 +3713,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/204/askew-tronics?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/204/askew-tronics?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009162/askew-tronics?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009162/askew-tronics?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3824,18 +3758,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/211/asylum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/211/asylum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Asylum_(Henrique_Gallante)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Asylum_(Henrique_Gallante)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010835/asylum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010835/asylum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -3999,18 +3930,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/214/atlas?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/214/atlas?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Atlas_(Team)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Atlas_(Team)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010336/atlas_team?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010336/atlas_team?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -4311,18 +4239,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/221/aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/221/aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009163/aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009163/aurora?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -4640,26 +4565,22 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/222/avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/222/avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009164/avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009164/avalanche?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
       {
         "id": 1009165,
         "name": "Avengers",
-        "description":
-          "Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team.",
+        "description": "Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team.",
         "modified": "2014-05-27T20:28:26-0400",
         "thumbnail": {
           "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/5102c774ebae7",
@@ -5025,18 +4946,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/comics/characters/1009165/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009165/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009165/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009165/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -5312,21 +5230,18 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/68/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/68/avengers?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1015239/avengers_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1015239/avengers_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
       {
         "id": 1011766,
         "name": "Azazel (Mutant)",
-        "description":
-          "A mutant from biblical times, Azazel is the ruler of the Neyaphem and claims that the Earth and everything on it belongs to him.",
+        "description": "A mutant from biblical times, Azazel is the ruler of the Neyaphem and claims that the Earth and everything on it belongs to him.",
         "modified": "2011-06-09T11:04:52-0400",
         "thumbnail": {
           "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
@@ -5394,18 +5309,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/227/azazel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/227/azazel?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Azazel_(mutant)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Azazel_(mutant)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011766/azazel_mutant?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011766/azazel_mutant?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -5750,26 +5662,22 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/232/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/232/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009168/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009168/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
       {
         "id": 1009596,
         "name": "Banshee (Theresa Rourke)",
-        "description":
-          "The daughter of former X-Men member Sean Cassidy, a.k.a. Banshee, and Maeve Rourke, Theresa Rourke was raised by her first cousin once removed, mutant terrorist Thomas Cassidy, a.k.a. Black Tom.",
+        "description": "The daughter of former X-Men member Sean Cassidy, a.k.a. Banshee, and Maeve Rourke, Theresa Rourke was raised by her first cousin once removed, mutant terrorist Thomas Cassidy, a.k.a. Black Tom.",
         "modified": "2011-03-23T17:37:27-0400",
         "thumbnail": {
           "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/c0/4ce5a1a50e56b",
@@ -6091,18 +5999,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/232/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/232/banshee?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Siryn?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Siryn?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009596/banshee_theresa_rourke?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009596/banshee_theresa_rourke?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -6411,18 +6316,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/3240/baron_strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/3240/baron_strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Baron_Strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Baron_Strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009169/baron_strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009169/baron_strucker?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -6731,18 +6633,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/238/baron_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/238/baron_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Baron_Zemo_(Heinrich_Zemo)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Baron_Zemo_(Heinrich_Zemo)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009170/baron_zemo_heinrich_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009170/baron_zemo_heinrich_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -6964,8 +6863,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/stories/141838",
-              "name":
-                "cover from Marvel Universe Avengers: Ultron Revolution (Digital Comic) (2017) #5",
+              "name": "cover from Marvel Universe Avengers: Ultron Revolution (Digital Comic) (2017) #5",
               "type": "cover"
             },
             {
@@ -6985,18 +6883,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/238/baron_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/238/baron_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Baron_Zemo_(Helmut_Zemo)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Baron_Zemo_(Helmut_Zemo)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010906/baron_zemo_helmut_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010906/baron_zemo_helmut_zemo?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7058,18 +6953,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/2876/baroness_sbak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/2876/baroness_sbak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Baroness_S%27Bak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Baroness_S%27Bak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011137/baroness_sbak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011137/baroness_sbak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7161,18 +7053,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/241/barracuda?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/241/barracuda?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Barracuda_(mercenary)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Barracuda_(mercenary)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011354/barracuda?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011354/barracuda?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7213,13 +7102,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/2752/bart_rozum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/2752/bart_rozum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009550/bart_rozum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009550/bart_rozum?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7528,18 +7415,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/244/bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/244/bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009171/bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009171/bastion?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7815,18 +7699,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/246/batroc_the_leaper?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/246/batroc_the_leaper?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Batroc_(Georges_Batroc)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Batroc_(Georges_Batroc)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009172/batroc_the_leaper?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009172/batroc_the_leaper?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -7896,18 +7777,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/2685/battering_ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/2685/battering_ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Battering_Ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Battering_Ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009173/battering_ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009173/battering_ram?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -8097,18 +7975,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/249/beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/249/beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009174/beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009174/beak?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -8481,18 +8356,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Beast_(Henry_McCoy)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Beast_(Henry_McCoy)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009175/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009175/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -8533,18 +8405,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Beast_(Earth-311)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Beast_(Earth-311)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010909/beast_earth-311?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010909/beast_earth-311?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -8836,18 +8705,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/3/beast?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Beast_(Ultimate)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Beast_(Ultimate)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1010908/beast_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1010908/beast_ultimate?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -8888,13 +8754,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/251/becatron?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/251/becatron?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009176/becatron?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009176/becatron?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -9029,13 +8893,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/252/bedlam?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/252/bedlam?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009177/bedlam?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009177/bedlam?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -9092,18 +8954,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/253/beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/253/beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/Beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/Beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009178/beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009178/beef?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -9368,13 +9227,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/254/beetle?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/254/beetle?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009179/beetle_abner_jenkins?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009179/beetle_abner_jenkins?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       },
@@ -9655,13 +9512,11 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/2763/ben_grimm?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/2763/ben_grimm?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1009329/ben_grimm?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1009329/ben_grimm?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       }

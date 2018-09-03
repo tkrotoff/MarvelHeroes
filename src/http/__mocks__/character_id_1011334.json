@@ -216,18 +216,15 @@
         "urls": [
           {
             "type": "detail",
-            "url":
-              "http://marvel.com/characters/74/3-d_man?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/74/3-d_man?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
-            "url":
-              "http://marvel.com/universe/3-D_Man_(Chandler)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/universe/3-D_Man_(Chandler)?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "comiclink",
-            "url":
-              "http://marvel.com/comics/characters/1011334/3-d_man?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/comics/characters/1011334/3-d_man?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           }
         ]
       }
