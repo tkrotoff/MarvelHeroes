@@ -1,18 +1,21 @@
 {
-  presets: [
+  "presets": [
     [
-      '@babel/env',
+      "@babel/preset-env",
       {
-        targets: {
-          browsers: ['> 1% in FR', 'IE >= 10']
+        "targets": {
+          "browsers": ["> 1% in FR", "IE >= 10"]
         },
         // Cannot use 'usage' otherwise IE 10 fails with "'Set' is undefined"
-        useBuiltIns: 'entry',
-        debug: false
+        "useBuiltIns": "entry",
+        "debug": false
       }
     ],
-    '@babel/react',
-    '@babel/typescript'
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
-  plugins: ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread']
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
 }
