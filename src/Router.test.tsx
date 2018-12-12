@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 
 import flushPromises from './utils/flushPromises';
@@ -11,7 +11,7 @@ import Router from './Router';
 jest.mock('./http/Marvel');
 
 const renderRoute = (path: string) =>
-  mount(
+  TestRenderer.create(
     <MemoryRouter initialEntries={[path]}>
       <Router />
     </MemoryRouter>
@@ -20,25 +20,25 @@ const renderRoute = (path: string) =>
 test('HeroesPagination route', async () => {
   const wrapper = renderRoute('/');
   await flushPromises();
-  expect(wrapper.find(HeroesPagination)).toHaveLength(1);
-  expect(wrapper.find(Hero)).toHaveLength(0);
-  expect(wrapper.find(PageNotFound)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(HeroesPagination)).toHaveLength(1);
+  expect(wrapper.root.findAllByType(Hero)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(PageNotFound)).toHaveLength(0);
   wrapper.unmount();
 });
 
 test('Hero route', async () => {
   const wrapper = renderRoute('/heroes/1011334');
   await flushPromises();
-  expect(wrapper.find(HeroesPagination)).toHaveLength(0);
-  expect(wrapper.find(Hero)).toHaveLength(1);
-  expect(wrapper.find(PageNotFound)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(HeroesPagination)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(Hero)).toHaveLength(1);
+  expect(wrapper.root.findAllByType(PageNotFound)).toHaveLength(0);
   wrapper.unmount();
 });
 
 test('PageNotFound route', () => {
   const wrapper = renderRoute('/random');
-  expect(wrapper.find(HeroesPagination)).toHaveLength(0);
-  expect(wrapper.find(Hero)).toHaveLength(0);
-  expect(wrapper.find(PageNotFound)).toHaveLength(1);
+  expect(wrapper.root.findAllByType(HeroesPagination)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(Hero)).toHaveLength(0);
+  expect(wrapper.root.findAllByType(PageNotFound)).toHaveLength(1);
   wrapper.unmount();
 });

@@ -1,16 +1,16 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import mockRouteComponentProps from './utils/mockRouteComponentProps';
-import PageNotFound from './PageNotFoundEnzymeFix';
+import PageNotFound from './PageNotFound';
 
 test('render()', async () => {
-  const wrapper = mount(
+  const wrapper = render(
     <PageNotFound {...mockRouteComponentProps({ location: { pathname: 'random' } })} />
   );
 
-  expect(wrapper.html()).toEqual(
-    "<div><h1>Whoops</h1><p>Sorry but <em>random</em> didn't match any pages</p></div>"
+  expect(wrapper.container.innerHTML).toEqual(
+    "<h1>Whoops</h1><p>Sorry but <em>random</em> didn't match any pages</p>"
   );
 
   wrapper.unmount();

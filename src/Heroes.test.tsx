@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from 'react-testing-library';
 import { MemoryRouter } from 'react-router';
 
 import flushPromises from './utils/flushPromises';
@@ -8,7 +8,7 @@ import Heroes from './Heroes';
 jest.mock('./http/Marvel');
 
 test('render()', async () => {
-  const wrapper = mount(
+  const wrapper = render(
     <MemoryRouter>
       <Heroes page={0} />
     </MemoryRouter>
@@ -16,21 +16,21 @@ test('render()', async () => {
 
   const pleaseWait = '<p>Please wait...</p>';
 
-  expect(wrapper.html()).toEqual(pleaseWait);
+  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
 
   await flushPromises();
-  expect(wrapper.html()).toMatch(
+  expect(wrapper.container.innerHTML).toMatch(
     /.*3-D Man.*A-Bomb \(HAS\).*A\.I\.M\..*Anita Blake.*Anne Marie Hoag.*Annihilus.*/
   );
 
-  // See Can't set the props or state of a component inside MemoryRouter https://github.com/airbnb/enzyme/issues/1384
-  //wrapper.find(Heroes).setProps({ page: 1 });
-  wrapper.setProps({
-    children: React.cloneElement(wrapper.props().children, { page: 1 })
-  });
-  expect(wrapper.html()).toEqual(pleaseWait);
+  wrapper.rerender(
+    <MemoryRouter>
+      <Heroes page={1} />
+    </MemoryRouter>
+  );
+  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
   await flushPromises();
-  expect(wrapper.html()).toMatch(
+  expect(wrapper.container.innerHTML).toMatch(
     /.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*/
   );
 

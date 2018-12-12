@@ -30,6 +30,6 @@ open build/index.html
 - TypeScript with `strict: true`
 - Babel 7 with `@babel/preset-typescript`
 - React Router 4
-- Jest + Enzyme + Puppeteer => 100% code coverage
+- Jest + react-testing-library + Puppeteer => 100% code coverage
 - Fetch API + whatwg-fetch polyfill
 - Bootstrap 4

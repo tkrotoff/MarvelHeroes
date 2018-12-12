@@ -1,10 +1,5 @@
 import '@babel/polyfill'; // Do we want to run the tests with the polyfills?
 
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
-
 // See Event: 'unhandledRejection' https://nodejs.org/api/process.html#process_event_unhandledrejection
 // See Bluebird Error management configuration http://bluebirdjs.com/docs/api/error-management-configuration.html
 //

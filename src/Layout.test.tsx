@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import Layout from './Layout';
 
 test('render()', async () => {
-  const wrapper = mount(<Layout>Hello, World!</Layout>);
+  const wrapper = render(<Layout>Hello, World!</Layout>);
 
-  expect(wrapper.html()).toEqual('<div class="container-fluid">Hello, World!</div>');
+  expect(wrapper.container.innerHTML).toEqual('<div class="container-fluid">Hello, World!</div>');
 
   wrapper.unmount();
 });
