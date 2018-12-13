@@ -1,6 +1,7 @@
 .git/
 .gitignore
 .prettierignore
+.browserslistrc
 LICENSE
 *.yml
 
