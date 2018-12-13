@@ -2,11 +2,11 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 
-import flushPromises from './utils/flushPromises';
-import HeroesPagination from './HeroesPagination';
-import Hero from './Hero';
-import PageNotFound from './PageNotFound';
-import Router from './Router';
+import { flushPromises } from './utils/flushPromises';
+import { HeroesPagination } from './HeroesPagination';
+import { Hero } from './Hero';
+import { PageNotFound } from './PageNotFound';
+import { Router } from './Router';
 
 jest.mock('./http/Marvel');
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Marvel from './http/Marvel';
@@ -7,40 +7,26 @@ export interface Props {
   page: number;
 }
 
-export interface State {
-  characters: Marvel.Characters | undefined;
-}
+export const Heroes: React.FunctionComponent<Props> = props => {
+  const [characters, setCharacters] = useState<Marvel.Characters | undefined>(undefined);
 
-export default class Heroes extends React.Component<Props, State> {
-  state: State = {
-    characters: undefined
-  };
-
-  async fetch(page: number) {
-    this.setState({
-      characters: undefined
-    });
+  async function fetch(page: number) {
+    setCharacters(undefined);
 
     const nbCharactersPerPage = 50;
     const characters = await Marvel.fetchCharacters(page * nbCharactersPerPage);
 
-    this.setState({
-      characters
-    });
+    setCharacters(characters);
   }
 
-  componentDidMount() {
-    this.fetch(this.props.page);
-  }
+  useEffect(
+    () => {
+      fetch(props.page);
+    },
+    [props.page]
+  );
 
-  componentDidUpdate(prevProps: Props) {
-    const { page } = this.props;
-    if (page !== prevProps.page) {
-      this.fetch(page);
-    }
-  }
-
-  static renderHeroes(characters: Marvel.Characters) {
+  function renderHeroes(characters: Marvel.Characters) {
     return characters.map(character => (
       <div key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img
@@ -66,13 +52,9 @@ export default class Heroes extends React.Component<Props, State> {
     ));
   }
 
-  render() {
-    const { characters } = this.state;
-
-    return characters !== undefined ? (
-      <div className="d-flex flex-wrap">{Heroes.renderHeroes(characters)}</div>
-    ) : (
-      <p>Please wait...</p>
-    );
-  }
-}
+  return characters !== undefined ? (
+    <div className="d-flex flex-wrap">{renderHeroes(characters)}</div>
+  ) : (
+    <p>Please wait...</p>
+  );
+};

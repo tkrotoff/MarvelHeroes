@@ -2,8 +2,6 @@
 //
 // Syntactic sugar, see: https://github.com/facebook/jest/issues/2157#issuecomment-279171856
 // Something like this will maybe added to the Jest API
-const flushPromises = () => {
+export const flushPromises = () => {
   return new Promise(resolve => setImmediate(resolve));
 };
-
-export default flushPromises;

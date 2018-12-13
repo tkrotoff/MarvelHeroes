@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-const PageNotFound: React.FunctionComponent<RouteComponentProps<{}>> = ({ location }) => (
+export const PageNotFound: React.FunctionComponent<RouteComponentProps<{}>> = ({ location }) => (
   <>
     <h1>Whoops</h1>
     <p>
@@ -9,5 +9,3 @@ const PageNotFound: React.FunctionComponent<RouteComponentProps<{}>> = ({ locati
     </p>
   </>
 );
-
-export default PageNotFound;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-import Layout from './Layout';
-import PageNotFound from './PageNotFound';
-import HeroesPagination from './HeroesPagination';
-import Hero from './Hero';
+import { Layout } from './Layout';
+import { PageNotFound } from './PageNotFound';
+import { HeroesPagination } from './HeroesPagination';
+import { Hero } from './Hero';
 
-const Router = () => (
+export const Router = () => (
   <HashRouter>
     <Layout>
       <Switch>
@@ -18,5 +18,3 @@ const Router = () => (
     </Layout>
   </HashRouter>
 );
-
-export default Router;

@@ -10,6 +10,6 @@ import ReactDOM from 'react-dom';
 
 import './index.html';
 import './App.scss';
-import Router from './Router';
+import { Router } from './Router';
 
 Raven.context(() => ReactDOM.render(<Router />, document.getElementById('app')));

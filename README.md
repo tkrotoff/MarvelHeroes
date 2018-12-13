@@ -25,8 +25,8 @@ open build/index.html
 
 ## Libraries used
 
-- React 16
-- No Redux, just `setState()`
+- React 16 with hooks
+- No Redux, just `useState()`
 - TypeScript with `strict: true`
 - Babel 7 with `@babel/preset-typescript`
 - React Router 4

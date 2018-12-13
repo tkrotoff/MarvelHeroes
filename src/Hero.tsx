@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import * as Marvel from './http/Marvel';
@@ -9,39 +9,23 @@ export interface QueryParams {
 
 export interface Props extends RouteComponentProps<QueryParams> {}
 
-export interface State {
-  character: Marvel.Character | undefined;
-}
+export const Hero: React.FunctionComponent<Props> = props => {
+  const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
 
-export default class Hero extends React.Component<Props, State> {
-  state: State = {
-    character: undefined
-  };
-
-  async fetch(id: string) {
-    this.setState({
-      character: undefined
-    });
-
+  async function fetch(id: string) {
+    setCharacter(undefined);
     const character = await Marvel.fetchCharacter(id);
-
-    this.setState({
-      character
-    });
+    setCharacter(character);
   }
 
-  componentDidMount() {
-    this.fetch(this.props.match.params.id);
-  }
+  useEffect(
+    () => {
+      fetch(props.match.params.id);
+    },
+    [props.match.params.id]
+  );
 
-  componentDidUpdate(prevProps: Props) {
-    const { id } = this.props.match.params;
-    if (id !== prevProps.match.params.id) {
-      this.fetch(id);
-    }
-  }
-
-  static renderHero(character: Marvel.Character) {
+  function renderHero(character: Marvel.Character) {
     return (
       <>
         <img
@@ -52,16 +36,16 @@ export default class Hero extends React.Component<Props, State> {
         <h3>{character.name}</h3>
         <p>{character.description}</p>
         <h6>Comics</h6>
-        {Hero.renderCategory(character, 'comics')}
+        {renderCategory(character, 'comics')}
         <h6>Series</h6>
-        {Hero.renderCategory(character, 'series')}
+        {renderCategory(character, 'series')}
         <h6>Stories</h6>
-        {Hero.renderCategory(character, 'stories')}
+        {renderCategory(character, 'stories')}
       </>
     );
   }
 
-  static renderCategory(character: Marvel.Character, category: string) {
+  function renderCategory(character: Marvel.Character, category: string) {
     return (
       <ul>
         {(character[category] as Marvel.CharacterCategory).items.map((item, index) => (
@@ -71,13 +55,9 @@ export default class Hero extends React.Component<Props, State> {
     );
   }
 
-  render() {
-    const { character } = this.state;
-
-    return character !== undefined ? (
-      <div className="hero">{Hero.renderHero(character)}</div>
-    ) : (
-      <p>Please wait...</p>
-    );
-  }
-}
+  return character !== undefined ? (
+    <div className="hero">{renderHero(character)}</div>
+  ) : (
+    <p>Please wait...</p>
+  );
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import Layout from './Layout';
+import { Layout } from './Layout';
 
 test('render()', async () => {
   const wrapper = render(<Layout>Hello, World!</Layout>);
