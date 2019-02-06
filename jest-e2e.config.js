@@ -1,3 +1,5 @@
+// @ts-check
+
 const { defaults } = require('jest-config');
 
 module.exports = {
