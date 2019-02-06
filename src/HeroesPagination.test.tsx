@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, flushEffects } from 'react-testing-library';
+import { render, flushEffects, cleanup } from 'react-testing-library';
 import { MemoryRouter } from 'react-router';
 
 import { flushPromises } from './utils/flushPromises';
@@ -7,6 +7,8 @@ import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import { HeroesPagination, QueryParams } from './HeroesPagination';
 
 jest.mock('./http/Marvel');
+
+afterEach(cleanup);
 
 test('render()', async () => {
   const wrapper = render(
@@ -42,6 +44,4 @@ test('render()', async () => {
   expect(wrapper.container.innerHTML).toMatch(
     /^<h3>Marvel Heroes<\/h3>.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*$/
   );
-
-  wrapper.unmount();
 });

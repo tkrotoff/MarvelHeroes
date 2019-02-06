@@ -1,11 +1,13 @@
 import React from 'react';
-import { render, flushEffects } from 'react-testing-library';
+import { render, flushEffects, cleanup } from 'react-testing-library';
 
 import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import { Hero, QueryParams } from './Hero';
 
 jest.mock('./http/Marvel');
+
+afterEach(cleanup);
 
 test('render()', async () => {
   const wrapper = render(
@@ -40,6 +42,4 @@ test('render()', async () => {
   await flushPromises();
   flushEffects();
   expect(wrapper.container.innerHTML).toMatch(/^<div class="hero">.*<h3>A\.I\.M\.<\/h3>.*<\/div>$/);
-
-  wrapper.unmount();
 });
