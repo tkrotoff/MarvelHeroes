@@ -18,12 +18,9 @@ export const Hero: React.FunctionComponent<Props> = props => {
     setCharacter(character);
   }
 
-  useEffect(
-    () => {
-      fetch(props.match.params.id);
-    },
-    [props.match.params.id]
-  );
+  useEffect(() => {
+    fetch(props.match.params.id);
+  }, [props.match.params.id]);
 
   function renderHero(character: Marvel.Character) {
     return (

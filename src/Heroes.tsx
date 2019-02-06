@@ -19,12 +19,9 @@ export const Heroes: React.FunctionComponent<Props> = props => {
     setCharacters(characters);
   }
 
-  useEffect(
-    () => {
-      fetch(props.page);
-    },
-    [props.page]
-  );
+  useEffect(() => {
+    fetch(props.page);
+  }, [props.page]);
 
   function renderHeroes(characters: Marvel.Characters) {
     return characters.map(character => (

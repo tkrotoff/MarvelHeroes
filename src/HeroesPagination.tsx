@@ -12,16 +12,13 @@ export interface Props extends RouteComponentProps<QueryParams> {}
 export const HeroesPagination: React.FunctionComponent<Props> = props => {
   const [page, setPage] = useState<number>(0);
 
-  useEffect(
-    () => {
-      const pageParam = props.match.params.page;
-      const pageFromProps = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
-      if (pageFromProps !== page) {
-        setPage(pageFromProps);
-      }
-    },
-    [props.match.params.page]
-  );
+  useEffect(() => {
+    const pageParam = props.match.params.page;
+    const pageFromProps = pageParam !== undefined ? parseInt(pageParam, 10) : 0;
+    if (pageFromProps !== page) {
+      setPage(pageFromProps);
+    }
+  }, [props.match.params.page]);
 
   // See Disabled href tag https://stackoverflow.com/q/13955667
   let prevButtonClasses = 'btn btn-primary';
