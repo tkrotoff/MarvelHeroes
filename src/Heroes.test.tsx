@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, flushEffects, cleanup } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import { MemoryRouter } from 'react-router';
 
 import { flushPromises } from './utils/flushPromises';
@@ -18,11 +18,9 @@ test('render()', async () => {
 
   const pleaseWait = '<p>Please wait...</p>';
 
-  flushEffects();
   expect(wrapper.container.innerHTML).toEqual(pleaseWait);
 
   await flushPromises();
-  flushEffects();
   expect(wrapper.container.innerHTML).toMatch(
     /.*3-D Man.*A-Bomb \(HAS\).*A\.I\.M\..*Anita Blake.*Anne Marie Hoag.*Annihilus.*/
   );
@@ -32,10 +30,8 @@ test('render()', async () => {
       <Heroes page={1} />
     </MemoryRouter>
   );
-  flushEffects();
   expect(wrapper.container.innerHTML).toEqual(pleaseWait);
   await flushPromises();
-  flushEffects();
   expect(wrapper.container.innerHTML).toMatch(
     /.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*/
   );
