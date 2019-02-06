@@ -18,7 +18,7 @@ afterAll(async () => {
     page.coverage.stopCSSCoverage()
   ]);
 
-  const computeCoverage = (entries: CoverageEntry[]) => {
+  function computeCoverage(entries: CoverageEntry[]) {
     let totalBytes = 0;
     let usedBytes = 0;
     for (const entry of entries) {
@@ -32,7 +32,7 @@ afterAll(async () => {
     return `${Math.round((usedBytes / totalBytes) * 100)}% (${Math.round(usedBytes)}/${Math.round(
       totalBytes
     )} KiB)`;
-  };
+  }
 
   console.log(`JavaScript coverage: ${computeCoverage(jsCoverage)}`);
   console.log(`CSS coverage: ${computeCoverage(cssCoverage)}`);

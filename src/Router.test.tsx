@@ -10,12 +10,13 @@ import { Router } from './Router';
 
 jest.mock('./http/Marvel');
 
-const renderRoute = (path: string) =>
-  TestRenderer.create(
+function renderRoute(path: string) {
+  return TestRenderer.create(
     <MemoryRouter initialEntries={[path]}>
       <Router />
     </MemoryRouter>
   );
+}
 
 test('HeroesPagination route', async () => {
   const wrapper = renderRoute('/');
