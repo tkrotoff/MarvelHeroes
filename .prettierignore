@@ -3,9 +3,7 @@
 .prettierignore
 .browserslistrc
 LICENSE
-*.yml
 
 build/
 coverage/
 *.png
-*.html
