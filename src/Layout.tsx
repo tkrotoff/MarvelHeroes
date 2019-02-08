@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const Layout: React.FunctionComponent = props => (
-  <div className="container-fluid">{props.children}</div>
-);
+export function Layout({ children }: { children: React.ReactNode }) {
+  return <div className="container-fluid">{children}</div>;
+}

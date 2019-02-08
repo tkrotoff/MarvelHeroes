@@ -9,8 +9,8 @@ export interface QueryParams {
 
 export interface Props extends RouteComponentProps<QueryParams> {}
 
-export const HeroesPagination: React.FunctionComponent<Props> = props => {
-  const [page, setPage] = useState<number>(0);
+export function HeroesPagination(props: Props) {
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     const pageParam = props.match.params.page;
@@ -36,4 +36,4 @@ export const HeroesPagination: React.FunctionComponent<Props> = props => {
       <Heroes page={page} />
     </>
   );
-};
+}

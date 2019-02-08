@@ -9,7 +9,7 @@ export interface QueryParams {
 
 export interface Props extends RouteComponentProps<QueryParams> {}
 
-export const Hero: React.FunctionComponent<Props> = props => {
+export function Hero(props: Props) {
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
 
   async function fetch(id: string) {
@@ -57,4 +57,4 @@ export const Hero: React.FunctionComponent<Props> = props => {
   ) : (
     <p>Please wait...</p>
   );
-};
+}

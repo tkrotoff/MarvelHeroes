@@ -7,7 +7,7 @@ export interface Props {
   page: number;
 }
 
-export const Heroes: React.FunctionComponent<Props> = props => {
+export function Heroes(props: Props) {
   const [characters, setCharacters] = useState<Marvel.Characters | undefined>(undefined);
 
   async function fetch(page: number) {
@@ -54,4 +54,4 @@ export const Heroes: React.FunctionComponent<Props> = props => {
   ) : (
     <p>Please wait...</p>
   );
-};
+}
