@@ -11,16 +11,27 @@ export interface Props extends RouteComponentProps<QueryParams> {}
 
 export function Hero(props: Props) {
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
-
-  async function fetch(id: string) {
-    setCharacter(undefined);
-    const character = await Marvel.fetchCharacter(id);
-    setCharacter(character);
-  }
+  const { id } = props.match.params;
 
   useEffect(() => {
-    fetch(props.match.params.id);
-  }, [props.match.params.id]);
+    async function fetch(id: string) {
+      setCharacter(undefined);
+      const character = await Marvel.fetchCharacter(id);
+      setCharacter(character);
+    }
+
+    fetch(id);
+  }, [id]);
+
+  function renderCategory(character: Marvel.Character, category: string) {
+    return (
+      <ul>
+        {(character[category] as Marvel.CharacterCategory).items.map((item, index) => (
+          <li key={`${category}.${index}`}>{item.name}</li>
+        ))}
+      </ul>
+    );
+  }
 
   function renderHero(character: Marvel.Character) {
     return (
@@ -39,16 +50,6 @@ export function Hero(props: Props) {
         <h6>Stories</h6>
         {renderCategory(character, 'stories')}
       </>
-    );
-  }
-
-  function renderCategory(character: Marvel.Character, category: string) {
-    return (
-      <ul>
-        {(character[category] as Marvel.CharacterCategory).items.map((item, index) => (
-          <li key={`${category}.${index}`}>{item.name}</li>
-        ))}
-      </ul>
     );
   }
 

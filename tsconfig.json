@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
-    "noEmit": true,
+    "esModuleInterop": true,
 
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-
-    "esModuleInterop": true
+    "forceConsistentCasingInFileNames": true
   }
 }

@@ -1,6 +1,8 @@
 .git/
 .gitignore
 .prettierignore
+.eslintignore
+.editorconfig
 .browserslistrc
 LICENSE
 

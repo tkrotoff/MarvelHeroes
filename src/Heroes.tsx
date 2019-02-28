@@ -9,19 +9,20 @@ export interface Props {
 
 export function Heroes(props: Props) {
   const [characters, setCharacters] = useState<Marvel.Characters | undefined>(undefined);
-
-  async function fetch(page: number) {
-    setCharacters(undefined);
-
-    const nbCharactersPerPage = 50;
-    const characters = await Marvel.fetchCharacters(page * nbCharactersPerPage);
-
-    setCharacters(characters);
-  }
+  const { page } = props;
 
   useEffect(() => {
-    fetch(props.page);
-  }, [props.page]);
+    async function fetch(page: number) {
+      setCharacters(undefined);
+
+      const nbCharactersPerPage = 50;
+      const characters = await Marvel.fetchCharacters(page * nbCharactersPerPage);
+
+      setCharacters(characters);
+    }
+
+    fetch(page);
+  }, [page]);
 
   function renderHeroes(characters: Marvel.Characters) {
     return characters.map(character => (

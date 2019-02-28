@@ -1,7 +1,9 @@
 // @ts-check
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 // Stupid webpack-serve does not have --mode option
 // See Should --mode be in webpack-serve? https://github.com/webpack-contrib/webpack-serve/issues/44
