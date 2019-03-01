@@ -1,7 +1,7 @@
 import '@babel/polyfill'; // Do we want to run the tests with the polyfills?
 
-// See Event: 'unhandledRejection' https://nodejs.org/api/process.html#process_event_unhandledrejection
-// See Bluebird Error management configuration http://bluebirdjs.com/docs/api/error-management-configuration.html
+// See [Event: 'unhandledRejection'](https://nodejs.org/api/process.html#process_event_unhandledrejection)
+// See [Bluebird Error management configuration](http://bluebirdjs.com/docs/api/error-management-configuration.html)
 //
 // Node.js error:
 // (node:38141) UnhandledPromiseRejectionWarning: Unhandled promise rejection.

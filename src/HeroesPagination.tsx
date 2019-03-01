@@ -20,7 +20,7 @@ export function HeroesPagination(props: Props) {
     }
   }, [pageQueryParam, page]);
 
-  // See Disabled href tag https://stackoverflow.com/q/13955667
+  // See [Disabled href tag](https://stackoverflow.com/q/13955667)
   let prevButtonClasses = 'btn btn-primary';
   if (page === 0) prevButtonClasses += ' disabled';
 

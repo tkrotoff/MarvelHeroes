@@ -33,7 +33,7 @@ export function Heroes(props: Props) {
           className="card-img-top"
           style={{
             // Fix for IE 11
-            // See Flexbox on IE11: image stretched for no reason? https://stackoverflow.com/q/36822370
+            // See [Flexbox on IE11: image stretched for no reason?](https://stackoverflow.com/q/36822370)
             flexShrink: 0,
 
             // Fix for IE 10
