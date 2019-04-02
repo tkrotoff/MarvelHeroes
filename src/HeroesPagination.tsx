@@ -10,9 +10,10 @@ export interface QueryParams {
 export interface Props extends RouteComponentProps<QueryParams> {}
 
 export function HeroesPagination(props: Props) {
-  const [page, setPage] = useState(0);
   const tmp = props.match.params.page;
   const pageQueryParam = tmp !== undefined ? parseInt(tmp, 10) : 0;
+
+  const [page, setPage] = useState(pageQueryParam);
 
   useEffect(() => {
     if (pageQueryParam !== page) {

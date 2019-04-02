@@ -3,6 +3,7 @@ import { render, cleanup } from 'react-testing-library';
 
 import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
+import * as Marvel from './http/Marvel';
 import { Hero, QueryParams } from './Hero';
 
 jest.mock('./http/Marvel');
@@ -10,20 +11,23 @@ jest.mock('./http/Marvel');
 afterEach(cleanup);
 
 test('render()', async () => {
-  const wrapper = render(
-    <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1011334' } } })} />
-  );
+  const spy = jest.spyOn(Marvel, 'fetchCharacter');
+  expect(spy).toHaveBeenCalledTimes(0);
 
   const pleaseWait = '<p>Please wait...</p>';
 
+  const wrapper = render(
+    <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1011334' } } })} />
+  );
+  expect(spy).toHaveBeenCalledTimes(1);
   expect(wrapper.container.innerHTML).toEqual(pleaseWait);
-
   await flushPromises();
   expect(wrapper.container.innerHTML).toMatch(/^<div class="hero">.*<h3>3-D Man<\/h3>.*<\/div>$/);
 
   wrapper.rerender(
     <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1017100' } } })} />
   );
+  expect(spy).toHaveBeenCalledTimes(2);
   expect(wrapper.container.innerHTML).toEqual(pleaseWait);
   await flushPromises();
   expect(wrapper.container.innerHTML).toMatch(
@@ -33,7 +37,10 @@ test('render()', async () => {
   wrapper.rerender(
     <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1009144' } } })} />
   );
+  expect(spy).toHaveBeenCalledTimes(3);
   expect(wrapper.container.innerHTML).toEqual(pleaseWait);
   await flushPromises();
   expect(wrapper.container.innerHTML).toMatch(/^<div class="hero">.*<h3>A\.I\.M\.<\/h3>.*<\/div>$/);
+
+  spy.mockRestore();
 });
