@@ -1,7 +1,9 @@
 # Marvel Heroes
 
-[![Build Status](https://travis-ci.org/tkrotoff/MarvelHeroes.svg?branch=master)](https://travis-ci.org/tkrotoff/MarvelHeroes)
+[![Travis CI Build Status](https://travis-ci.org/tkrotoff/MarvelHeroes.svg?branch=master)](https://travis-ci.org/tkrotoff/MarvelHeroes)
 [![codecov](https://codecov.io/gh/tkrotoff/MarvelHeroes/branch/master/graph/badge.svg)](https://codecov.io/gh/tkrotoff/MarvelHeroes)
+[![Code Climate Maintainability](https://api.codeclimate.com/v1/badges/6440dc7f156cc4726c69/maintainability)](https://codeclimate.com/github/tkrotoff/MarvelHeroes/maintainability)
+[![Code Climate Test Coverage](https://api.codeclimate.com/v1/badges/6440dc7f156cc4726c69/test_coverage)](https://codeclimate.com/github/tkrotoff/MarvelHeroes/test_coverage)
 
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
