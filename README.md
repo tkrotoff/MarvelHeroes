@@ -19,17 +19,17 @@ React app that displays the Marvel characters thanks to https://developer.marvel
 ## How to run
 
 ```
-npm run build
-open build/index.html
+npm run start
+open http://localhost:8080
 ```
 
 ## Libraries used
 
-- React 16 with hooks
+- React with hooks
 - No Redux, just `useState()`
 - TypeScript with `strict: true`
-- Babel 7 with `@babel/preset-typescript`
-- React Router 4
+- Babel with `@babel/preset-typescript`
+- React Router
 - Jest + react-testing-library + Puppeteer => 100% code coverage
 - Fetch API + whatwg-fetch polyfill
 - Bootstrap 4
