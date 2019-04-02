@@ -12,5 +12,12 @@ import './index.html';
 import './App.scss';
 import { Router } from './Router';
 
-// eslint-disable-next-line react/no-render-return-value
-Raven.context(() => ReactDOM.render(<Router />, document.getElementById('app')));
+Raven.context(() =>
+  // eslint-disable-next-line react/no-render-return-value
+  ReactDOM.render(
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>,
+    document.getElementById('app')
+  )
+);
