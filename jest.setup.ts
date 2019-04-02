@@ -1,4 +1,6 @@
-import '@babel/polyfill'; // Do we want to run the tests with the polyfills?
+// Do we want to run the tests with the polyfills?
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 // See [Event: 'unhandledRejection'](https://nodejs.org/api/process.html#process_event_unhandledrejection)
 // See [Bluebird Error management configuration](http://bluebirdjs.com/docs/api/error-management-configuration.html)
