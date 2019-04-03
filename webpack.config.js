@@ -35,6 +35,8 @@ module.exports = async (env, argv) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
+  const output = `[name].${isProd ? '[hash].production.min' : 'development'}`;
+
   const config = {
     entry: {
       App: './src/App.tsx'
@@ -42,7 +44,7 @@ module.exports = async (env, argv) => {
 
     output: {
       path: path.join(__dirname, 'build'),
-      filename: '[name].js'
+      filename: `${output}.js`
     },
 
     resolve: {
@@ -75,11 +77,11 @@ module.exports = async (env, argv) => {
     },
 
     plugins: [
-      isProd && new MiniCssExtractPlugin({ filename: '[name].css' }),
+      isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
 
       new HtmlWebpackPlugin({
         description: myPackage.description,
-        version: isProd ? myPackage.version : `${myPackage.version}-dev`,
+        version: isProd ? `${myPackage.version}-production` : `${myPackage.version}-development`,
         date: new Date().toISOString(),
 
         // See [Get hash of most recent git commit in Node](https://stackoverflow.com/a/34518749/990356)
