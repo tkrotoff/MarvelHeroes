@@ -2,8 +2,12 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// @ts-ignore FIXME No @types/postcss-preset-env
 const postcssPresetEnv = require('postcss-preset-env');
+// @ts-ignoreFIXME No @types/purgecss-webpack-plugin
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { promisify } = require('util');
 const child_process = require('child_process');
@@ -79,6 +83,8 @@ module.exports = async (env, argv) => {
 
     plugins: [
       isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
+
+      isProd && new PurgecssPlugin({ paths: glob.sync('src/**/*', { nodir: true }) }),
 
       new HtmlWebpackPlugin({
         description: myPackage.description,
