@@ -21,12 +21,12 @@ afterAll(async () => {
   function computeCoverage(entries: CoverageEntry[]) {
     let totalBytes = 0;
     let usedBytes = 0;
-    for (const entry of entries) {
+    entries.forEach(entry => {
       totalBytes += entry.text.length;
-      for (const range of entry.ranges) {
+      entry.ranges.forEach(range => {
         usedBytes += range.end - range.start - 1;
-      }
-    }
+      });
+    });
     totalBytes /= 1024;
     usedBytes /= 1024;
     return `${Math.round((usedBytes / totalBytes) * 100)}% (${Math.round(usedBytes)}/${Math.round(

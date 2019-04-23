@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+
 import { mockFetch } from '../utils/mockFetch';
 import * as Marvel from './Marvel';
 

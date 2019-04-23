@@ -14,41 +14,41 @@ export function Hero(props: Props) {
   const { id } = props.match.params;
 
   useEffect(() => {
-    async function fetch(id: string) {
+    async function fetch(_id: string) {
       setCharacter(undefined);
-      const character = await Marvel.fetchCharacter(id);
-      setCharacter(character);
+      const _character = await Marvel.fetchCharacter(_id);
+      setCharacter(_character);
     }
 
     fetch(id);
   }, [id]);
 
-  function renderCategory(character: Marvel.Character, category: string) {
+  function renderCategory(_character: Marvel.Character, category: string) {
     return (
       <ul>
-        {(character[category] as Marvel.CharacterCategory).items.map((item, index) => (
-          <li key={`${category}.${index}`}>{item.name}</li>
+        {(_character[category] as Marvel.CharacterCategory).items.map(item => (
+          <li key={item.resourceURI}>{item.name}</li>
         ))}
       </ul>
     );
   }
 
-  function renderHero(character: Marvel.Character) {
+  function renderHero(_character: Marvel.Character) {
     return (
       <>
         <img
-          src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-          alt={character.name}
+          src={`${_character.thumbnail.path}.${_character.thumbnail.extension}`}
+          alt={_character.name}
           className="img-fluid" // Resize image on mobile
         />
-        <h3>{character.name}</h3>
-        <p>{character.description}</p>
+        <h3>{_character.name}</h3>
+        <p>{_character.description}</p>
         <h6>Comics</h6>
-        {renderCategory(character, 'comics')}
+        {renderCategory(_character, 'comics')}
         <h6>Series</h6>
-        {renderCategory(character, 'series')}
+        {renderCategory(_character, 'series')}
         <h6>Stories</h6>
-        {renderCategory(character, 'stories')}
+        {renderCategory(_character, 'stories')}
       </>
     );
   }

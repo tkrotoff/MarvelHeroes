@@ -5,8 +5,9 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const promisify = require('util').promisify;
+const { promisify } = require('util');
 const child_process = require('child_process');
+
 const exec = promisify(child_process.exec);
 
 const myPackage = require('./package.json');

@@ -12,20 +12,20 @@ export function Heroes(props: Props) {
   const { page } = props;
 
   useEffect(() => {
-    async function fetch(page: number) {
+    async function fetch(_page: number) {
       setCharacters(undefined);
 
       const nbCharactersPerPage = 50;
-      const characters = await Marvel.fetchCharacters(page * nbCharactersPerPage);
+      const _characters = await Marvel.fetchCharacters(_page * nbCharactersPerPage);
 
-      setCharacters(characters);
+      setCharacters(_characters);
     }
 
     fetch(page);
   }, [page]);
 
-  function renderHeroes(characters: Marvel.Characters) {
-    return characters.map(character => (
+  function renderHeroes(_characters: Marvel.Characters) {
+    return _characters.map(character => (
       <div key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}

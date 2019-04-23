@@ -2,12 +2,20 @@
 
 module.exports = {
   parser: '@typescript-eslint/parser',
-  parserOptions: {},
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
+    // /!\ Order seems to matter
+
+    'airbnb',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended'
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'prettier/react'
+
+    // Already done by Airbnb
+    //'plugin:react/recommended'
   ],
   plugins: ['prettier', '@typescript-eslint', 'react', 'react-hooks'],
   settings: {
@@ -28,8 +36,20 @@ module.exports = {
 
   rules: {
     'no-console': 'off',
+    'no-underscore-dangle': 'off',
+    'no-prototype-builtins': 'off',
+    'no-plusplus': 'off',
+    'spaced-comment': 'off',
 
-    'prettier/prettier': 'error',
+    // See [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
+    'no-return-assign': 'off',
+
+    'import/no-extraneous-dependencies': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+
+    'jsx-a11y/label-has-for': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
 
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -42,6 +62,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
 
     'react/no-unescaped-entities': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
   }

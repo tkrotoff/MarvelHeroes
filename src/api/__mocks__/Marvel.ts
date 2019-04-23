@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+
 import characters_offset_0 from './characters_offset_0.json';
 import characters_offset_50 from './characters_offset_50.json';
 
