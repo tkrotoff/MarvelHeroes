@@ -3,10 +3,10 @@ import { render, cleanup } from 'react-testing-library';
 
 import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
-import * as Marvel from './http/Marvel';
+import * as Marvel from './api/Marvel';
 import { Hero, QueryParams } from './Hero';
 
-jest.mock('./http/Marvel');
+jest.mock('./api/Marvel');
 
 afterEach(cleanup);
 

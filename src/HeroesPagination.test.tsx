@@ -4,10 +4,10 @@ import { MemoryRouter } from 'react-router';
 
 import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
-import * as Marvel from './http/Marvel';
+import * as Marvel from './api/Marvel';
 import { HeroesPagination, QueryParams } from './HeroesPagination';
 
-jest.mock('./http/Marvel');
+jest.mock('./api/Marvel');
 
 afterEach(cleanup);
 

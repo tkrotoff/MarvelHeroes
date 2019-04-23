@@ -8,14 +8,14 @@ import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import './App.scss';
 import { Router } from './Router';
 
 Raven.context(() =>
   // eslint-disable-next-line react/no-render-return-value
-  ReactDOM.render(
+  render(
     <React.StrictMode>
       <Router />
     </React.StrictMode>,

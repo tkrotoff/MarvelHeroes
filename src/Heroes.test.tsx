@@ -3,10 +3,10 @@ import { render, cleanup } from 'react-testing-library';
 import { MemoryRouter } from 'react-router';
 
 import { flushPromises } from './utils/flushPromises';
-import * as Marvel from './http/Marvel';
+import * as Marvel from './api/Marvel';
 import { Heroes } from './Heroes';
 
-jest.mock('./http/Marvel');
+jest.mock('./api/Marvel');
 
 afterEach(cleanup);
 

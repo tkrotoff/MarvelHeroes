@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import * as Marvel from './http/Marvel';
+import * as Marvel from './api/Marvel';
 
 export interface Props {
   page: number;

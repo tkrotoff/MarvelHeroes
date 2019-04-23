@@ -8,7 +8,7 @@ import { Hero } from './Hero';
 import { PageNotFound } from './PageNotFound';
 import { Router } from './Router';
 
-jest.mock('./http/Marvel');
+jest.mock('./api/Marvel');
 
 function renderRoute(path: string) {
   return TestRenderer.create(
