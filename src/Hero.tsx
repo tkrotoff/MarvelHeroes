@@ -35,7 +35,7 @@ export function Hero(props: Props) {
 
   function renderHero(_character: Marvel.Character) {
     return (
-      <>
+      <section className="hero">
         <img
           src={`${_character.thumbnail.path}.${_character.thumbnail.extension}`}
           alt={_character.name}
@@ -49,13 +49,9 @@ export function Hero(props: Props) {
         {renderCategory(_character, 'series')}
         <h6>Stories</h6>
         {renderCategory(_character, 'stories')}
-      </>
+      </section>
     );
   }
 
-  return character !== undefined ? (
-    <div className="hero">{renderHero(character)}</div>
-  ) : (
-    <p>Please wait...</p>
-  );
+  return character !== undefined ? renderHero(character) : <p>Please wait...</p>;
 }

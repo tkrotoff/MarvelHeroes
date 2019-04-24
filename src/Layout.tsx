@@ -1,5 +1,5 @@
 import React from 'react';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  return <div className="container-fluid">{children}</div>;
+  return <main className="container-fluid">{children}</main>;
 }

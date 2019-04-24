@@ -26,7 +26,7 @@ export function Heroes(props: Props) {
 
   function renderHeroes(_characters: Marvel.Characters) {
     return _characters.map(character => (
-      <div key={character.id} className="card m-3" style={{ width: '200px' }}>
+      <section key={character.id} className="card m-3" style={{ width: '200px' }}>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={character.name}
@@ -46,7 +46,7 @@ export function Heroes(props: Props) {
         <div className="card-footer border-top-0">
           <Link to={`/heroes/${character.id}`}>Details</Link>
         </div>
-      </div>
+      </section>
     ));
   }
 

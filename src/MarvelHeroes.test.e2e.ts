@@ -40,9 +40,9 @@ afterAll(async () => {
 
 test('Navigation', async () => {
   {
-    await page.waitFor('div.card > div.card-body > h5.card-title');
+    await page.waitFor('section.card > div.card-body > h5.card-title');
 
-    const heroes = await page.$$('div.card');
+    const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
 
     const firstHeroCard = heroes[0];
@@ -52,9 +52,9 @@ test('Navigation', async () => {
     await link.click();
     // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('div.hero');
+    await page.waitFor('section.hero');
 
-    const hero = (await page.$('div.hero'))!;
+    const hero = (await page.$('section.hero'))!;
     await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
     await expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual(
@@ -66,9 +66,9 @@ test('Navigation', async () => {
   await page.goBack();
 
   {
-    await page.waitFor('div.card > div.card-body > h5.card-title');
+    await page.waitFor('section.card > div.card-body > h5.card-title');
 
-    const heroes = await page.$$('div.card');
+    const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
 
     const thirdHeroCard = heroes[2];
@@ -81,9 +81,9 @@ test('Navigation', async () => {
     await link.click();
     // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('div.hero');
+    await page.waitFor('section.hero');
 
-    const hero = (await page.$('div.hero'))!;
+    const hero = (await page.$('section.hero'))!;
     await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(
       'AIM is a terrorist organization bent on destroying the world.'
     );
@@ -97,9 +97,9 @@ test('Navigation', async () => {
   await page.goBack();
 
   {
-    await page.waitFor('div.card > div.card-body > h5.card-title');
+    await page.waitFor('section.card > div.card-body > h5.card-title');
 
-    const heroes = await page.$$('div.card');
+    const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
 
     const lastHeroCard = heroes[49];
@@ -112,9 +112,9 @@ test('Navigation', async () => {
     await link.click();
     // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('div.hero');
+    await page.waitFor('section.hero');
 
-    const hero = (await page.$('div.hero'))!;
+    const hero = (await page.$('section.hero'))!;
     await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
     await expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual(
