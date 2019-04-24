@@ -6,7 +6,6 @@ import { Layout } from './Layout';
 afterEach(cleanup);
 
 test('render()', async () => {
-  const wrapper = render(<Layout>Hello, World!</Layout>);
-
-  expect(wrapper.container.innerHTML).toEqual('<div class="container-fluid">Hello, World!</div>');
+  const { getByText } = render(<Layout>Hello, World!</Layout>);
+  getByText('Hello, World!');
 });

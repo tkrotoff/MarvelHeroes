@@ -14,33 +14,34 @@ test('render()', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacter');
   expect(spy).toHaveBeenCalledTimes(0);
 
-  const pleaseWait = '<p>Please wait...</p>';
+  const pleaseWait = 'Please wait...';
 
-  const wrapper = render(
+  const { getByText, queryByText, rerender } = render(
     <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1011334' } } })} />
   );
   expect(spy).toHaveBeenCalledTimes(1);
-  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(/^<div class="hero">.*<h3>3-D Man<\/h3>.*<\/div>$/);
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('3-D Man');
 
-  wrapper.rerender(
+  rerender(
     <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1017100' } } })} />
   );
   expect(spy).toHaveBeenCalledTimes(2);
-  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /^<div class="hero">.*<h3>A-Bomb \(HAS\)<\/h3>.*<\/div>$/
-  );
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('A-Bomb (HAS)');
 
-  wrapper.rerender(
+  rerender(
     <Hero {...mockRouteComponentProps<QueryParams>({ match: { params: { id: '1009144' } } })} />
   );
   expect(spy).toHaveBeenCalledTimes(3);
-  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(/^<div class="hero">.*<h3>A\.I\.M\.<\/h3>.*<\/div>$/);
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('A.I.M.');
 
   spy.mockRestore();
 });

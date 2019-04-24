@@ -15,21 +15,31 @@ test('render() without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
   expect(spy).toHaveBeenCalledTimes(0);
 
-  const wrapper = render(
+  const pleaseWait = 'Please wait...';
+
+  const { getByText, queryByText, rerender } = render(
     <MemoryRouter>
       <HeroesPagination {...mockRouteComponentProps<QueryParams>({ match: { params: {} } })} />
     </MemoryRouter>
   );
-  expect(spy).toHaveBeenCalledTimes(1);
-  expect(wrapper.container.innerHTML).toEqual(
-    '<h3>Marvel Heroes</h3><a class="btn btn-primary disabled" href="/-1">« Previous</a> <a class="btn btn-primary" href="/1">Next »</a><p>Please wait...</p>'
-  );
-  await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /^<h3>Marvel Heroes<\/h3>.*3-D Man.*A-Bomb \(HAS\).*A\.I\.M\..*Anita Blake.*Anne Marie Hoag.*Annihilus.*$/
-  );
 
-  wrapper.rerender(
+  expect(spy).toHaveBeenCalledTimes(1);
+  getByText('Marvel Heroes');
+  const prevLink = getByText('« Previous') as HTMLLinkElement;
+  expect(prevLink.href).toEqual('http://localhost/-1');
+  const nextLink = getByText('Next »') as HTMLLinkElement;
+  expect(nextLink.href).toEqual('http://localhost/1');
+  getByText(pleaseWait);
+  await flushPromises();
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('3-D Man');
+  getByText('A-Bomb (HAS)');
+  getByText('A.I.M.');
+  getByText('Anita Blake');
+  getByText('Anne Marie Hoag');
+  getByText('Annihilus');
+
+  rerender(
     <MemoryRouter>
       <HeroesPagination
         {...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } })}
@@ -37,13 +47,17 @@ test('render() without page query param then change page', async () => {
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(2);
-  expect(wrapper.container.innerHTML).toEqual(
-    '<h3>Marvel Heroes</h3><a class="btn btn-primary" href="/0">« Previous</a> <a class="btn btn-primary" href="/2">Next »</a><p>Please wait...</p>'
-  );
+  expect(prevLink.href).toEqual('http://localhost/0');
+  expect(nextLink.href).toEqual('http://localhost/2');
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /^<h3>Marvel Heroes<\/h3>.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*$/
-  );
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('Anole');
+  getByText("Ant-Man (Eric O'Grady)");
+  getByText('Ant-Man (Scott Lang)');
+  getByText('Beef');
+  getByText('Beetle (Abner Jenkins)');
+  getByText('Ben Grimm');
 
   spy.mockRestore();
 });
@@ -52,7 +66,7 @@ test('render() given a page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
   expect(spy).toHaveBeenCalledTimes(0);
 
-  const wrapper = render(
+  const { getByText, queryByText } = render(
     <MemoryRouter>
       <HeroesPagination
         {...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } })}
@@ -60,13 +74,21 @@ test('render() given a page query param', async () => {
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(1);
-  expect(wrapper.container.innerHTML).toEqual(
-    '<h3>Marvel Heroes</h3><a class="btn btn-primary" href="/0">« Previous</a> <a class="btn btn-primary" href="/2">Next »</a><p>Please wait...</p>'
-  );
+  getByText('Marvel Heroes');
+  const prevLink = getByText('« Previous') as HTMLLinkElement;
+  expect(prevLink.href).toEqual('http://localhost/0');
+  const nextLink = getByText('Next »') as HTMLLinkElement;
+  expect(nextLink.href).toEqual('http://localhost/2');
+  getByText('Please wait...');
+
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /^<h3>Marvel Heroes<\/h3>.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*$/
-  );
+  expect(queryByText('Please wait...')).toEqual(null);
+  getByText('Anole');
+  getByText("Ant-Man (Eric O'Grady)");
+  getByText('Ant-Man (Scott Lang)');
+  getByText('Beef');
+  getByText('Beetle (Abner Jenkins)');
+  getByText('Ben Grimm');
 
   spy.mockRestore();
 });

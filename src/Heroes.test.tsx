@@ -14,31 +14,39 @@ test('render()', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
   expect(spy).toHaveBeenCalledTimes(0);
 
-  const pleaseWait = '<p>Please wait...</p>';
+  const pleaseWait = 'Please wait...';
 
-  const wrapper = render(
+  const { getByText, queryByText, rerender } = render(
     <MemoryRouter>
       <Heroes page={0} />
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(1);
-  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /.*3-D Man.*A-Bomb \(HAS\).*A\.I\.M\..*Anita Blake.*Anne Marie Hoag.*Annihilus.*/
-  );
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('3-D Man');
+  getByText('A-Bomb (HAS)');
+  getByText('A.I.M.');
+  getByText('Anita Blake');
+  getByText('Anne Marie Hoag');
+  getByText('Annihilus');
 
-  wrapper.rerender(
+  rerender(
     <MemoryRouter>
       <Heroes page={1} />
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(2);
-  expect(wrapper.container.innerHTML).toEqual(pleaseWait);
+  getByText(pleaseWait);
   await flushPromises();
-  expect(wrapper.container.innerHTML).toMatch(
-    /.*Anole.*Ant-Man \(Eric O'Grady\).*Ant-Man \(Scott Lang\).*Beef.*Beetle \(Abner Jenkins\).*Ben Grimm.*/
-  );
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('Anole');
+  getByText("Ant-Man (Eric O'Grady)");
+  getByText('Ant-Man (Scott Lang)');
+  getByText('Beef');
+  getByText('Beetle (Abner Jenkins)');
+  getByText('Ben Grimm');
 
   spy.mockRestore();
 });
