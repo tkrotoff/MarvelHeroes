@@ -31,7 +31,8 @@ open http://localhost:8080
 - No Redux, just `useState()`
 - TypeScript with `strict: true`
 - Babel with `@babel/preset-typescript`
-- React Router
 - Jest + react-testing-library + Puppeteer => 100% code coverage
 - Fetch API + whatwg-fetch polyfill
-- Bootstrap 4
+- React Router
+- Prettier + ESLint + stylelint
+- Bootstrap 4 + Purgecss
