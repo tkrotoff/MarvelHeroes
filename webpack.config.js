@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const glob = require('glob');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // @ts-ignore FIXME No @types/postcss-preset-env
 const postcssPresetEnv = require('postcss-preset-env');
@@ -82,6 +83,8 @@ module.exports = async (env, argv) => {
     },
 
     plugins: [
+      new CopyWebpackPlugin([{ from: './src/assets/favicon', to: 'favicon' }]),
+
       isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
 
       isProd && new PurgecssPlugin({ paths: glob.sync('src/**/*', { nodir: true }) }),

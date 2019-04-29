@@ -9,3 +9,6 @@ LICENSE
 build/
 coverage/
 *.png
+*.svg
+*.xml
+*.ico
