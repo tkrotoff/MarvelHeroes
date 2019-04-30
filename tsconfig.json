@@ -5,6 +5,7 @@
     "module": "commonjs",
     "jsx": "react",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
 
     "strict": true,
     "noUnusedLocals": true,
