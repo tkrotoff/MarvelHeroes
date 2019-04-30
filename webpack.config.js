@@ -30,7 +30,7 @@ const myPackage = require('./package.json');
 // This guide https://webpack.js.org/guides/production/ explains another way
 // to generate a production build using webpack-merge with TWO webpack.config.js
 //
-// To complexify things, mini-css-extract-plugin documentation (https://webpack.js.org/plugins/mini-css-extract-plugin/#minimizing-for-production)
+// To complexify things, [mini-css-extract-plugin documentation](https://webpack.js.org/plugins/mini-css-extract-plugin/#minimizing-for-production)
 // explains that: "While webpack 5 is likely to come with a CSS minimizer built-in, with webpack 4 you need to bring your own."
 // so what is -p with --optimize-minimize?
 // I've compared the Bootstrap .css output with -p and the official bootstrap.min.css => same sizes: 140 kB
@@ -62,7 +62,7 @@ module.exports = async (env, argv) => {
         { test: /\.(js|tsx?)$/, exclude: /node_modules/, loader: 'babel-loader' },
         {
           // FIXME Don't know how to make source maps work
-          // See SourceMap not working with Webpack 4.8.1 https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141
+          // See [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
           test: /\.scss$/,
           use: [
             isProd
