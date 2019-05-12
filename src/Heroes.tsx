@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
 
-export interface Props {
+interface Props {
   page: number;
 }
 

@@ -8,15 +8,16 @@ export function fetchCharacters(offset: number) {
 
   switch (offset) {
     case 0:
-      characters = Promise.resolve(characters_offset_0.data.results);
+      characters = characters_offset_0.data.results;
       break;
     case 50:
-      characters = Promise.resolve(characters_offset_50.data.results);
+      characters = characters_offset_50.data.results;
       break;
     default:
-      throw new Error(`Unknown offset ${offset}`);
+      throw new Error(`Unknown offset: "${offset}"`);
   }
-  return characters;
+
+  return Promise.resolve(characters);
 }
 
 import character_id_1011334 from './character_id_1011334.json';
@@ -28,17 +29,17 @@ export function fetchCharacter(id: string) {
 
   switch (id) {
     case '1011334':
-      character = Promise.resolve(character_id_1011334.data.results[0]);
+      character = character_id_1011334.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
     case '1017100':
-      character = Promise.resolve(character_id_1017100.data.results[0]);
+      character = character_id_1017100.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
     case '1009144':
-      character = Promise.resolve(character_id_1009144.data.results[0]);
+      character = character_id_1009144.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
     default:
-      throw new Error(`Unknown id ${id}`);
+      throw new Error(`Unknown id: "${id}"`);
   }
 
-  return character;
+  return Promise.resolve(character);
 }

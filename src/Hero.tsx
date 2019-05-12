@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 
@@ -7,7 +7,7 @@ export interface QueryParams {
   id: string;
 }
 
-export interface Props extends RouteComponentProps<QueryParams> {}
+interface Props extends RouteComponentProps<QueryParams> {}
 
 export function Hero(props: Props) {
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);

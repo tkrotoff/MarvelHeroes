@@ -1,6 +1,6 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 
 import { flushPromises } from './utils/flushPromises';
 import { HeroesPagination } from './HeroesPagination';
@@ -37,7 +37,7 @@ test('Hero route', async () => {
 });
 
 test('PageNotFound route', () => {
-  const wrapper = renderRoute('/random');
+  const wrapper = renderRoute('/unknown');
   expect(wrapper.root.findAllByType(HeroesPagination)).toHaveLength(0);
   expect(wrapper.root.findAllByType(Hero)).toHaveLength(0);
   expect(wrapper.root.findAllByType(PageNotFound)).toHaveLength(1);

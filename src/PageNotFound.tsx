@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 
 export function PageNotFound({ location }: RouteComponentProps<{}>) {
   return (

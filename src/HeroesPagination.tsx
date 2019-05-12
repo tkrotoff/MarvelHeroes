@@ -7,7 +7,7 @@ export interface QueryParams {
   page?: string;
 }
 
-export interface Props extends RouteComponentProps<QueryParams> {}
+interface Props extends RouteComponentProps<QueryParams> {}
 
 export function HeroesPagination(props: Props) {
   const tmp = props.match.params.page;
