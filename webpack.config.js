@@ -41,7 +41,7 @@ module.exports = async (env, argv) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
-  const output = `[name].${isProd ? '[hash].production.min' : 'development'}`;
+  const output = `[name].${isProd ? 'production.min' : 'development'}`;
 
   const config = {
     entry: {
@@ -98,7 +98,7 @@ module.exports = async (env, argv) => {
         rev: (await exec('git rev-parse HEAD')).stdout.trim(),
 
         template: './src/index.html',
-        hash: true
+        hash: isProd
       })
     ]
   };
