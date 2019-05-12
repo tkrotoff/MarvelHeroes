@@ -9,16 +9,27 @@ import 'whatwg-fetch';
 
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import './App.scss';
+import { Layout } from './Layout';
 import { Router } from './Router';
+
+import './index.scss';
 
 Raven.context(() =>
   // eslint-disable-next-line react/no-render-return-value
   render(
     <React.StrictMode>
-      <Router />
+      <BrowserRouter>
+        <Layout>
+          <Router />
+        </Layout>
+      </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('app')
   )
 );
+
+if (module.hot) {
+  module.hot.accept();
+}

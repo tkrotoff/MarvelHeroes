@@ -45,7 +45,7 @@ module.exports = async (env, argv) => {
 
   const config = {
     entry: {
-      App: './src/App.tsx'
+      index: './src/index.tsx'
     },
 
     output: {
@@ -100,7 +100,14 @@ module.exports = async (env, argv) => {
         template: './src/index.html',
         hash: isProd
       })
-    ]
+    ],
+
+    devServer: {
+      hot: true,
+
+      // See [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
+      historyApiFallback: true
+    }
   };
 
   // Hack to remove false plugins due to short-circuit evaluation "isProd &&"
