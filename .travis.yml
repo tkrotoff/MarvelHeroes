@@ -8,6 +8,8 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
+  - npm run tsc
+  - npm run lint
   - npm run build
   - npm run test:coverage
   - npm run test:e2e
