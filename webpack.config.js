@@ -103,8 +103,6 @@ module.exports = async (env, argv) => {
     ],
 
     devServer: {
-      hot: true,
-
       // See [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
       historyApiFallback: true
     }
