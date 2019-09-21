@@ -1,19 +1,15 @@
-// @ts-check
-
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const glob = require('glob');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'path';
+import glob from 'glob';
 // @ts-ignore FIXME No @types/postcss-preset-env
-const postcssPresetEnv = require('postcss-preset-env');
-// @ts-ignore FIXME No @types/purgecss-webpack-plugin
-const PurgecssPlugin = require('purgecss-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { execSync } = require('child_process');
+import postcssPresetEnv from 'postcss-preset-env';
+import webpack from 'webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import PurgecssPlugin from 'purgecss-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { execSync } from 'child_process';
 
-const myPackage = require('./package.json');
-/* eslint-enable @typescript-eslint/no-var-requires */
+import myPackage from './package.json';
 
 // WTF
 //
@@ -34,13 +30,13 @@ const myPackage = require('./package.json');
 
 // webpack-dev-server output is bigger than a regular build because it includes more things
 
-module.exports = (env, argv) => {
+export default (_env: any, argv: any) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
   const output = `[name].${isProd ? 'production.min' : 'development'}`;
 
-  const config = {
+  const config: webpack.Configuration = {
     entry: {
       index: './src/index.tsx'
     },
@@ -97,7 +93,7 @@ module.exports = (env, argv) => {
         template: './src/index.html',
         hash: isProd
       })
-    ],
+    ] as webpack.Plugin[],
 
     devServer: {
       // See [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
@@ -107,7 +103,7 @@ module.exports = (env, argv) => {
 
   // Hack to remove false plugins due to short-circuit evaluation "isProd &&"
   // FYI with Rollup (rollup.config.js) no need for this hack
-  config.plugins = config.plugins.filter(plugin => plugin);
+  config.plugins = config.plugins!.filter(plugin => plugin);
 
   return config;
 };
