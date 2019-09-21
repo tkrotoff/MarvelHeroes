@@ -7,13 +7,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // @ts-ignore FIXME No @types/postcss-preset-env
 const postcssPresetEnv = require('postcss-preset-env');
-// @ts-ignoreFIXME No @types/purgecss-webpack-plugin
+// @ts-ignore FIXME No @types/purgecss-webpack-plugin
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { promisify } = require('util');
-const child_process = require('child_process');
-
-const exec = promisify(child_process.exec);
+const { execSync } = require('child_process');
 
 const myPackage = require('./package.json');
 /* eslint-enable @typescript-eslint/no-var-requires */
@@ -35,9 +32,9 @@ const myPackage = require('./package.json');
 // so what is -p with --optimize-minimize?
 // I've compared the Bootstrap .css output with -p and the official bootstrap.min.css => same sizes: 140 kB
 
-// webpack-dev-server output is bigger than a regular build because it includes a lot of things
+// webpack-dev-server output is bigger than a regular build because it includes more things
 
-module.exports = async (env, argv) => {
+module.exports = (env, argv) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
@@ -94,8 +91,10 @@ module.exports = async (env, argv) => {
         version: isProd ? `${myPackage.version}-production` : `${myPackage.version}-development`,
         date: new Date().toISOString(),
 
-        // See [Get hash of most recent git commit in Node](https://stackoverflow.com/a/34518749/990356)
-        rev: (await exec('git rev-parse HEAD')).stdout.trim(),
+        // See [Get hash of most recent git commit in Node](https://stackoverflow.com/a/35778030/990356)
+        rev: execSync('git rev-parse HEAD')
+          .toString()
+          .trim(),
 
         template: './src/index.html',
         hash: isProd
