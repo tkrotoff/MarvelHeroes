@@ -25,7 +25,8 @@
     "format": "prettier --write \"**/*\"",
     "lint": "eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",
     "precommit": "npm run format && tsc && npm run lint",
-    "prepush": "npm run precommit && npm run test && npm run test:e2e"
+    "prepush": "npm run precommit && npm run test && npm run test:e2e",
+    "deploy": "npm run clean && npm run build:prod && aws s3 sync build/ s3://marvelheroes"
   },
   "dependencies": {
     "@testing-library/react": "^9.1.4",

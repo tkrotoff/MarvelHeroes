@@ -7,10 +7,16 @@
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Airbnb Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 
+http://marvelheroes.s3-website.eu-west-3.amazonaws.com/ <sup>[1]</sup>
+
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
 - Supports IE >= 10
 - [W3C validator](https://validator.w3.org/) completed
+
+I use this app as a boilerplate and to demo JS web app best practices.
+
+<small>1. No HTTPS, no gzip, no cache...</small>
 
 ### HeroesPagination/Heroes component screenshot
 
