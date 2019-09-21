@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import { PageNotFound } from './PageNotFound';

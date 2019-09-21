@@ -62,9 +62,7 @@ module.exports = (env, argv) => {
           // See [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
           test: /\.scss$/,
           use: [
-            isProd
-              ? MiniCssExtractPlugin.loader
-              : { loader: 'style-loader', options: { sourceMap: !isProd } },
+            isProd ? MiniCssExtractPlugin.loader : { loader: 'style-loader' },
             { loader: 'css-loader', options: { sourceMap: !isProd } },
             {
               loader: 'postcss-loader',

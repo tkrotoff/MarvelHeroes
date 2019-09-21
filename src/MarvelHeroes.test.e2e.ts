@@ -3,7 +3,6 @@ import { CoverageEntry } from 'puppeteer';
 jest.setTimeout(20000); // 20s
 
 beforeAll(async () => {
-  // Enable both JavaScript and CSS coverage
   await Promise.all([page.coverage.startJSCoverage(), page.coverage.startCSSCoverage()]);
 });
 
@@ -12,14 +11,13 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
-  // Disable both JavaScript and CSS coverage
   const [jsCoverage, cssCoverage] = await Promise.all([
     page.coverage.stopJSCoverage(),
     page.coverage.stopCSSCoverage()
   ]);
 
   function computeCoverage(entries: CoverageEntry[]) {
-    let totalBytes = 0;
+    let totalBytes = 1; // Cannot be 0 otherwise usedBytes / totalBytes gives a NaN
     let usedBytes = 0;
     entries.forEach(entry => {
       totalBytes += entry.text.length;

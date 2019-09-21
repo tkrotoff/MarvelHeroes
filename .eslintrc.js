@@ -60,6 +60,7 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
@@ -67,5 +68,14 @@ module.exports = {
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
-  }
+  },
+
+  overrides: [
+    {
+      files: ['*.test.ts', '*.test.tsx'],
+      rules: {
+        'react/jsx-props-no-spreading': 'off'
+      }
+    }
+  ]
 };
