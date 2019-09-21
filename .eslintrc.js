@@ -17,7 +17,7 @@ module.exports = {
     // Already done by Airbnb
     //'plugin:react/recommended'
   ],
-  plugins: ['prettier', '@typescript-eslint', 'react', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   settings: {
     react: {
       version: 'detect'
