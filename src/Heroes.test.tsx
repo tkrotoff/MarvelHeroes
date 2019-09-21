@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, waitForDomChange } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
-import { flushPromises } from './utils/flushPromises';
 import * as Marvel from './api/Marvel';
 import { Heroes } from './Heroes';
 
@@ -23,7 +22,7 @@ test('render()', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('3-D Man');
   getByText('A-Bomb (HAS)');
@@ -39,7 +38,7 @@ test('render()', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");

@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, waitForDomChange } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
-import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import * as Marvel from './api/Marvel';
 import { HeroesPagination, QueryParams } from './HeroesPagination';
@@ -30,7 +29,7 @@ test('render() without page query param then change page', async () => {
   const nextLink = getByText('Next »') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('3-D Man');
   getByText('A-Bomb (HAS)');
@@ -50,7 +49,7 @@ test('render() without page query param then change page', async () => {
   expect(prevLink.href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");
@@ -81,7 +80,7 @@ test('render() given a page query param', async () => {
   expect(nextLink.href).toEqual('http://localhost/2');
   getByText('Please wait...');
 
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText('Please wait...')).toEqual(null);
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");

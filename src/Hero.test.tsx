@@ -1,7 +1,6 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, waitForDomChange } from '@testing-library/react';
 
-import { flushPromises } from './utils/flushPromises';
 import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import * as Marvel from './api/Marvel';
 import { Hero, QueryParams } from './Hero';
@@ -21,7 +20,7 @@ test('render()', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('3-D Man');
 
@@ -30,7 +29,7 @@ test('render()', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('A-Bomb (HAS)');
 
@@ -39,7 +38,7 @@ test('render()', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(3);
   getByText(pleaseWait);
-  await flushPromises();
+  await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('A.I.M.');
 
