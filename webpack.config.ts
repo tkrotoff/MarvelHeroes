@@ -10,6 +10,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { execSync } from 'child_process';
 
 import myPackage from './package.json';
+import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
 
 // WTF
 //
@@ -37,9 +38,7 @@ export default (_env: any, argv: any) => {
   const output = `[name].${isProd ? 'production.min' : 'development'}`;
 
   const config: webpack.Configuration = {
-    entry: {
-      index: './src/index.tsx'
-    },
+    entry: './src/index.tsx',
 
     output: {
       path: path.join(__dirname, 'build'),
@@ -98,6 +97,28 @@ export default (_env: any, argv: any) => {
     devServer: {
       // See [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
       historyApiFallback: true
+    },
+
+    // See [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)
+    // See [Webpack v4 chunk splitting deep dive](https://www.chrisclaxton.me.uk/chris-claxtons-blog/webpack-chunksplitting-deepdive)
+    optimization: {
+      // "creates a runtime file to be shared for all generated chunks", see https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
+      runtimeChunk: 'single',
+
+      splitChunks: {
+        chunks: 'all',
+        minSize: 0,
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          vendors: {
+            test: /\/node_modules\//,
+            name(module: { context: string }, chunks: { name: string }[]) {
+              const packageName = getPackageNameFromPath(module.context).replace('/', '-');
+              return `${packageName}~${chunks.map(chunk => chunk.name).join('~')}`;
+            }
+          }
+        }
+      }
     }
   };
 
