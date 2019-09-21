@@ -1,13 +1,15 @@
+// FIXME To remove in the future
+/// <reference types="./types/html-webpack-tags-plugin" />
+/// <reference types="./types/postcss-preset-env" />
+
 import path from 'path';
 import glob from 'glob';
-// @ts-ignore FIXME No @types/postcss-preset-env
 import postcssPresetEnv from 'postcss-preset-env';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-// @ts-ignore FIXME No @types/html-webpack-tags-plugin
 import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import { execSync } from 'child_process';
 

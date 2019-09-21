@@ -76,6 +76,16 @@ module.exports = {
       rules: {
         'react/jsx-props-no-spreading': 'off'
       }
+    },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        // FIXME Fix "TypeError: Cannot read property 'body' of null"
+        // https://github.com/typescript-eslint/typescript-eslint/issues/420
+        // https://github.com/eslint/eslint/issues/11464
+        // https://github.com/eslint/eslint/issues/11440
+        'no-useless-constructor': 'off'
+      }
     }
   ]
 };
