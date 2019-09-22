@@ -55,7 +55,14 @@ export default (_env: any, argv: any) => {
 
     module: {
       rules: [
-        { test: /\.(js|tsx?)$/, exclude: /node_modules/, loader: 'babel-loader' },
+        {
+          test: /\.(js|tsx?)$/,
+
+          // See [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
+          exclude: /\/core-js/,
+
+          loader: 'babel-loader'
+        },
         {
           // FIXME Don't know how to make source maps work
           // See [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
