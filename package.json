@@ -1,10 +1,6 @@
 {
   "name": "marvel-heroes",
   "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tkrotoff/MarvelHeroes.git"
-  },
   "description": "Marvel Heroes",
   "license": "MIT",
   "private": true,
