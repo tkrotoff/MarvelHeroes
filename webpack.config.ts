@@ -1,5 +1,4 @@
 // FIXME To remove in the future
-/// <reference types="./types/html-webpack-tags-plugin" />
 /// <reference types="./types/postcss-preset-env" />
 
 import path from 'path';
