@@ -3,6 +3,36 @@ import { RouteComponentProps } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 
+function renderCategory(character: Marvel.Character, category: string) {
+  return (
+    <ul>
+      {(character[category] as Marvel.CharacterCategory).items.map(item => (
+        <li key={item.resourceURI}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+
+function renderHero(character: Marvel.Character) {
+  return (
+    <section className="hero">
+      <img
+        src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+        alt={character.name}
+        className="img-fluid" // Resize image on mobile
+      />
+      <h3>{character.name}</h3>
+      <p>{character.description}</p>
+      <h6>Comics</h6>
+      {renderCategory(character, 'comics')}
+      <h6>Series</h6>
+      {renderCategory(character, 'series')}
+      <h6>Stories</h6>
+      {renderCategory(character, 'stories')}
+    </section>
+  );
+}
+
 export interface QueryParams {
   id: string;
 }
@@ -22,36 +52,6 @@ export function Hero(props: Props) {
 
     fetch(id);
   }, [id]);
-
-  function renderCategory(_character: Marvel.Character, category: string) {
-    return (
-      <ul>
-        {(_character[category] as Marvel.CharacterCategory).items.map(item => (
-          <li key={item.resourceURI}>{item.name}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  function renderHero(_character: Marvel.Character) {
-    return (
-      <section className="hero">
-        <img
-          src={`${_character.thumbnail.path}.${_character.thumbnail.extension}`}
-          alt={_character.name}
-          className="img-fluid" // Resize image on mobile
-        />
-        <h3>{_character.name}</h3>
-        <p>{_character.description}</p>
-        <h6>Comics</h6>
-        {renderCategory(_character, 'comics')}
-        <h6>Series</h6>
-        {renderCategory(_character, 'series')}
-        <h6>Stories</h6>
-        {renderCategory(_character, 'stories')}
-      </section>
-    );
-  }
 
   return character !== undefined ? renderHero(character) : <p>Please wait...</p>;
 }

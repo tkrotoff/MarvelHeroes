@@ -9,7 +9,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        // Cannot use 'usage' otherwise IE 10 fails with "'Set' is undefined"
+        // Cannot use 'usage' otherwise IE10 fails with "'Set' is undefined"
         useBuiltIns: 'entry',
 
         // See https://babeljs.io/blog/2019/03/19/7.4.0#core-js-3-7646-https-githubcom-babel-babel-pull-7646
