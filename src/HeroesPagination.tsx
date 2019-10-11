@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { Heroes } from './Heroes';
 
-export interface QueryParams {
-  page?: string;
-}
-
-interface Props extends RouteComponentProps<QueryParams> {}
-
-export function HeroesPagination(props: Props) {
-  const tmp = props.match.params.page;
+export function HeroesPagination() {
+  const { page: tmp } = useParams();
   const pageQueryParam = tmp !== undefined ? parseInt(tmp, 10) : 0;
 
   const [page, setPage] = useState(pageQueryParam);

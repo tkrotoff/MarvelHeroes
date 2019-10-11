@@ -1,7 +1,9 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router';
+import { useLocation } from 'react-router';
 
-export function PageNotFound({ location }: RouteComponentProps<{}>) {
+export function PageNotFound() {
+  const location = useLocation();
+
   return (
     <>
       <h1>Whoops</h1>

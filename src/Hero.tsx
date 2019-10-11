@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 
@@ -33,15 +33,10 @@ function renderHero(character: Marvel.Character) {
   );
 }
 
-export interface QueryParams {
-  id: string;
-}
-
-interface Props extends RouteComponentProps<QueryParams> {}
-
-export function Hero(props: Props) {
+export function Hero() {
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
-  const { id } = props.match.params;
+  const { id } = useParams();
+  console.assert(id !== undefined, 'id cannot be undefined');
 
   useEffect(() => {
     async function fetch(_id: string) {
@@ -50,7 +45,8 @@ export function Hero(props: Props) {
       setCharacter(_character);
     }
 
-    fetch(id);
+    // FIXME Remove ! when TypeScript 3.7 is released, see https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/
+    fetch(id!);
   }, [id]);
 
   return character !== undefined ? renderHero(character) : <p>Please wait...</p>;

@@ -1,12 +1,17 @@
 import React from 'react';
 import { render, cleanup, waitForDomChange } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { useParams, MemoryRouter } from 'react-router';
 
-import { mockRouteComponentProps } from './utils/mockRouteComponentProps';
 import * as Marvel from './api/Marvel';
-import { HeroesPagination, QueryParams } from './HeroesPagination';
+import { HeroesPagination } from './HeroesPagination';
 
 jest.mock('./api/Marvel');
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useParams: jest.fn()
+}));
+const useParamsMock = useParams as jest.Mock;
 
 afterEach(cleanup);
 
@@ -16,9 +21,10 @@ test('render() without page query param then change page', async () => {
 
   const pleaseWait = 'Please wait...';
 
+  useParamsMock.mockReturnValue({});
   const { getByText, queryByText, rerender } = render(
     <MemoryRouter>
-      <HeroesPagination {...mockRouteComponentProps<QueryParams>({ match: { params: {} } })} />
+      <HeroesPagination />
     </MemoryRouter>
   );
 
@@ -38,11 +44,10 @@ test('render() without page query param then change page', async () => {
   getByText('Anne Marie Hoag');
   getByText('Annihilus');
 
+  useParamsMock.mockReturnValue({ page: '1' });
   rerender(
     <MemoryRouter>
-      <HeroesPagination
-        {...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } })}
-      />
+      <HeroesPagination />
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(2);
@@ -65,11 +70,10 @@ test('render() given a page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
   expect(spy).toHaveBeenCalledTimes(0);
 
+  useParamsMock.mockReturnValue({ page: '1' });
   const { getByText, queryByText } = render(
     <MemoryRouter>
-      <HeroesPagination
-        {...mockRouteComponentProps<QueryParams>({ match: { params: { page: '1' } } })}
-      />
+      <HeroesPagination />
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(1);
