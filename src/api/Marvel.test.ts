@@ -1,6 +1,6 @@
-/* eslint-disable import/first */
-
-import { mockFetch } from '../utils/mockFetch';
+import { fakeFetchResponse } from '../utils/fakeFetchResponse';
+import characters_offset_0 from './__mocks__/characters_offset_0.json';
+import character_id_1011334 from './__mocks__/character_id_1011334.json';
 import * as Marvel from './Marvel';
 
 test('getQueryParams()', () => {
@@ -13,24 +13,25 @@ test('getQueryParams()', () => {
   );
 });
 
-import characters_offset_0 from './__mocks__/characters_offset_0.json';
+describe('fetch*()', () => {
+  const fetchSpy = jest.spyOn(window, 'fetch');
+  afterEach(fetchSpy.mockClear);
 
-test('fetchCharacters()', async () => {
-  window.fetch = mockFetch(characters_offset_0);
+  test('fetchCharacters()', async () => {
+    fetchSpy.mockResolvedValueOnce(fakeFetchResponse(characters_offset_0));
 
-  const characters = await Marvel.fetchCharacters(0);
-  expect(characters).toEqual(characters_offset_0.data.results);
+    const characters = await Marvel.fetchCharacters(0);
+    expect(characters).toEqual(characters_offset_0.data.results);
 
-  expect(window.fetch).toHaveBeenCalledTimes(1);
-});
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
 
-import character_id_1011334 from './__mocks__/character_id_1011334.json';
+  test('fetchCharacter()', async () => {
+    fetchSpy.mockResolvedValueOnce(fakeFetchResponse(character_id_1011334));
 
-test('fetchCharacter()', async () => {
-  window.fetch = mockFetch(character_id_1011334);
+    const characters = await Marvel.fetchCharacter('1011334');
+    expect(characters).toEqual(character_id_1011334.data.results[0]);
 
-  const characters = await Marvel.fetchCharacter('1011334');
-  expect(characters).toEqual(character_id_1011334.data.results[0]);
-
-  expect(window.fetch).toHaveBeenCalledTimes(1);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
 });
