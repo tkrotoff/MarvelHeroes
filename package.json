@@ -13,7 +13,7 @@
     "build:watch": "webpack -d --watch",
     "build:prod": "webpack -p",
     "build:prod:analyze": "webpack -p --profile --json > stats.json && webpack-bundle-analyzer stats.json build",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "pretest:e2e": "npm run build",
     "test:e2e": "jest --config jest-e2e.config.js",
