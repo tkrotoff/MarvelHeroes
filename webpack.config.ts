@@ -34,7 +34,7 @@ import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
 
 // webpack-dev-server output is bigger than a regular build because it includes more things
 
-export default (_env: any, argv: any) => {
+export default (_webpackEnv: any, argv: any) => {
   // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
