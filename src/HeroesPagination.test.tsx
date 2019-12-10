@@ -17,7 +17,6 @@ afterEach(cleanup);
 
 test('render() without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
-  expect(spy).toHaveBeenCalledTimes(0);
 
   const pleaseWait = 'Please wait...';
 
@@ -68,7 +67,6 @@ test('render() without page query param then change page', async () => {
 
 test('render() given a page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
-  expect(spy).toHaveBeenCalledTimes(0);
 
   useParamsMock.mockReturnValue({ page: '1' });
   const { getByText, queryByText } = render(
