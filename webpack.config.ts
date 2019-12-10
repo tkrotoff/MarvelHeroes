@@ -4,6 +4,7 @@
 import path from 'path';
 import glob from 'glob';
 import postcssPresetEnv from 'postcss-preset-env';
+import sass from 'sass';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -77,7 +78,7 @@ export default (_webpackEnv: any, argv: any) => {
                 sourceMap: !isProd
               }
             },
-            { loader: 'sass-loader', options: { sourceMap: !isProd } }
+            { loader: 'sass-loader', options: { implementation: sass, sourceMap: !isProd } }
           ]
         }
       ]
