@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
+import { config } from './config';
 
 function renderHeroes(characters: Marvel.Characters) {
   return (
@@ -44,10 +45,7 @@ export function Heroes(props: Props) {
   useEffect(() => {
     async function fetch(_page: number) {
       setCharacters(undefined);
-
-      const nbCharactersPerPage = 50;
-      const _characters = await Marvel.fetchCharacters(_page * nbCharactersPerPage);
-
+      const _characters = await Marvel.fetchCharacters(_page * config.nbCharactersPerPage);
       setCharacters(_characters);
     }
 
