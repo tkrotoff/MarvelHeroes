@@ -11,6 +11,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 import { execSync } from 'child_process';
 
 import myPackage from './package.json';
@@ -158,7 +159,16 @@ export default (_webpackEnv: any, argv: any) => {
         append: false, // We want the favicons to be before main.css
 
         hash: true
-      })
+      }),
+
+      isProd &&
+        new CompressionPlugin({
+          // See [Use original filename without .gz extension](https://github.com/webpack-contrib/compression-webpack-plugin/issues/117)
+          filename: '[path]?gz',
+
+          //test: /\.(js|css|svg|json)$/,
+          deleteOriginalAssets: true
+        })
     ] as webpack.Plugin[],
 
     devServer: {
