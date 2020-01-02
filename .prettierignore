@@ -8,7 +8,8 @@ LICENSE
 
 build/
 coverage/
+*.txt
+*.xml
 *.png
 *.svg
-*.xml
 *.ico
