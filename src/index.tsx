@@ -1,7 +1,6 @@
-import Raven from 'raven-js';
-
+import * as Sentry from '@sentry/browser';
 /* eslint-disable import/first */
-Raven.config('https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526').install();
+Sentry.init({ dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526' });
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -16,16 +15,13 @@ import { Router } from './Router';
 
 import './index.scss';
 
-Raven.context(() =>
-  // eslint-disable-next-line react/no-render-return-value
-  render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <Layout>
-          <Router />
-        </Layout>
-      </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('app')
-  )
+render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Layout>
+        <Router />
+      </Layout>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('app')
 );
