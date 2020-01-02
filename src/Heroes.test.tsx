@@ -9,10 +9,10 @@ jest.mock('./api/Marvel');
 
 afterEach(cleanup);
 
-test('render()', async () => {
-  const spy = jest.spyOn(Marvel, 'fetchCharacters');
-  expect(spy).toHaveBeenCalledTimes(0);
+const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');
+afterEach(fetchCharactersSpy.mockClear);
 
+test('render()', async () => {
   const pleaseWait = 'Please wait...';
 
   const { getByText, queryByText, rerender } = render(
@@ -20,7 +20,7 @@ test('render()', async () => {
       <Heroes page={0} />
     </MemoryRouter>
   );
-  expect(spy).toHaveBeenCalledTimes(1);
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
   await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
@@ -36,7 +36,7 @@ test('render()', async () => {
       <Heroes page={1} />
     </MemoryRouter>
   );
-  expect(spy).toHaveBeenCalledTimes(2);
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
   await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
@@ -46,6 +46,34 @@ test('render()', async () => {
   getByText('Beef');
   getByText('Beetle (Abner Jenkins)');
   getByText('Ben Grimm');
+});
 
-  spy.mockRestore();
+test('render() "No results found :("', async () => {
+  const pleaseWait = 'Please wait...';
+
+  const { getByText, queryByText } = render(
+    <MemoryRouter>
+      <Heroes page={204} />
+    </MemoryRouter>
+  );
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
+  getByText(pleaseWait);
+  await waitForDomChange();
+  expect(queryByText(pleaseWait)).toEqual(null);
+  getByText('No results found :(');
+});
+
+test('fetchCharacters() error', () => {
+  const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+
+  expect(() =>
+    render(
+      <MemoryRouter>
+        <Heroes page={500} />
+      </MemoryRouter>
+    )
+  ).toThrow('500 Internal Server Error');
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
+
+  consoleSpy.mockRestore();
 });

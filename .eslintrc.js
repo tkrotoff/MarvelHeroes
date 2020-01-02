@@ -65,6 +65,8 @@ module.exports = {
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+    'react/state-in-constructor': 'off',
+    'react/prop-types': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'
@@ -74,7 +76,8 @@ module.exports = {
     {
       files: ['*.test.ts', '*.test.tsx'],
       rules: {
-        'react/jsx-props-no-spreading': 'off'
+        'react/jsx-props-no-spreading': 'off',
+        'react/jsx-boolean-value': 'off'
       }
     },
     {

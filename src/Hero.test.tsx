@@ -14,15 +14,15 @@ const useParamsMock = useParams as jest.Mock;
 
 afterEach(cleanup);
 
-test('render()', async () => {
-  const spy = jest.spyOn(Marvel, 'fetchCharacter');
-  expect(spy).toHaveBeenCalledTimes(0);
+const fetchCharacterSpy = jest.spyOn(Marvel, 'fetchCharacter');
+afterEach(fetchCharacterSpy.mockClear);
 
+test('render()', async () => {
   const pleaseWait = 'Please wait...';
 
   useParamsMock.mockReturnValue({ id: '1011334' });
   const { getByText, queryByText, rerender } = render(<Hero />);
-  expect(spy).toHaveBeenCalledTimes(1);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
   await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
@@ -30,7 +30,7 @@ test('render()', async () => {
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
-  expect(spy).toHaveBeenCalledTimes(2);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
   await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
@@ -38,11 +38,19 @@ test('render()', async () => {
 
   useParamsMock.mockReturnValue({ id: '1009144' });
   rerender(<Hero />);
-  expect(spy).toHaveBeenCalledTimes(3);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(3);
   getByText(pleaseWait);
   await waitForDomChange();
   expect(queryByText(pleaseWait)).toEqual(null);
   getByText('A.I.M.');
+});
 
-  spy.mockRestore();
+test('fetchCharacter() error', () => {
+  const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+
+  useParamsMock.mockReturnValue({ id: 'unknown' });
+  expect(() => render(<Hero />)).toThrow('404 Not Found');
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
+
+  consoleSpy.mockRestore();
 });

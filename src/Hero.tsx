@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
+import { useErrorBoundary } from './utils/useErrorBoundary';
 
 function renderCategory(character: Marvel.Character, category: string) {
   return (
@@ -34,6 +35,7 @@ function renderHero(character: Marvel.Character) {
 }
 
 export function Hero() {
+  const errorBoundary = useErrorBoundary();
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
   const { id } = useParams();
   console.assert(id !== undefined, 'id cannot be undefined');
@@ -41,13 +43,17 @@ export function Hero() {
   useEffect(() => {
     async function fetch(_id: string) {
       setCharacter(undefined);
-      const _character = await Marvel.fetchCharacter(_id);
-      setCharacter(_character);
+      try {
+        const _character = await Marvel.fetchCharacter(_id);
+        setCharacter(_character);
+      } catch (e) {
+        errorBoundary(e);
+      }
     }
 
     // FIXME Remove ! when TypeScript 3.7 is released, see https://devblogs.microsoft.com/typescript/announcing-typescript-3-7-beta/
     fetch(id!);
-  }, [id]);
+  }, [id, errorBoundary]);
 
   return character !== undefined ? renderHero(character) : <p>Please wait...</p>;
 }

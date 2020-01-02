@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
+import { useErrorBoundary } from './utils/useErrorBoundary';
 import { config } from './config';
 
 function renderHeroes(characters: Marvel.Characters) {
@@ -39,18 +40,24 @@ interface Props {
 }
 
 export function Heroes(props: Props) {
+  const errorBoundary = useErrorBoundary();
+
   const [characters, setCharacters] = useState<Marvel.Characters | undefined>(undefined);
   const { page } = props;
 
   useEffect(() => {
     async function fetch(_page: number) {
       setCharacters(undefined);
-      const _characters = await Marvel.fetchCharacters(_page * config.nbCharactersPerPage);
-      setCharacters(_characters);
+      try {
+        const _characters = await Marvel.fetchCharacters(_page * config.nbCharactersPerPage);
+        setCharacters(_characters);
+      } catch (e) {
+        errorBoundary(e);
+      }
     }
 
     fetch(page);
-  }, [page]);
+  }, [page, errorBoundary]);
 
   if (characters === undefined) {
     return <p>Please wait...</p>;
