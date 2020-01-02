@@ -5,9 +5,6 @@ import 'core-js/stable';
 // it generates "ReferenceError: regeneratorRuntime is not defined"
 import 'regenerator-runtime/runtime';
 
-// See [How to test api calls using fetch?](https://github.com/facebook/create-react-app/issues/967#issuecomment-396771497)
-import 'whatwg-fetch';
-
 // See [console.assert not throwing with v22.4.0](https://github.com/facebook/jest/issues/5634)
 import assert from 'assert'; // eslint-disable-line import/newline-after-import
 console.assert = assert;
@@ -25,3 +22,7 @@ console.assert = assert;
 process.on('unhandledRejection', (reason: Error | any, _promise: Promise<any>) => {
   throw reason;
 });
+
+(window.fetch as any) = () => {
+  throw new Error('You should mock fetch()');
+};
