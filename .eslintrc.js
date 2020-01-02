@@ -47,6 +47,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
 
     'jsx-a11y/label-has-for': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
