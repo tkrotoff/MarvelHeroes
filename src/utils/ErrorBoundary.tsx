@@ -55,7 +55,7 @@ export function withErrorBoundary<P extends object>(Component: React.ComponentTy
   }
 
   // Format for display in DevTools
-  const name = Component.displayName || Component.name;
+  const name = Component.displayName ?? Component.name;
   WithErrorBoundary.displayName = name ? `WithErrorBoundary(${name})` : 'WithErrorBoundary';
 
   return WithErrorBoundary;
