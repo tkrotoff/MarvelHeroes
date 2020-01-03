@@ -1,5 +1,5 @@
 // Do we want to run the tests with the polyfills?
-import 'core-js/stable';
+import 'core-js';
 
 // Needed for async/await inside the tests otherwise
 // it generates "ReferenceError: regeneratorRuntime is not defined"

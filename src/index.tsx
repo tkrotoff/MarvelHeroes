@@ -2,7 +2,7 @@ import * as Sentry from '@sentry/browser';
 /* eslint-disable import/first */
 Sentry.init({ dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526' });
 
-import 'core-js/stable';
+import 'core-js';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
