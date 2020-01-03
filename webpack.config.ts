@@ -93,7 +93,8 @@ export default (_webpackEnv: any, argv: any) => {
 
       new HtmlWebpackPlugin({
         description: myPackage.description,
-        version: isProd ? `${myPackage.version}-production` : `${myPackage.version}-development`,
+        version: myPackage.version,
+        buildMode: isProd ? 'production' : 'development',
         date: new Date().toISOString(),
 
         // See [Get hash of most recent git commit in Node](https://stackoverflow.com/a/35778030/990356)
