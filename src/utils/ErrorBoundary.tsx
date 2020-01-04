@@ -19,22 +19,15 @@ export class ErrorBoundary extends React.Component<Props> {
     eventId: undefined
   };
 
-  static getDerivedStateFromError(error: Error) {
-    return { error };
-  }
-
   // See https://reactjs.org/docs/react-component.html#componentdidcatch
   // "In the event of an error, you can render a fallback UI with componentDidCatch()
   // by calling setState, but this will be deprecated in a future release.
   // Use static getDerivedStateFromError() to handle fallback rendering instead."
   //
   // See https://docs.sentry.io/platforms/javascript/react/#error-boundaries
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    Sentry.withScope(scope => {
-      scope.setExtras(errorInfo);
-      const eventId = Sentry.captureException(error);
-      this.setState({ eventId });
-    });
+  static getDerivedStateFromError(error: Error) {
+    const eventId = Sentry.captureException(error);
+    return { error, eventId };
   }
 
   render() {
