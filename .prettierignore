@@ -9,6 +9,7 @@ LICENSE
 build/
 coverage/
 *.txt
+*.sh
 *.xml
 *.png
 *.svg

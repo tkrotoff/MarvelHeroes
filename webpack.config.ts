@@ -163,8 +163,8 @@ export default (_webpackEnv: any, argv: any) => {
 
       isProd &&
         new CompressionPlugin({
-          // See [Use original filename without .gz extension](https://github.com/webpack-contrib/compression-webpack-plugin/issues/117)
-          filename: '[path]?gz',
+          // FIXME See [Use original filename without .gz extension](https://github.com/webpack-contrib/compression-webpack-plugin/issues/117)
+          //filename: '[path]?gz',
 
           //test: /\.(js|css|svg|json)$/,
           deleteOriginalAssets: true
