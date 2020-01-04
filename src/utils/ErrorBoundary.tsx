@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Sentry from '@sentry/browser';
 
 // Inspired by https://github.com/bvaughn/react-error-boundary/tree/1.2.4
 
@@ -8,12 +9,14 @@ interface Props {
 
 interface State {
   error?: Error;
+  eventId?: string;
 }
 
 // FIXME ["componentDidCatch and getDerivedStateFromError: There are no Hook equivalents for these methods"](https://reactjs.org/docs/hooks-faq.html#how-do-lifecycle-methods-correspond-to-hooks)
 export class ErrorBoundary extends React.Component<Props> {
   state: State = {
-    error: undefined
+    error: undefined,
+    eventId: undefined
   };
 
   static getDerivedStateFromError(error: Error) {
@@ -24,18 +27,31 @@ export class ErrorBoundary extends React.Component<Props> {
   // "In the event of an error, you can render a fallback UI with componentDidCatch()
   // by calling setState, but this will be deprecated in a future release.
   // Use static getDerivedStateFromError() to handle fallback rendering instead."
-  componentDidCatch(_error: Error, _errorInfo: React.ErrorInfo) {
-    //logErrorToMyService(error, errorInfo);
+  //
+  // See https://docs.sentry.io/platforms/javascript/react/#error-boundaries
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    Sentry.withScope(scope => {
+      scope.setExtras(errorInfo);
+      const eventId = Sentry.captureException(error);
+      this.setState({ eventId });
+    });
   }
 
   render() {
-    const { error } = this.state;
+    const { error, eventId } = this.state;
 
     if (error !== undefined) {
       return (
         <>
           <h1>Something went wrong</h1>
           <p>{error.toString()}</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => Sentry.showReportDialog({ eventId })}
+          >
+            Report feedback
+          </button>
         </>
       );
     }
