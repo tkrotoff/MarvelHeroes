@@ -3,7 +3,7 @@
     "noEmit": true,
     "target": "esnext",
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "preserve",
     "esModuleInterop": true,
     "resolveJsonModule": true,
 
