@@ -23,7 +23,7 @@
     "precommit": "npm run format && npm run lint",
     "prepush": "npm run precommit && npm run test && npm run test:e2e",
     "deploy": "npm run clean && npm run build:prod && aws s3 sync build/ s3://marvelheroes",
-    "npm:update": "ncu --upgrade"
+    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
@@ -80,7 +80,6 @@
     "jest": "^24.9.0",
     "jest-puppeteer": "^4.4.0",
     "mini-css-extract-plugin": "^0.9.0",
-    "npm-check-updates": "^4.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
