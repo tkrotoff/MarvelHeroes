@@ -1,6 +1,7 @@
 // @ts-check
 
-module.exports = {
+/** @type {import('eslint').Linter.Config} */
+const config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json'
@@ -93,3 +94,5 @@ module.exports = {
     }
   ]
 };
+
+module.exports = config;

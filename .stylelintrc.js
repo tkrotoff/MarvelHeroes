@@ -1,6 +1,7 @@
 // @ts-check
 
-module.exports = {
+/** @type {Partial<import('stylelint').Configuration>} */
+const config = {
   extends: [
     // As of 2019/04/08, stylelint-config-airbnb is still at v0.0.0 and has not seen a release for a year
     // Should we keep this? Is this future proof?
@@ -20,3 +21,5 @@ module.exports = {
     'order/order': null
   }
 };
+
+module.exports = config;

@@ -3,7 +3,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { defaults } = require('jest-config');
 
-module.exports = {
+/** @type jest.InitialOptions */
+const config = {
   setupFiles: ['./jest.setup.ts'],
   coveragePathIgnorePatterns: [...defaults.coveragePathIgnorePatterns, './jest.setup.ts'],
 
@@ -21,3 +22,5 @@ module.exports = {
     }
   }
 };
+
+module.exports = config;
