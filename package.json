@@ -21,7 +21,7 @@
     "format": "prettier --write \"**/*\"",
     "lint": "npm run tsc && eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",
     "precommit": "npm run format && npm run lint",
-    "prepush": "npm run precommit && npm run test && npm run test:e2e",
+    "prepush": "npm run test && npm run test:e2e",
     "deploy": "npm run clean && npm run build:prod && aws s3 sync build/ s3://marvelheroes",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
