@@ -1,4 +1,8 @@
 node_modules/
+
+.eslintcache
+.stylelintcache
+
 build/
 coverage/
 stats.json

@@ -19,8 +19,7 @@
     "test:e2e": "NODE_ENV=test jest --config jest-e2e.config.js",
     "tsc": "tsc",
     "format": "prettier --write \"**/*\"",
-    "lint": "npm run tsc && eslint . '**/*.{js,jsx,ts,tsx}' && stylelint '**/*.scss'",
-    "precommit": "npm run format && npm run lint",
+    "lint": "npm run tsc && eslint . '**/*.{js,ts,tsx}' && stylelint '**/*.scss'",
     "prepush": "npm run test && npm run test:e2e",
     "deploy": "npm run clean && npm run build:prod && aws s3 sync build/ s3://marvelheroes",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
@@ -79,6 +78,7 @@
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "jest-puppeteer": "^4.4.0",
+    "lint-staged": "^10.0.7",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
