@@ -1,10 +1,6 @@
 // @ts-check
 
 module.exports = {
-  // See https://github.com/facebook/create-react-app/blob/v2.1.0/packages/babel-preset-react-app/dependencies.js#L64
-  // See [Add Babel config sourceType: 'unambiguous' for dependencies](https://github.com/facebook/create-react-app/pull/5052)
-  sourceType: 'unambiguous',
-
   presets: [
     [
       '@babel/preset-env',
