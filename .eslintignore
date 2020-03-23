@@ -1,4 +1,4 @@
-# See https://github.com/eslint/eslint/issues/10341#issuecomment-440450160
+# https://github.com/eslint/eslint/issues/10341#issuecomment-440450160
 !.*
 
 .git/

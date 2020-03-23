@@ -5,8 +5,8 @@ import 'core-js';
 // it generates "ReferenceError: regeneratorRuntime is not defined"
 import 'regenerator-runtime/runtime';
 
-// See [Event: 'unhandledRejection'](https://nodejs.org/api/process.html#process_event_unhandledrejection)
-// See [Bluebird Error management configuration](http://bluebirdjs.com/docs/api/error-management-configuration.html)
+// [Event: 'unhandledRejection'](https://nodejs.org/api/process.html#process_event_unhandledrejection)
+// [Bluebird Error management configuration](http://bluebirdjs.com/docs/api/error-management-configuration.html)
 //
 // Node.js error:
 // (node:65532) UnhandledPromiseRejectionWarning: Error: Text not found "Annihilus"

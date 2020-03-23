@@ -1,6 +1,6 @@
-// FIXME See https://github.com/csstools/postcss-preset-env/issues/150
+// FIXME https://github.com/csstools/postcss-preset-env/issues/150
 declare module 'postcss-preset-env' {
-  import { plugin, Plugin, ParserInput, Result, LazyResult, Root, ProcessOptions } from 'postcss';
+  import { Plugin } from 'postcss';
 
   interface PluginOptions {
     stage?: number;

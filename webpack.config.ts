@@ -36,7 +36,7 @@ import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
 // webpack-dev-server output is bigger than a regular build because it includes more things
 
 export default (_webpackEnv: any, argv: any) => {
-  // See https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
+  // https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
   const output = `[name].${isProd ? 'production.min' : 'development'}`;
@@ -59,14 +59,14 @@ export default (_webpackEnv: any, argv: any) => {
         {
           test: /\.(js|tsx?)$/,
 
-          // See [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
+          // [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
           exclude: /\/core-js/,
 
           loader: 'babel-loader'
         },
         {
           // FIXME Don't know how to make source maps work
-          // See [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
+          // [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
           test: /\.scss$/,
           use: [
             isProd ? MiniCssExtractPlugin.loader : { loader: 'style-loader' },
@@ -97,7 +97,7 @@ export default (_webpackEnv: any, argv: any) => {
         buildMode: isProd ? 'production' : 'development',
         date: new Date().toISOString(),
 
-        // See [Get hash of most recent git commit in Node](https://stackoverflow.com/a/35778030/990356)
+        // [Get hash of most recent git commit in Node](https://stackoverflow.com/a/35778030/990356)
         rev: execSync('git rev-parse HEAD')
           .toString()
           .trim(),
@@ -162,14 +162,14 @@ export default (_webpackEnv: any, argv: any) => {
     ] as webpack.Plugin[],
 
     devServer: {
-      // See [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
+      // [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
       historyApiFallback: true
     },
 
-    // See [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)
-    // See [Webpack v4 chunk splitting deep dive](https://www.chrisclaxton.me.uk/chris-claxtons-blog/webpack-chunksplitting-deepdive)
+    // [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)
+    // [Webpack v4 chunk splitting deep dive](https://www.chrisclaxton.me.uk/chris-claxtons-blog/webpack-chunksplitting-deepdive)
     optimization: {
-      // "creates a runtime file to be shared for all generated chunks", see https://webpack.js.org/configuration/optimization/#optimizationruntimechunk
+      // ["creates a runtime file to be shared for all generated chunks"](https://webpack.js.org/configuration/optimization/#optimizationruntimechunk)
       runtimeChunk: 'single',
 
       splitChunks: {

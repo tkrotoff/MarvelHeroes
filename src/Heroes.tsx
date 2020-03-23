@@ -16,7 +16,7 @@ function renderHeroes(characters: Marvel.Characters) {
             className="card-img-top"
             style={{
               // Fix for IE11
-              // See [Flexbox on IE11: image stretched for no reason?](https://stackoverflow.com/q/36822370)
+              // [Flexbox on IE11: image stretched for no reason?](https://stackoverflow.com/q/36822370)
               flexShrink: 0,
 
               // Fix for IE10

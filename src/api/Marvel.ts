@@ -54,7 +54,7 @@ export function getQueryParams(offset?: number) {
     offset
   };
 
-  // See [How to pass url query params?](https://github.com/github/fetch/issues/256)
+  // [How to pass url query params?](https://github.com/github/fetch/issues/256)
   return Object.keys(params)
     .filter(key => (params as any)[key] !== undefined)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent((params as any)[key])}`)
@@ -63,7 +63,7 @@ export function getQueryParams(offset?: number) {
 
 export async function fetchCharacters(offset: number) {
   const response = await fetch(`${BASE_URL}/v1/public/characters?${getQueryParams(offset)}`);
-  // See [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
+  // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
   if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
   return data.data.results as Characters;
@@ -71,7 +71,7 @@ export async function fetchCharacters(offset: number) {
 
 export async function fetchCharacter(id: string) {
   const response = await fetch(`${BASE_URL}/v1/public/characters/${id}?${getQueryParams()}`);
-  // See [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
+  // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
   if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
   return data.data.results[0] as Character;

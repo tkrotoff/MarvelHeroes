@@ -48,7 +48,7 @@ test('Navigation', async () => {
 
     const link = (await firstHeroCard.$('div.card-footer > a'))!;
     await link.click();
-    // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
+    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
     await page.waitFor('section.hero');
 
@@ -77,7 +77,7 @@ test('Navigation', async () => {
 
     const link = (await thirdHeroCard.$('div.card-footer > a'))!;
     await link.click();
-    // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
+    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
     await page.waitFor('section.hero');
 
@@ -108,7 +108,7 @@ test('Navigation', async () => {
 
     const link = (await lastHeroCard.$('div.card-footer > a'))!;
     await link.click();
-    // See [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
+    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
     await page.waitFor('section.hero');
 

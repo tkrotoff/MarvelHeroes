@@ -23,7 +23,7 @@ test('render() children if no error', () => {
 describe('if an error occured', () => {
   let consoleSpy: jest.SpyInstance;
   beforeAll(() => {
-    // FIXME See https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
+    // FIXME https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
     consoleSpy = jest.spyOn(console, 'error').mockImplementation();
   });
   afterAll(() => {
@@ -89,7 +89,7 @@ describe('withErrorBoundary() ', () => {
   });
 
   test('render() a message if an error occured', () => {
-    // FIXME See https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
+    // FIXME https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
     const { getByText } = render(<MyComponentWithHOC throwError={true} />);

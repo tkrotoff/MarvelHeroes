@@ -39,7 +39,7 @@ const config = {
     'no-plusplus': 'off',
     'spaced-comment': 'off',
 
-    // See [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
+    // [no-return-assign should be configurable to ignore arrow-functions](https://github.com/eslint/eslint/issues/9471)
     'no-return-assign': 'off',
 
     'import/no-extraneous-dependencies': 'off',

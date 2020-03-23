@@ -1,5 +1,7 @@
 .git/
 .gitignore
+.eslintcache
+.stylelintcache
 .prettierignore
 .eslintignore
 .editorconfig

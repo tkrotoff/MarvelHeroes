@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type jest.InitialOptions */
+/** @type Partial<import('@jest/types').Config.InitialOptions> */
 const config = {
   preset: 'jest-puppeteer',
 

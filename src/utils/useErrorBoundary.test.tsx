@@ -21,8 +21,8 @@ test('useErrorBoundary()', () => {
   //
   // React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.
   //
-  // See https://github.com/testing-library/react-hooks-testing-library/issues/43
-  // See https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
+  // https://github.com/testing-library/react-hooks-testing-library/issues/43
+  // https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
   const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
   act(() => {
     result.current(e);
