@@ -98,9 +98,7 @@ export default (_webpackEnv: any, argv: any) => {
         date: new Date().toISOString(),
 
         // [Get hash of most recent git commit in Node](https://stackoverflow.com/a/35778030/990356)
-        rev: execSync('git rev-parse HEAD')
-          .toString()
-          .trim(),
+        rev: execSync('git rev-parse HEAD').toString().trim(),
 
         template: './src/index.html',
         hash: isProd
