@@ -3,11 +3,11 @@ import { fakeFetchResponseSuccess, fakeFetchResponseError } from './fakeFetchRes
 test('fakeFetchResponseSuccess()', async () => {
   const response = fakeFetchResponseSuccess({ foo: 'bar' });
   expect(response.ok).toBe(true);
-  await expect(response.json()).resolves.toEqual({ foo: 'bar' });
+  expect(await response.json()).toEqual({ foo: 'bar' });
 
   const fetchSpy = jest.spyOn(window, 'fetch');
   fetchSpy.mockResolvedValueOnce(response);
-  await expect((await fetch('whatever')).json()).resolves.toEqual({ foo: 'bar' });
+  expect(await (await fetch('whatever')).json()).toEqual({ foo: 'bar' });
   expect(fetchSpy).toHaveBeenCalledTimes(1);
   fetchSpy.mockRestore();
 });

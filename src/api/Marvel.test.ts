@@ -1,3 +1,5 @@
+/* eslint-disable jest/no-mocks-import */
+
 import { fakeFetchResponseSuccess, fakeFetchResponseError } from '../utils/fakeFetchResponse';
 import characters_offset_0 from './__mocks__/characters_offset_0.json';
 import character_id_1011334 from './__mocks__/character_id_1011334.json';

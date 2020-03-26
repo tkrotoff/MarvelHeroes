@@ -44,7 +44,7 @@ test('Navigation', async () => {
     expect(heroes).toHaveLength(50);
 
     const firstHeroCard = heroes[0];
-    await expect(await firstHeroCard.$('h5.card-title')).toMatch('3-D Man');
+    expect(await firstHeroCard.$('h5.card-title')).toMatch('3-D Man');
 
     const link = (await firstHeroCard.$('div.card-footer > a'))!;
     await link.click();
@@ -53,12 +53,10 @@ test('Navigation', async () => {
     await page.waitFor('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
-    await expect(await hero.$('p')).toMatch(''); // No description
-    await expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual(
-      '3-D Man'
-    );
-    await expect(await hero.$('h3')).toMatch('3-D Man');
+    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
+    expect(await hero.$('p')).toMatch(''); // No description
+    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('3-D Man');
+    expect(await hero.$('h3')).toMatch('3-D Man');
   }
 
   await page.goBack();
@@ -70,7 +68,7 @@ test('Navigation', async () => {
     expect(heroes).toHaveLength(50);
 
     const thirdHeroCard = heroes[2];
-    await expect(
+    expect(
       await thirdHeroCard.$eval('h5.card-title', node => (node as HTMLElement).innerText)
     ).toEqual('A.I.M.');
     await expect(await thirdHeroCard.$('h5.card-title')).toMatch('A.I.M.');
@@ -82,13 +80,13 @@ test('Navigation', async () => {
     await page.waitFor('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(
+    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(
       'AIM is a terrorist organization bent on destroying the world.'
     );
     await expect(await hero.$('p')).toMatch(
       'AIM is a terrorist organization bent on destroying the world.'
     );
-    await expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('A.I.M.');
+    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('A.I.M.');
     await expect(await hero.$('h3')).toMatch('A.I.M.');
   }
 
@@ -101,7 +99,7 @@ test('Navigation', async () => {
     expect(heroes).toHaveLength(50);
 
     const lastHeroCard = heroes[49];
-    await expect(
+    expect(
       await lastHeroCard.$eval('h5.card-title', node => (node as HTMLElement).innerText)
     ).toEqual('Annihilus');
     await expect(await lastHeroCard.$('h5.card-title')).toMatch('Annihilus');
@@ -113,11 +111,9 @@ test('Navigation', async () => {
     await page.waitFor('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    await expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
+    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
-    await expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual(
-      'Annihilus'
-    );
+    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('Annihilus');
     await expect(await hero.$('h3')).toMatch('Annihilus');
   }
 });
