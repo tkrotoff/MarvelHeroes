@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitForDomChange } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -7,12 +7,12 @@ import { Heroes } from './Heroes';
 
 jest.mock('./api/Marvel');
 
+const pleaseWait = 'Please wait...';
+
 const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');
 afterEach(fetchCharactersSpy.mockClear);
 
 test('render', async () => {
-  const pleaseWait = 'Please wait...';
-
   const { getByText, queryByText, rerender } = render(
     <MemoryRouter>
       <Heroes page={0} />
@@ -20,8 +20,9 @@ test('render', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('3-D Man');
   getByText('A-Bomb (HAS)');
   getByText('A.I.M.');
@@ -36,8 +37,9 @@ test('render', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");
   getByText('Ant-Man (Scott Lang)');
@@ -47,8 +49,6 @@ test('render', async () => {
 });
 
 test('render "No results found :("', async () => {
-  const pleaseWait = 'Please wait...';
-
   const { getByText, queryByText } = render(
     <MemoryRouter>
       <Heroes page={204} />
@@ -56,8 +56,9 @@ test('render "No results found :("', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('No results found :(');
 });
 

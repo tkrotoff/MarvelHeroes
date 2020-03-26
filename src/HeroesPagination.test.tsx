@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitForDomChange } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { MemoryRouter, useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -13,10 +13,10 @@ jest.mock('react-router', () => ({
 }));
 const useParamsMock = useParams as jest.Mock;
 
+const pleaseWait = 'Please wait...';
+
 test('render without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
-
-  const pleaseWait = 'Please wait...';
 
   useParamsMock.mockReturnValue({});
   const { getByText, queryByText, rerender } = render(
@@ -32,8 +32,9 @@ test('render without page query param then change page', async () => {
   const nextLink = getByText('Next »') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('3-D Man');
   getByText('A-Bomb (HAS)');
   getByText('A.I.M.');
@@ -51,8 +52,9 @@ test('render without page query param then change page', async () => {
   expect(prevLink.href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");
   getByText('Ant-Man (Scott Lang)');
@@ -78,10 +80,11 @@ test('render given a page query param', async () => {
   expect(prevLink.href).toEqual('http://localhost/0');
   const nextLink = getByText('Next »') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/2');
-  getByText('Please wait...');
+  getByText(pleaseWait);
 
-  await waitForDomChange();
-  expect(queryByText('Please wait...')).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('Anole');
   getByText("Ant-Man (Eric O'Grady)");
   getByText('Ant-Man (Scott Lang)');

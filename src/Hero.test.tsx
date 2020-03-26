@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitForDomChange } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -12,34 +12,37 @@ jest.mock('react-router', () => ({
 }));
 const useParamsMock = useParams as jest.Mock;
 
+const pleaseWait = 'Please wait...';
+
 const fetchCharacterSpy = jest.spyOn(Marvel, 'fetchCharacter');
 afterEach(fetchCharacterSpy.mockClear);
 
 test('render', async () => {
-  const pleaseWait = 'Please wait...';
-
   useParamsMock.mockReturnValue({ id: '1011334' });
   const { getByText, queryByText, rerender } = render(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('3-D Man');
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(2);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('A-Bomb (HAS)');
 
   useParamsMock.mockReturnValue({ id: '1009144' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(3);
   getByText(pleaseWait);
-  await waitForDomChange();
-  expect(queryByText(pleaseWait)).toEqual(null);
+  await waitFor(() => {
+    expect(queryByText(pleaseWait)).toEqual(null);
+  });
   getByText('A.I.M.');
 });
 
