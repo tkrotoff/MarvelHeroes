@@ -1,10 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 
-import { PageNotFound } from './PageNotFound';
-import { HeroesPagination } from './HeroesPagination';
-import { Hero } from './Hero';
 import { withErrorBoundary } from './utils/ErrorBoundary';
+import { Hero } from './Hero';
+import { HeroesPagination } from './HeroesPagination';
+import { PageNotFound } from './PageNotFound';
 
 export function Router() {
   return (

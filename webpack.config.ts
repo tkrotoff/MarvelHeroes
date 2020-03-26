@@ -1,20 +1,20 @@
 // FIXME To remove in the future
 /// <reference types="./types/postcss-preset-env" />
 
-import path from 'path';
-import glob from 'glob';
-import postcssPresetEnv from 'postcss-preset-env';
-import sass from 'sass';
-import webpack from 'webpack';
+import { execSync } from 'child_process';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import PurgecssPlugin from 'purgecss-webpack-plugin';
+import glob from 'glob';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
-import { execSync } from 'child_process';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import postcssPresetEnv from 'postcss-preset-env';
+import PurgecssPlugin from 'purgecss-webpack-plugin';
+import sass from 'sass';
+import webpack from 'webpack';
 
-import myPackage from './package.json';
 import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
+import myPackage from './package.json';
 
 // WTF
 //

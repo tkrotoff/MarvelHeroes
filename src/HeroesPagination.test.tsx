@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitForDomChange } from '@testing-library/react';
-import { useParams, MemoryRouter } from 'react-router';
+import { MemoryRouter, useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 import { HeroesPagination } from './HeroesPagination';

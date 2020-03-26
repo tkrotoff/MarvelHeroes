@@ -1,10 +1,10 @@
 import React from 'react';
-import { create, act } from 'react-test-renderer';
 import { wait } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
+import { act, create } from 'react-test-renderer';
 
-import { HeroesPagination } from './HeroesPagination';
 import { Hero } from './Hero';
+import { HeroesPagination } from './HeroesPagination';
 import { PageNotFound } from './PageNotFound';
 import { Router } from './Router';
 

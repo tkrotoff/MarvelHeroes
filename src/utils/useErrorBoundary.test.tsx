@@ -1,8 +1,8 @@
 import React from 'react';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
-import { useErrorBoundary } from './useErrorBoundary';
 import { ErrorBoundary } from './ErrorBoundary';
+import { useErrorBoundary } from './useErrorBoundary';
 
 test('useErrorBoundary()', () => {
   const { result } = renderHook(() => useErrorBoundary(), {

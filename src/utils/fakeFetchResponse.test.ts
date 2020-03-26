@@ -1,4 +1,4 @@
-import { fakeFetchResponseSuccess, fakeFetchResponseError } from './fakeFetchResponse';
+import { fakeFetchResponseError, fakeFetchResponseSuccess } from './fakeFetchResponse';
 
 test('fakeFetchResponseSuccess()', async () => {
   const response = fakeFetchResponseSuccess({ foo: 'bar' });

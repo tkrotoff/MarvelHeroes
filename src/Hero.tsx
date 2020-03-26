@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
-import { useErrorBoundary } from './utils/useErrorBoundary';
 import { assert } from './utils/assert';
+import { useErrorBoundary } from './utils/useErrorBoundary';
 
 function renderCategory(character: Marvel.Character, category: string) {
   return (
