@@ -12,7 +12,7 @@ afterEach(cleanup);
 const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');
 afterEach(fetchCharactersSpy.mockClear);
 
-test('render()', async () => {
+test('render', async () => {
   const pleaseWait = 'Please wait...';
 
   const { getByText, queryByText, rerender } = render(
@@ -48,7 +48,7 @@ test('render()', async () => {
   getByText('Ben Grimm');
 });
 
-test('render() "No results found :("', async () => {
+test('render "No results found :("', async () => {
   const pleaseWait = 'Please wait...';
 
   const { getByText, queryByText } = render(

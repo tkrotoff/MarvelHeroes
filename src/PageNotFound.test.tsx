@@ -11,7 +11,7 @@ const useLocationMock = useLocation as jest.Mock;
 
 afterEach(cleanup);
 
-test('render()', async () => {
+test('render', async () => {
   useLocationMock.mockReturnValueOnce({ pathname: 'unknown' });
   const { getByText } = render(<PageNotFound />);
 

@@ -5,7 +5,7 @@ import { Layout } from './Layout';
 
 afterEach(cleanup);
 
-test('render()', async () => {
+test('render', async () => {
   const { getByText } = render(<Layout>Hello, World!</Layout>);
   getByText('Hello, World!');
 });

@@ -11,7 +11,7 @@ function MyComponent({ throwError }: { throwError: boolean }) {
   return <>Hello, World!</>;
 }
 
-test('render() children if no error', () => {
+test('render children if no error', () => {
   const { getByText } = render(
     <ErrorBoundary>
       <MyComponent throwError={false} />
@@ -30,7 +30,7 @@ describe('if an error occured', () => {
     consoleSpy.mockRestore();
   });
 
-  test('render() message + report button', () => {
+  test('render message + report button', () => {
     const { getByText } = render(
       <ErrorBoundary>
         <MyComponent throwError={true} />
@@ -83,12 +83,12 @@ describe('withErrorBoundary() ', () => {
     expect(AnonymousComponentWithHOC.displayName).toEqual('WithErrorBoundary');
   });
 
-  test('render() children if no error', () => {
+  test('render children if no error', () => {
     const { getByText } = render(<MyComponentWithHOC throwError={false} />);
     getByText('Hello, World!');
   });
 
-  test('render() a message if an error occured', () => {
+  test('render a message if an error occured', () => {
     // FIXME https://github.com/bvaughn/react-error-boundary/blob/1.2.4/src/__tests__/ErrorBoundary.test.js#L16-L19
     const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 

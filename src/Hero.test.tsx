@@ -17,7 +17,7 @@ afterEach(cleanup);
 const fetchCharacterSpy = jest.spyOn(Marvel, 'fetchCharacter');
 afterEach(fetchCharacterSpy.mockClear);
 
-test('render()', async () => {
+test('render', async () => {
   const pleaseWait = 'Please wait...';
 
   useParamsMock.mockReturnValue({ id: '1011334' });

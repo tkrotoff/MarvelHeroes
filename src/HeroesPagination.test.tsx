@@ -15,7 +15,7 @@ const useParamsMock = useParams as jest.Mock;
 
 afterEach(cleanup);
 
-test('render() without page query param then change page', async () => {
+test('render without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
 
   const pleaseWait = 'Please wait...';
@@ -65,7 +65,7 @@ test('render() without page query param then change page', async () => {
   spy.mockRestore();
 });
 
-test('render() given a page query param', async () => {
+test('render given a page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
 
   useParamsMock.mockReturnValue({ page: '1' });
