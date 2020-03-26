@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, waitForDomChange } from '@testing-library/react';
+import { render, waitForDomChange } from '@testing-library/react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -11,8 +11,6 @@ jest.mock('react-router', () => ({
   useParams: jest.fn()
 }));
 const useParamsMock = useParams as jest.Mock;
-
-afterEach(cleanup);
 
 const fetchCharacterSpy = jest.spyOn(Marvel, 'fetchCharacter');
 afterEach(fetchCharacterSpy.mockClear);

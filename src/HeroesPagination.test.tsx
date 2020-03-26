@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, waitForDomChange } from '@testing-library/react';
+import { render, waitForDomChange } from '@testing-library/react';
 import { useParams, MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -12,8 +12,6 @@ jest.mock('react-router', () => ({
   useParams: jest.fn()
 }));
 const useParamsMock = useParams as jest.Mock;
-
-afterEach(cleanup);
 
 test('render without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');

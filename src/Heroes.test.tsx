@@ -1,13 +1,11 @@
 import React from 'react';
-import { render, cleanup, waitForDomChange } from '@testing-library/react';
+import { render, waitForDomChange } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 import { Heroes } from './Heroes';
 
 jest.mock('./api/Marvel');
-
-afterEach(cleanup);
 
 const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');
 afterEach(fetchCharactersSpy.mockClear);
