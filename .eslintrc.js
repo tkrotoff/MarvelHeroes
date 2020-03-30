@@ -6,6 +6,7 @@ const config = {
   parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
+    'plugin:testing-library/react',
     'plugin:jest/recommended',
     'airbnb',
     // Already done by Airbnb
