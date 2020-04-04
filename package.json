@@ -26,7 +26,6 @@
   "dependencies": {
     "@babel/runtime": "^7.9.2",
     "@sentry/browser": "^5.15.2",
-    "@testing-library/react": "^10.0.1",
     "blueimp-md5": "^2.13.0",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
@@ -43,6 +42,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
+    "@testing-library/react": "^10.0.2",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/blueimp-md5": "^2.7.0",
     "@types/copy-webpack-plugin": "^5.0.0",
