@@ -60,7 +60,7 @@ describe('if an error occured', () => {
   });
 });
 
-describe('withErrorBoundary() ', () => {
+describe('withErrorBoundary()', () => {
   const MyComponentWithHOC = withErrorBoundary(MyComponent);
 
   test('displayName', () => {

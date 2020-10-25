@@ -1,4 +1,4 @@
-export function fakeFetchResponseSuccess(data: object) {
+export function fakeFetchResponseSuccess(data: Record<string, unknown>) {
   return {
     ok: true,
     json: () => Promise.resolve(data)

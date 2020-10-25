@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
-import { assert } from './utils/assert';
 import { useErrorBoundary } from './utils/useErrorBoundary';
 
 function renderCategory(character: Marvel.Character, category: string) {
@@ -38,8 +37,7 @@ function renderHero(character: Marvel.Character) {
 export function Hero() {
   const errorBoundary = useErrorBoundary();
   const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
-  const { id } = useParams();
-  assert(id !== undefined, 'id cannot be undefined');
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     async function fetch(_id: string) {

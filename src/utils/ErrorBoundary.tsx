@@ -53,7 +53,9 @@ export class ErrorBoundary extends React.Component<Props> {
   }
 }
 
-export function withErrorBoundary<P extends object>(Component: React.ComponentType<P>) {
+export function withErrorBoundary<P extends Record<string, unknown>>(
+  Component: React.ComponentType<P>
+) {
   function WithErrorBoundary(props: P) {
     return (
       <ErrorBoundary>

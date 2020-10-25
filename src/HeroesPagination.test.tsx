@@ -8,7 +8,9 @@ import { HeroesPagination } from './HeroesPagination';
 jest.mock('./api/Marvel');
 
 jest.mock('react-router', () => ({
-  ...jest.requireActual('react-router'),
+  // FIXME https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44734
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/44433#issuecomment-628789936
+  ...jest.requireActual<any>('react-router'),
   useParams: jest.fn()
 }));
 const useParamsMock = useParams as jest.Mock;

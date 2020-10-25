@@ -38,7 +38,7 @@ afterAll(async () => {
 
 test('Navigation', async () => {
   {
-    await page.waitFor('section.card > div.card-body > h5.card-title');
+    await page.waitForSelector('section.card > div.card-body > h5.card-title');
 
     const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
@@ -50,7 +50,7 @@ test('Navigation', async () => {
     await link.click();
     // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('section.hero');
+    await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
@@ -62,7 +62,7 @@ test('Navigation', async () => {
   await page.goBack();
 
   {
-    await page.waitFor('section.card > div.card-body > h5.card-title');
+    await page.waitForSelector('section.card > div.card-body > h5.card-title');
 
     const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
@@ -77,7 +77,7 @@ test('Navigation', async () => {
     await link.click();
     // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('section.hero');
+    await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(
@@ -93,7 +93,7 @@ test('Navigation', async () => {
   await page.goBack();
 
   {
-    await page.waitFor('section.card > div.card-body > h5.card-title');
+    await page.waitForSelector('section.card > div.card-body > h5.card-title');
 
     const heroes = await page.$$('section.card');
     expect(heroes).toHaveLength(50);
@@ -108,7 +108,7 @@ test('Navigation', async () => {
     await link.click();
     // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
-    await page.waitFor('section.hero');
+    await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description

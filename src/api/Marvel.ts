@@ -38,7 +38,12 @@ export interface Character {
     }
   ];
 
-  [index: string]: CharacterCategory | string | number | object;
+  [index: string]:
+    | CharacterCategory
+    | string
+    | number
+    | Record<string, unknown>
+    | Record<string, unknown>[];
 }
 
 export type Characters = Character[];

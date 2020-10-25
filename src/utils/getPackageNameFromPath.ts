@@ -1,3 +1,5 @@
+import { assert } from './assert';
+
 /**
  * For webpack.config.js splitChunks
  * [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)
@@ -5,6 +7,6 @@
  */
 export function getPackageNameFromPath(path: string) {
   const packageName = path.match(/\/node_modules\/((?:@[^/]*\/[^/]*)|(?:.*?))(?:\/|$)/);
-  console.assert(packageName, `Could not recognize '${path}'`);
-  return packageName![1];
+  assert(packageName !== null, `Could not recognize '${path}'`);
+  return packageName[1];
 }

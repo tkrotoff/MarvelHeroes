@@ -31,6 +31,7 @@ const config = {
     'no-prototype-builtins': 'off',
     'no-plusplus': 'off',
     'spaced-comment': 'off',
+    camelcase: 'off',
 
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
@@ -79,12 +80,19 @@ const config = {
       }
     ],
 
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'error',
+
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
@@ -105,16 +113,6 @@ const config = {
       rules: {
         'react/jsx-props-no-spreading': 'off',
         'react/jsx-boolean-value': 'off'
-      }
-    },
-    {
-      files: ['*.d.ts'],
-      rules: {
-        // FIXME Fix "TypeError: Cannot read property 'body' of null"
-        // https://github.com/typescript-eslint/typescript-eslint/issues/420
-        // https://github.com/eslint/eslint/issues/11464
-        // https://github.com/eslint/eslint/issues/11440
-        'no-useless-constructor': 'off'
       }
     }
   ]

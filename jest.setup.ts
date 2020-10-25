@@ -4,10 +4,13 @@ import 'core-js';
 // it generates "ReferenceError: regeneratorRuntime is not defined"
 import 'regenerator-runtime/runtime';
 
+import assert from 'assert';
+
 // [console.assert not throwing with v22.4.0](https://github.com/facebook/jest/issues/5634)
-import assert from 'assert'; // eslint-disable-line import/newline-after-import
 console.assert = assert;
 
+// FIXME Remove when Node.js >= 15 is LTS, see https://news.ycombinator.com/item?id=24870960
+//
 // [Event: 'unhandledRejection'](https://nodejs.org/api/process.html#process_event_unhandledrejection)
 // [Bluebird Error management configuration](http://bluebirdjs.com/docs/api/error-management-configuration.html)
 //

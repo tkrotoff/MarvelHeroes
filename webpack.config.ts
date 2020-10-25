@@ -1,6 +1,3 @@
-// FIXME To remove in the future
-/// <reference types="./types/postcss-preset-env" />
-
 import { execSync } from 'child_process';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import glob from 'glob';
@@ -8,7 +5,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
-import postcssPresetEnv from 'postcss-preset-env';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
 import sass from 'sass';
 import webpack from 'webpack';
@@ -74,7 +70,7 @@ export default (_webpackEnv: any, argv: any) => {
             {
               loader: 'postcss-loader',
               options: {
-                plugins: () => [postcssPresetEnv],
+                postcssOptions: { plugins: [['postcss-preset-env']] },
                 sourceMap: !isProd
               }
             },
