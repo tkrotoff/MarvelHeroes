@@ -6,7 +6,7 @@ import { assert } from './assert';
  * [Webpack v4 chunk splitting deep dive](https://www.chrisclaxton.me.uk/chris-claxtons-blog/webpack-chunksplitting-deepdive)
  */
 export function getPackageNameFromPath(path: string) {
-  const packageName = path.match(/\/node_modules\/((?:@[^/]*\/[^/]*)|(?:.*?))(?:\/|$)/);
+  const packageName = path.match(/\/node_modules\/((?:@[^/]*\/[^/]*)|.*?)(?:\/|$)/);
   assert(packageName !== null, `Could not recognize '${path}'`);
   return packageName[1];
 }

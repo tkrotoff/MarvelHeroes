@@ -7,6 +7,7 @@ const config = {
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
     'plugin:testing-library/react',
+    'plugin:unicorn/recommended',
     'plugin:jest/recommended',
     'airbnb',
     // Already done by Airbnb
@@ -93,6 +94,12 @@ const config = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+
+    'unicorn/filename-case': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/catch-error-name': 'off',
+    'unicorn/no-null': 'off',
+    'unicorn/prefer-query-selector': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',

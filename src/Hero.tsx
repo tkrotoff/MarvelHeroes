@@ -36,11 +36,12 @@ function renderHero(character: Marvel.Character) {
 
 export function Hero() {
   const errorBoundary = useErrorBoundary();
-  const [character, setCharacter] = useState<Marvel.Character | undefined>(undefined);
+  const [character, setCharacter] = useState<Marvel.Character>();
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     async function fetch(_id: string) {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacter(undefined);
       try {
         const _character = await Marvel.fetchCharacter(_id);

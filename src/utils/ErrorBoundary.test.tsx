@@ -4,6 +4,8 @@ import { render } from '@testing-library/react';
 
 import { ErrorBoundary, withErrorBoundary } from './ErrorBoundary';
 
+/* eslint-disable unicorn/consistent-function-scoping */
+
 jest.mock('@sentry/browser');
 
 function MyComponent({ throwError }: { throwError: boolean }) {

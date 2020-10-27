@@ -10,27 +10,27 @@ beforeEach(async () => {
   await page.goto('http://localhost:8080');
 });
 
+function computeCoverage(entries: CoverageEntry[]) {
+  let totalBytes = 1; // Cannot be 0 otherwise usedBytes / totalBytes gives a NaN
+  let usedBytes = 0;
+  entries.forEach(entry => {
+    totalBytes += entry.text.length;
+    entry.ranges.forEach(range => {
+      usedBytes += range.end - range.start - 1;
+    });
+  });
+  totalBytes /= 1024;
+  usedBytes /= 1024;
+  return `${Math.round((usedBytes / totalBytes) * 100)}% (${Math.round(usedBytes)}/${Math.round(
+    totalBytes
+  )} KiB)`;
+}
+
 afterAll(async () => {
   const [jsCoverage, cssCoverage] = await Promise.all([
     page.coverage.stopJSCoverage(),
     page.coverage.stopCSSCoverage()
   ]);
-
-  function computeCoverage(entries: CoverageEntry[]) {
-    let totalBytes = 1; // Cannot be 0 otherwise usedBytes / totalBytes gives a NaN
-    let usedBytes = 0;
-    entries.forEach(entry => {
-      totalBytes += entry.text.length;
-      entry.ranges.forEach(range => {
-        usedBytes += range.end - range.start - 1;
-      });
-    });
-    totalBytes /= 1024;
-    usedBytes /= 1024;
-    return `${Math.round((usedBytes / totalBytes) * 100)}% (${Math.round(usedBytes)}/${Math.round(
-      totalBytes
-    )} KiB)`;
-  }
 
   console.log(`JavaScript coverage: ${computeCoverage(jsCoverage)}`);
   console.log(`CSS coverage: ${computeCoverage(cssCoverage)}`);
@@ -53,9 +53,9 @@ test('Navigation', async () => {
     await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
+    expect(await hero.$eval('p', node => (node as HTMLElement).textContent)).toEqual(''); // No description
     expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('3-D Man');
+    expect(await hero.$eval('h3', node => (node as HTMLElement).textContent)).toEqual('3-D Man');
     expect(await hero.$('h3')).toMatch('3-D Man');
   }
 
@@ -69,7 +69,7 @@ test('Navigation', async () => {
 
     const thirdHeroCard = heroes[2];
     expect(
-      await thirdHeroCard.$eval('h5.card-title', node => (node as HTMLElement).innerText)
+      await thirdHeroCard.$eval('h5.card-title', node => (node as HTMLElement).textContent)
     ).toEqual('A.I.M.');
     await expect(await thirdHeroCard.$('h5.card-title')).toMatch('A.I.M.');
 
@@ -80,13 +80,13 @@ test('Navigation', async () => {
     await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(
+    expect(await hero.$eval('p', node => (node as HTMLElement).textContent)).toEqual(
       'AIM is a terrorist organization bent on destroying the world.'
     );
     await expect(await hero.$('p')).toMatch(
       'AIM is a terrorist organization bent on destroying the world.'
     );
-    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('A.I.M.');
+    expect(await hero.$eval('h3', node => (node as HTMLElement).textContent)).toEqual('A.I.M.');
     await expect(await hero.$('h3')).toMatch('A.I.M.');
   }
 
@@ -100,7 +100,7 @@ test('Navigation', async () => {
 
     const lastHeroCard = heroes[49];
     expect(
-      await lastHeroCard.$eval('h5.card-title', node => (node as HTMLElement).innerText)
+      await lastHeroCard.$eval('h5.card-title', node => (node as HTMLElement).textContent)
     ).toEqual('Annihilus');
     await expect(await lastHeroCard.$('h5.card-title')).toMatch('Annihilus');
 
@@ -111,9 +111,9 @@ test('Navigation', async () => {
     await page.waitForSelector('section.hero');
 
     const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => (node as HTMLElement).innerText)).toEqual(''); // No description
+    expect(await hero.$eval('p', node => (node as HTMLElement).textContent)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => (node as HTMLElement).innerText)).toEqual('Annihilus');
+    expect(await hero.$eval('h3', node => (node as HTMLElement).textContent)).toEqual('Annihilus');
     await expect(await hero.$('h3')).toMatch('Annihilus');
   }
 });

@@ -42,11 +42,12 @@ interface Props {
 export function Heroes(props: Props) {
   const errorBoundary = useErrorBoundary();
 
-  const [characters, setCharacters] = useState<Marvel.Characters | undefined>(undefined);
+  const [characters, setCharacters] = useState<Marvel.Characters>();
   const { page } = props;
 
   useEffect(() => {
     async function fetch(_page: number) {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacters(undefined);
       try {
         const _characters = await Marvel.fetchCharacters(_page * config.nbCharactersPerPage);

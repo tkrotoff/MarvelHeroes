@@ -5,7 +5,7 @@ import { Heroes } from './Heroes';
 
 export function HeroesPagination() {
   const { page: tmp } = useParams<{ page: string }>();
-  const pageQueryParam = tmp !== undefined ? parseInt(tmp, 10) : 0;
+  const pageQueryParam = tmp !== undefined ? Number.parseInt(tmp, 10) : 0;
 
   const [page, setPage] = useState(pageQueryParam);
 
