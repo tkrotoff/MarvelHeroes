@@ -17,6 +17,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run build:prod
+      - run: npm run test
 
       - uses: jakejarvis/s3-sync-action@v0.5.1
         with:
