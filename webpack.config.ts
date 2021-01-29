@@ -14,7 +14,7 @@ import myPackage from './package.json';
 
 // WTF
 //
-// webpack has multiple options for production and development modes:
+// webpack 4 has multiple options for production and development modes:
 // -p and -d, see https://webpack.js.org/api/cli/#shortcuts
 // --mode=production and --mode=development, see https://webpack.js.org/concepts/mode/
 // Of course -p is not identical to --mode=production => that would be too easy
@@ -81,11 +81,16 @@ export default (_webpackEnv: any, argv: any) => {
     },
 
     plugins: [
-      new CopyWebpackPlugin([{ from: './src/assets/favicons', to: 'favicons' }]),
+      new CopyWebpackPlugin({ patterns: [{ from: './src/assets/favicons', to: 'favicons' }] }),
 
       isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
 
-      isProd && new PurgecssPlugin({ paths: glob.sync('src/**/*', { nodir: true }) }),
+      isProd &&
+        new PurgecssPlugin({
+          paths: glob.sync('src/**/*', { nodir: true }),
+          // https://purgecss.com/safelisting.html
+          safelist: []
+        }),
 
       new HtmlWebpackPlugin({
         description: myPackage.description,
@@ -169,7 +174,7 @@ export default (_webpackEnv: any, argv: any) => {
       splitChunks: {
         chunks: 'all',
         minSize: 0,
-        maxInitialRequests: Infinity,
+        maxInitialRequests: Number.POSITIVE_INFINITY,
         cacheGroups: {
           vendors: {
             test: /\/node_modules\//,

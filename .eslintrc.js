@@ -40,10 +40,10 @@ const config = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
 
-    'simple-import-sort/sort': [
+    'simple-import-sort/imports': [
       'error',
       {
-        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/v5.0.2/src/sort.js#L3-L15
+        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/v7.0.0/src/imports.js#L5
         groups: [
           // Side effect imports
           ['^\\u0000'],
@@ -57,8 +57,8 @@ const config = {
           ],
 
           // Absolute imports and other imports such as Vue-style `@/foo`
-          // Anything that does not start with a dot
-          ['^[^.]'],
+          // Anything not matched in another group
+          ['^'],
 
           // Relative imports
           [
@@ -80,6 +80,7 @@ const config = {
         ]
       }
     ],
+    'simple-import-sort/exports': 'error',
 
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
@@ -100,6 +101,11 @@ const config = {
     'unicorn/catch-error-name': 'off',
     'unicorn/no-null': 'off',
     'unicorn/prefer-query-selector': 'off',
+    // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v27.0.0/docs/rules/no-array-for-each.md
+    // https://github.com/github/eslint-plugin-github/blob/v4.1.1/docs/rules/array-foreach.md
+    // conflicts with
+    // https://github.com/airbnb/javascript/issues/1271
+    'unicorn/no-array-for-each': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
