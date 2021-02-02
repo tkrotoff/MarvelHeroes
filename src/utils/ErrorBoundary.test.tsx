@@ -1,4 +1,3 @@
-import React from 'react';
 import * as Sentry from '@sentry/browser';
 import { render } from '@testing-library/react';
 

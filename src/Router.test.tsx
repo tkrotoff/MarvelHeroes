@@ -1,4 +1,3 @@
-import React from 'react';
 import { waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { act, create } from 'react-test-renderer';

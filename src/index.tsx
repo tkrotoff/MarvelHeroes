@@ -8,7 +8,7 @@ import 'core-js';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
-import React from 'react';
+import { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -17,12 +17,12 @@ import { Router } from './Router';
 import './index.scss';
 
 render(
-  <React.StrictMode>
+  <StrictMode>
     <BrowserRouter>
       <Layout>
         <Router />
       </Layout>
     </BrowserRouter>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('app')
 );

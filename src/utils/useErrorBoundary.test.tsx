@@ -1,4 +1,3 @@
-import React from 'react';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { ErrorBoundary } from './ErrorBoundary';

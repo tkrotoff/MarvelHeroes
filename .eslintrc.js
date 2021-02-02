@@ -49,12 +49,8 @@ const config = {
           ['^\\u0000'],
 
           // Packages
-          [
-            // React first
-            '^react$',
-            // Things that start with a letter (or digit or underscore), or `@` followed by a letter
-            '^@?\\w'
-          ],
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter
+          ['^@?\\w'],
 
           // Absolute imports and other imports such as Vue-style `@/foo`
           // Anything not matched in another group
@@ -107,17 +103,19 @@ const config = {
     // https://github.com/airbnb/javascript/issues/1271
     'unicorn/no-array-for-each': 'off',
 
+    'jest/no-expect-resolves': 'error',
+    'jest/expect-expect': 'off',
+
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/state-in-constructor': 'off',
     'react/prop-types': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
-
-    'jest/no-expect-resolves': 'error',
-    'jest/expect-expect': 'off'
+    'react-hooks/exhaustive-deps': 'error'
   },
 
   overrides: [

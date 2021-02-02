@@ -1,5 +1,5 @@
-import React from 'react';
 import * as Sentry from '@sentry/browser';
+import * as React from 'react';
 
 // Inspired by https://github.com/bvaughn/react-error-boundary/tree/1.2.4
 
