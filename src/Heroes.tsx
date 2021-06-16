@@ -45,6 +45,19 @@ export function Heroes(props: Props) {
   const [characters, setCharacters] = useState<Marvel.Characters>();
   const { page } = props;
 
+  if (page === 10) {
+    console.log('PAGE 10');
+  }
+  if (page === 11) {
+    console.error('PAGE 11');
+  }
+  if (page === 12) {
+    console.assert(false, 'PAGE 12');
+  }
+  if (page === 13) {
+    throw new Error('PAGE 13');
+  }
+
   useEffect(() => {
     async function fetch(_page: number) {
       // eslint-disable-next-line unicorn/no-useless-undefined
