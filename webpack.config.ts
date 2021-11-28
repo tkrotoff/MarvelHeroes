@@ -6,30 +6,10 @@ import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
-import sass from 'sass';
 import webpack from 'webpack';
 
 import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
 import myPackage from './package.json';
-
-// WTF
-//
-// webpack 4 has multiple options for production and development modes:
-// -p and -d, see https://webpack.js.org/api/cli/#shortcuts
-// --mode=production and --mode=development, see https://webpack.js.org/concepts/mode/
-// Of course -p is not identical to --mode=production => that would be too easy
-// -p seems to be a superset of --mode=production
-// With -p you get minified CSS, with --mode=production you don't
-//
-// This guide https://webpack.js.org/guides/production/ explains another way
-// to generate a production build using webpack-merge with TWO webpack.config.js
-//
-// To complexify things, [mini-css-extract-plugin documentation](https://webpack.js.org/plugins/mini-css-extract-plugin/#minimizing-for-production)
-// explains that: "While webpack 5 is likely to come with a CSS minimizer built-in, with webpack 4 you need to bring your own."
-// so what is -p with --optimize-minimize?
-// I've compared the Bootstrap .css output with -p and the official bootstrap.min.css => same sizes: 140 kB
-
-// webpack-dev-server output is bigger than a regular build because it includes more things
 
 export default (_webpackEnv: any, argv: any) => {
   // https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
@@ -46,6 +26,10 @@ export default (_webpackEnv: any, argv: any) => {
       publicPath: '/'
     },
 
+    // https://github.com/facebook/create-react-app/blob/v4.0.3/packages/react-scripts/config/webpack.config.js#L175-L179
+    // https://reactjs.org/docs/cross-origin-errors.html#source-maps
+    devtool: !isProd ? 'cheap-module-source-map' : undefined,
+
     resolve: {
       extensions: ['.js', '.ts', '.tsx']
     },
@@ -61,20 +45,17 @@ export default (_webpackEnv: any, argv: any) => {
           loader: 'babel-loader'
         },
         {
-          // FIXME Don't know how to make source maps work
-          // [SourceMap not working with Webpack 4.8.1](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/141)
           test: /\.scss$/,
           use: [
             isProd ? MiniCssExtractPlugin.loader : { loader: 'style-loader' },
-            { loader: 'css-loader', options: { sourceMap: !isProd } },
+            'css-loader',
             {
               loader: 'postcss-loader',
               options: {
-                postcssOptions: { plugins: [['postcss-preset-env']] },
-                sourceMap: !isProd
+                postcssOptions: { plugins: [['postcss-preset-env']] }
               }
             },
-            { loader: 'sass-loader', options: { implementation: sass, sourceMap: !isProd } }
+            'sass-loader'
           ]
         }
       ]
@@ -158,7 +139,7 @@ export default (_webpackEnv: any, argv: any) => {
 
         hash: true
       })
-    ] as webpack.Plugin[],
+    ] as webpack.WebpackPluginInstance[],
 
     devServer: {
       // [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
@@ -189,7 +170,10 @@ export default (_webpackEnv: any, argv: any) => {
   };
 
   // Hack to remove false plugins due to short-circuit evaluation "isProd &&"
+  //
   // FYI with Rollup (rollup.config.js) no need for this hack
+  // "Falsy plugins will be ignored, which can be used to easily activate or deactivate plugins"
+  // https://github.com/rollup/rollup/blob/v2.33.3/docs/999-big-list-of-options.md#outputplugins
   config.plugins = config.plugins!.filter(plugin => plugin);
 
   return config;
