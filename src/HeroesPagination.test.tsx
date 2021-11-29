@@ -28,9 +28,9 @@ test('render without page query param then change page', async () => {
 
   expect(spy).toHaveBeenCalledTimes(1);
   getByText('Marvel Heroes');
-  const prevLink = getByText('« Previous') as HTMLLinkElement;
+  const prevLink = getByText('‹ Previous') as HTMLLinkElement;
   expect(prevLink.href).toEqual('http://localhost/-1');
-  const nextLink = getByText('Next »') as HTMLLinkElement;
+  const nextLink = getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
   getByText(pleaseWait);
   await waitFor(() => {
@@ -77,9 +77,9 @@ test('render given a page query param', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(1);
   getByText('Marvel Heroes');
-  const prevLink = getByText('« Previous') as HTMLLinkElement;
+  const prevLink = getByText('‹ Previous') as HTMLLinkElement;
   expect(prevLink.href).toEqual('http://localhost/0');
-  const nextLink = getByText('Next »') as HTMLLinkElement;
+  const nextLink = getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/2');
   getByText(pleaseWait);
 

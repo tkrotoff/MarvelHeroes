@@ -23,10 +23,10 @@ export function HeroesPagination() {
     <>
       <h3>Marvel Heroes</h3>
       <Link to={`/${page - 1}`} className={prevButtonClasses}>
-        &laquo; Previous
+        ‹ Previous
       </Link>{' '}
       <Link to={`/${page + 1}`} className="btn btn-primary">
-        Next &raquo;
+        Next ›
       </Link>
       <Heroes page={page} />
     </>
