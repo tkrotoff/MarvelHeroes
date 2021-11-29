@@ -1,10 +1,10 @@
 {
   "code": 200,
   "status": "Ok",
-  "copyright": "© 2018 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2018 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2018 MARVEL</a>",
-  "etag": "6d019b64cde92c34ae4df312df040edfff9f5c4f",
+  "copyright": "© 2021 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
+  "etag": "988a6c1f74ffda4d807344a0156db4476e9c1d16",
   "data": {
     "offset": 0,
     "limit": 50,
@@ -22,28 +22,84 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1017100",
         "comics": {
-          "available": 0,
+          "available": 4,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017100/comics",
-          "items": [],
-          "returned": 0
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/47176",
+              "name": "FREE COMIC BOOK DAY 2013 1 (2013) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/40632",
+              "name": "Hulk (2008) #53"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/40630",
+              "name": "Hulk (2008) #54"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/40628",
+              "name": "Hulk (2008) #55"
+            }
+          ],
+          "returned": 4
         },
         "series": {
-          "available": 0,
+          "available": 2,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017100/series",
-          "items": [],
-          "returned": 0
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/17765",
+              "name": "FREE COMIC BOOK DAY 2013 1 (2013)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/3374",
+              "name": "Hulk (2008 - 2012)"
+            }
+          ],
+          "returned": 2
         },
         "stories": {
-          "available": 1,
+          "available": 7,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017100/stories",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92078",
+              "name": "Hulk (2008) #55",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92079",
+              "name": "Interior #92079",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92082",
+              "name": "Hulk (2008) #54",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92083",
+              "name": "Interior #92083",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92086",
+              "name": "Hulk (2008) #53",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/92087",
+              "name": "Interior #92087",
+              "type": "interiorStory"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/stories/105929",
               "name": "cover from Free Comic Book Day 2013 (Avengers/Hulk) (2013) #1",
               "type": "cover"
             }
           ],
-          "returned": 1
+          "returned": 7
         },
         "events": {
           "available": 0,

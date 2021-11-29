@@ -1,10 +1,10 @@
 {
   "code": 200,
   "status": "Ok",
-  "copyright": "© 2018 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2018 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2018 MARVEL</a>",
-  "etag": "5378e852ed0ae5fec5c78d8dc30f9f427072145d",
+  "copyright": "© 2021 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
+  "etag": "dd9da35be5711d2e2aef139b7444953fbf62ba75",
   "data": {
     "offset": 0,
     "limit": 50,
@@ -22,7 +22,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009144",
         "comics": {
-          "available": 47,
+          "available": 52,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009144/comics",
           "items": [
             {
@@ -36,6 +36,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/7340",
               "name": "Avengers (1963) #87"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4214",
+              "name": "Avengers and Power Pack Assemble! (2006) #2"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/63217",
@@ -87,29 +91,25 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/31068",
-              "name": "Incredible Hulks (2009) #606 (VARIANT)"
+              "name": "Incredible Hulks (2010) #606 (VARIANT)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/46168",
+              "name": "Indestructible Hulk (2012) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/49865",
+              "name": "Iron Man (2012) #1"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/43944",
               "name": "Iron Man (2012) #1"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/9544",
-              "name": "Iron Man (1968) #295"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/9545",
-              "name": "Iron Man (1968) #296"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/9546",
-              "name": "Iron Man (1968) #297"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 31,
+          "available": 34,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009144/series",
           "items": [
             {
@@ -127,6 +127,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23123",
               "name": "Avengers and Power Pack (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1046",
+              "name": "Avengers and Power Pack Assemble! (2006)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23600",
@@ -158,15 +162,19 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/8842",
-              "name": "Incredible Hulks (2009 - 2011)"
+              "name": "Incredible Hulks (2010 - 2011)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/16583",
+              "name": "Indestructible Hulk (2012 - 2014)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/16593",
+              "name": "Iron Man (2012 - 2014)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2029",
               "name": "Iron Man (1968 - 1996)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/16593",
-              "name": "Iron Man (2012 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23915",
@@ -177,28 +185,30 @@
               "name": "Marvel Adventures Super Heroes (2010 - 2012)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1506",
-              "name": "Marvel Masterworks: Captain America Vol. (2005)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/189",
               "name": "Marvel Masterworks: Captain America Vol. 1 - 2nd Edition (2003)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1468",
-              "name": "Marvel Masterworks: Doctor Strange Vol. (2005)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1494",
-              "name": "Marvel Masterworks: The Invincible Iron Man Vol. (2005)"
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1506",
+              "name": "MARVEL MASTERWORKS: CAPTAIN AMERICA VOL. 1 HC (2005)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 48,
+          "available": 54,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009144/stories",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5800",
+              "name": "Avengers and Power Pack Assemble! (2006) #2",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/5801",
+              "name": "2 of 4 - 4XLS",
+              "type": "interiorStory"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/stories/10253",
               "name": "When the Unliving Strike",
@@ -287,16 +297,6 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/stories/28233",
               "name": "In Sin Airy X",
-              "type": "interiorStory"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/stories/28971",
-              "name": "[The Brothers Part I]",
-              "type": "interiorStory"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/stories/34426",
-              "name": "The Red Skull Lives!",
               "type": "interiorStory"
             }
           ],

@@ -25,9 +25,9 @@ test('render', async () => {
   getByText('3-D Man');
   getByText('A-Bomb (HAS)');
   getByText('A.I.M.');
-  getByText('Anita Blake');
-  getByText('Anne Marie Hoag');
-  getByText('Annihilus');
+  getByText('Angel (Ultimate)');
+  getByText('Angel (Warren Worthington III)');
+  getByText('Angela (Aldrif Odinsdottir)');
 
   rerender(
     <MemoryRouter>
@@ -39,12 +39,12 @@ test('render', async () => {
   await waitFor(() => {
     expect(queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('Anole');
-  getByText("Ant-Man (Eric O'Grady)");
-  getByText('Ant-Man (Scott Lang)');
-  getByText('Beef');
-  getByText('Beetle (Abner Jenkins)');
-  getByText('Ben Grimm');
+  getByText('Anita Blake');
+  getByText('Anne Marie Hoag');
+  getByText('Annihilus');
+  getByText('Battering Ram');
+  getByText('Battlestar');
+  getByText('Beak');
 });
 
 test('render "No results found :("', async () => {
