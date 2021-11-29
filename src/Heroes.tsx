@@ -39,11 +39,10 @@ interface Props {
   page: number;
 }
 
-export function Heroes(props: Props) {
+export function Heroes({ page }: Props) {
   const errorBoundary = useErrorBoundary();
 
   const [characters, setCharacters] = useState<Marvel.Characters>();
-  const { page } = props;
 
   useEffect(() => {
     async function fetch(_page: number) {
