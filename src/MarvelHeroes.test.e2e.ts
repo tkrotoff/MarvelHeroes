@@ -101,8 +101,8 @@ test('Navigation', async () => {
     const lastHeroCard = heroes[49];
     expect(
       await lastHeroCard.$eval('h5.card-title', node => (node as HTMLElement).textContent)
-    ).toEqual('Annihilus');
-    await expect(await lastHeroCard.$('h5.card-title')).toMatch('Annihilus');
+    ).toEqual('Angela (Aldrif Odinsdottir)');
+    await expect(await lastHeroCard.$('h5.card-title')).toMatch('Angela (Aldrif Odinsdottir)');
 
     const link = (await lastHeroCard.$('div.card-footer > a'))!;
     await link.click();
@@ -113,7 +113,9 @@ test('Navigation', async () => {
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => (node as HTMLElement).textContent)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => (node as HTMLElement).textContent)).toEqual('Annihilus');
-    await expect(await hero.$('h3')).toMatch('Annihilus');
+    expect(await hero.$eval('h3', node => (node as HTMLElement).textContent)).toEqual(
+      'Angela (Aldrif Odinsdottir)'
+    );
+    await expect(await hero.$('h3')).toMatch('Angela (Aldrif Odinsdottir)');
   }
 });
