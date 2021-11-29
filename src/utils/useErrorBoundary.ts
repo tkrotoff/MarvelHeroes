@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react';
 export function useErrorBoundary() {
   const [, setError] = useState();
 
-  return useCallback((e: any) => {
+  return useCallback(e => {
     setError(() => {
       throw e;
     });
