@@ -20,6 +20,7 @@
     "tsc": "tsc",
     "format": "prettier --write '**/*'",
     "lint": "npm run tsc && eslint . '**/*.{js,ts,tsx}' && stylelint '**/*.scss'",
+    "precommit": "lint-staged --verbose",
     "prepush": "npm run test && npm run test:e2e",
     "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
   },
