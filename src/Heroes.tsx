@@ -7,29 +7,23 @@ import { config } from './config';
 
 function Characters({ characters }: { characters: Marvel.Characters }) {
   return (
-    <div className="card-deck mt-3">
+    <div className="row g-3 mt-0 mb-3">
       {characters.map(character => (
-        <section key={character.id} className="hero card">
-          <img
-            src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-            alt={character.name}
-            className="card-img-top"
-            style={{
-              // Fix for IE11
-              // [Flexbox on IE11: image stretched for no reason?](https://stackoverflow.com/q/36822370)
-              flexShrink: 0,
-
-              // Fix for IE10
-              height: 'auto'
-            }}
-          />
-          <div className="card-body">
-            <h5 className="card-title">{character.name}</h5>
-          </div>
-          <div className="card-footer border-top-0">
-            <Link to={`/heroes/${character.id}`}>Details</Link>
-          </div>
-        </section>
+        <div key={character.id} className="col">
+          <section className="card h-100" style={{ minWidth: 200, maxWidth: 575 }}>
+            <img
+              src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              alt={character.name}
+              className="card-img-top"
+            />
+            <div className="card-body">
+              <h5 className="card-title">{character.name}</h5>
+            </div>
+            <div className="card-footer border-top-0">
+              <Link to={`/heroes/${character.id}`}>Details</Link>
+            </div>
+          </section>
+        </div>
       ))}
     </div>
   );

@@ -23,7 +23,7 @@ function Character({ character }: { character: Marvel.Character }) {
         alt={character.name}
         className="img-fluid" // Resize image on mobile
       />
-      <h3>{character.name}</h3>
+      <h1>{character.name}</h1>
       <p>{character.description}</p>
       <h6>Comics</h6>
       <Category character={character} category="comics" />

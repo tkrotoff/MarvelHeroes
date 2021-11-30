@@ -55,8 +55,8 @@ test('Navigation', async () => {
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => node.textContent)).toEqual(''); // No description
     expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('3-D Man');
-    expect(await hero.$('h3')).toMatch('3-D Man');
+    expect(await hero.$eval('h1', node => node.textContent)).toEqual('3-D Man');
+    expect(await hero.$('h1')).toMatch('3-D Man');
   }
 
   await page.goBack();
@@ -84,8 +84,8 @@ test('Navigation', async () => {
     await expect(await hero.$('p')).toMatch(
       'AIM is a terrorist organization bent on destroying the world.'
     );
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('A.I.M.');
-    await expect(await hero.$('h3')).toMatch('A.I.M.');
+    expect(await hero.$eval('h1', node => node.textContent)).toEqual('A.I.M.');
+    await expect(await hero.$('h1')).toMatch('A.I.M.');
   }
 
   await page.goBack();
@@ -111,7 +111,7 @@ test('Navigation', async () => {
     const hero = (await page.$('section.hero'))!;
     expect(await hero.$eval('p', node => node.textContent)).toEqual(''); // No description
     await expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('Angela (Aldrif Odinsdottir)');
-    await expect(await hero.$('h3')).toMatch('Angela (Aldrif Odinsdottir)');
+    expect(await hero.$eval('h1', node => node.textContent)).toEqual('Angela (Aldrif Odinsdottir)');
+    await expect(await hero.$('h1')).toMatch('Angela (Aldrif Odinsdottir)');
   }
 });

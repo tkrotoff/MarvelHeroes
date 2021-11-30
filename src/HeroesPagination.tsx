@@ -21,7 +21,7 @@ export function HeroesPagination() {
 
   return (
     <>
-      <h3>Marvel Heroes</h3>
+      <h1>Marvel Heroes</h1>
       <Link to={`/${page - 1}`} className={prevButtonClasses}>
         ‹ Previous
       </Link>{' '}
