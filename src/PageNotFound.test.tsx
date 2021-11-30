@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { useLocation } from 'react-router';
 
 import { PageNotFound } from './PageNotFound';
@@ -10,11 +10,11 @@ const useLocationMock = useLocation as jest.Mock;
 
 test('render', async () => {
   useLocationMock.mockReturnValue({ pathname: 'unknown' });
-  const { getByText } = render(<PageNotFound />);
+  render(<PageNotFound />);
 
-  getByText('Whoops');
+  screen.getByText('Whoops');
 
   // Tests "Sorry but <em>unknown</em> didn't match any pages"
-  getByText("Sorry but didn't match any pages");
-  getByText('unknown');
+  screen.getByText("Sorry but didn't match any pages");
+  screen.getByText('unknown');
 });

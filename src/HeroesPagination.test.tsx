@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -20,28 +20,28 @@ test('render without page query param then change page', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
 
   useParamsMock.mockReturnValue({});
-  const { getByText, queryByText, rerender } = render(
+  const { rerender } = render(
     <MemoryRouter>
       <HeroesPagination />
     </MemoryRouter>
   );
 
   expect(spy).toHaveBeenCalledTimes(1);
-  getByText('Marvel Heroes');
-  const prevLink = getByText('‹ Previous') as HTMLLinkElement;
+  screen.getByText('Marvel Heroes');
+  const prevLink = screen.getByText('‹ Previous') as HTMLLinkElement;
   expect(prevLink.href).toEqual('http://localhost/-1');
-  const nextLink = getByText('Next ›') as HTMLLinkElement;
+  const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('3-D Man');
-  getByText('A-Bomb (HAS)');
-  getByText('A.I.M.');
-  getByText('Angel (Ultimate)');
-  getByText('Angel (Warren Worthington III)');
-  getByText('Angela (Aldrif Odinsdottir)');
+  screen.getByText('3-D Man');
+  screen.getByText('A-Bomb (HAS)');
+  screen.getByText('A.I.M.');
+  screen.getByText('Angel (Ultimate)');
+  screen.getByText('Angel (Warren Worthington III)');
+  screen.getByText('Angela (Aldrif Odinsdottir)');
 
   useParamsMock.mockReturnValue({ page: '1' });
   rerender(
@@ -52,16 +52,16 @@ test('render without page query param then change page', async () => {
   expect(spy).toHaveBeenCalledTimes(2);
   expect(prevLink.href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('Anita Blake');
-  getByText('Anne Marie Hoag');
-  getByText('Annihilus');
-  getByText('Battering Ram');
-  getByText('Battlestar');
-  getByText('Beak');
+  screen.getByText('Anita Blake');
+  screen.getByText('Anne Marie Hoag');
+  screen.getByText('Annihilus');
+  screen.getByText('Battering Ram');
+  screen.getByText('Battlestar');
+  screen.getByText('Beak');
 
   spy.mockRestore();
 });
@@ -70,28 +70,28 @@ test('render given a page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
 
   useParamsMock.mockReturnValue({ page: '1' });
-  const { getByText, queryByText } = render(
+  render(
     <MemoryRouter>
       <HeroesPagination />
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(1);
-  getByText('Marvel Heroes');
-  const prevLink = getByText('‹ Previous') as HTMLLinkElement;
+  screen.getByText('Marvel Heroes');
+  const prevLink = screen.getByText('‹ Previous') as HTMLLinkElement;
   expect(prevLink.href).toEqual('http://localhost/0');
-  const nextLink = getByText('Next ›') as HTMLLinkElement;
+  const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/2');
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
 
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('Anita Blake');
-  getByText('Anne Marie Hoag');
-  getByText('Annihilus');
-  getByText('Battering Ram');
-  getByText('Battlestar');
-  getByText('Beak');
+  screen.getByText('Anita Blake');
+  screen.getByText('Anne Marie Hoag');
+  screen.getByText('Annihilus');
+  screen.getByText('Battering Ram');
+  screen.getByText('Battlestar');
+  screen.getByText('Beak');
 
   spy.mockRestore();
 });

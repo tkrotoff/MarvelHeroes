@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { Layout } from './Layout';
 
 test('render', async () => {
-  const { getByText } = render(<Layout>Hello, World!</Layout>);
-  getByText('Hello, World!');
+  render(<Layout>Hello, World!</Layout>);
+  screen.getByText('Hello, World!');
 });
