@@ -20,7 +20,7 @@ describe('fetch*()', () => {
   afterEach(fetchSpy.mockClear);
 
   test('fetchCharacters() success', async () => {
-    fetchSpy.mockResolvedValueOnce(fakeFetchResponseSuccess(characters_offset_0));
+    fetchSpy.mockResolvedValue(fakeFetchResponseSuccess(characters_offset_0));
 
     const characters = await Marvel.fetchCharacters(0);
     expect(characters).toEqual(characters_offset_0.data.results);
@@ -29,7 +29,7 @@ describe('fetch*()', () => {
   });
 
   test('fetchCharacters() error', async () => {
-    fetchSpy.mockResolvedValueOnce(fakeFetchResponseError('500 Internal Server Error'));
+    fetchSpy.mockResolvedValue(fakeFetchResponseError('500 Internal Server Error'));
 
     await expect(Marvel.fetchCharacters(0)).rejects.toThrow('500 Internal Server Error');
 
@@ -37,7 +37,7 @@ describe('fetch*()', () => {
   });
 
   test('fetchCharacter() success', async () => {
-    fetchSpy.mockResolvedValueOnce(fakeFetchResponseSuccess(character_id_1011334));
+    fetchSpy.mockResolvedValue(fakeFetchResponseSuccess(character_id_1011334));
 
     const characters = await Marvel.fetchCharacter('1011334');
     expect(characters).toEqual(character_id_1011334.data.results[0]);
@@ -46,7 +46,7 @@ describe('fetch*()', () => {
   });
 
   test('fetchCharacter() error', async () => {
-    fetchSpy.mockResolvedValueOnce(fakeFetchResponseError('404 Not Found'));
+    fetchSpy.mockResolvedValue(fakeFetchResponseError('404 Not Found'));
 
     await expect(Marvel.fetchCharacter('unknown')).rejects.toThrow('404 Not Found');
 

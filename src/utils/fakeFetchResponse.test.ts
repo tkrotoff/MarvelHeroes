@@ -6,7 +6,7 @@ test('fakeFetchResponseSuccess()', async () => {
   expect(await response.json()).toEqual({ foo: 'bar' });
 
   const fetchSpy = jest.spyOn(window, 'fetch');
-  fetchSpy.mockResolvedValueOnce(response);
+  fetchSpy.mockResolvedValue(response);
   expect(await (await fetch('whatever')).json()).toEqual({ foo: 'bar' });
   expect(fetchSpy).toHaveBeenCalledTimes(1);
   fetchSpy.mockRestore();
