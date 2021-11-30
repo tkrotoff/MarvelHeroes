@@ -7,6 +7,7 @@ test('fakeFetchResponseSuccess()', async () => {
 
   const fetchSpy = jest.spyOn(window, 'fetch');
   fetchSpy.mockResolvedValue(response);
+  // eslint-disable-next-line unicorn/no-await-expression-member
   expect(await (await fetch('whatever')).json()).toEqual({ foo: 'bar' });
   expect(fetchSpy).toHaveBeenCalledTimes(1);
   fetchSpy.mockRestore();

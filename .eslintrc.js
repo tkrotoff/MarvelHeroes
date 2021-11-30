@@ -7,15 +7,13 @@ const config = {
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
     'plugin:testing-library/react',
-    'plugin:unicorn/recommended',
     'plugin:jest/recommended',
+    'plugin:unicorn/recommended',
     'airbnb',
     // Already done by Airbnb
     //'plugin:react/recommended'
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react'
+    'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'react-hooks'],
   env: {
@@ -102,9 +100,10 @@ const config = {
     // conflicts with
     // https://github.com/airbnb/javascript/issues/1271
     'unicorn/no-array-for-each': 'off',
-
-    'jest/no-expect-resolves': 'error',
-    'jest/expect-expect': 'off',
+    // FIXME Activate when ES modules are well supported
+    'unicorn/prefer-module': 'off',
+    // FIXME Activate when ES modules are well supported
+    'unicorn/prefer-node-protocol': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',
@@ -113,9 +112,14 @@ const config = {
     'react/prop-types': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    // FIXME https://github.com/yannickcr/eslint-plugin-react/issues/3114#issuecomment-951725512
+    'react/jsx-no-bind': 'off',
+    'react/function-component-definition': 'off',
 
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+
+    'jest/expect-expect': 'off'
   },
 
   overrides: [

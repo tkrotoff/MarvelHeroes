@@ -1,6 +1,6 @@
 import { CoverageEntry } from 'puppeteer';
 
-jest.setTimeout(20000); // 20s
+jest.setTimeout(20_000); // 20s
 
 beforeAll(async () => {
   await Promise.all([page.coverage.startJSCoverage(), page.coverage.startCSSCoverage()]);
