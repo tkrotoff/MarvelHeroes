@@ -27,8 +27,8 @@ export default (_webpackEnv: any, argv: any) => {
     },
 
     // https://github.com/facebook/create-react-app/blob/v4.0.3/packages/react-scripts/config/webpack.config.js#L175-L179
-    // https://reactjs.org/docs/cross-origin-errors.html#source-maps
-    devtool: !isProd ? 'cheap-module-source-map' : undefined,
+    // https://github.com/reactjs/reactjs.org/blob/ea6e34f8f07dd9f06dfeda9aabf0b6d2d949c6d0/content/docs/cross-origin-errors.md#source-maps-source-maps
+    devtool: isProd ? 'source-map' : 'cheap-module-source-map',
 
     resolve: {
       extensions: ['.js', '.ts', '.tsx']

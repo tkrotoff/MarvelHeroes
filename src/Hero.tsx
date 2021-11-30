@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
-import { useErrorBoundary } from './utils/useErrorBoundary';
+import { assert } from './utils/assert';
+import { useErrorHandler } from './utils/useErrorHandler';
 
 function Category({ character, category }: { character: Marvel.Character; category: string }) {
   return (
@@ -35,9 +36,11 @@ function Character({ character }: { character: Marvel.Character }) {
 }
 
 export function Hero() {
-  const errorBoundary = useErrorBoundary();
+  const handleError = useErrorHandler();
   const [character, setCharacter] = useState<Marvel.Character>();
-  const { id } = useParams<{ id: string }>();
+
+  const { id } = useParams<'id'>();
+  assert(id !== undefined, 'Param id cannot be empty');
 
   useEffect(() => {
     async function fetch(_id: string) {
@@ -47,12 +50,12 @@ export function Hero() {
         const _character = await Marvel.fetchCharacter(_id);
         setCharacter(_character);
       } catch (e) {
-        errorBoundary(e);
+        handleError(e);
       }
     }
 
     fetch(id);
-  }, [id, errorBoundary]);
+  }, [id, handleError]);
 
   return character !== undefined ? <Character character={character} /> : <p>Please wait...</p>;
 }

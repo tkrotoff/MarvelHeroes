@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Heroes } from './Heroes';
 
 export function HeroesPagination() {
-  const { page: tmp } = useParams<{ page: string }>();
+  const { page: tmp } = useParams<'page'>();
   const pageQueryParam = tmp !== undefined ? Number.parseInt(tmp, 10) : 0;
 
   const [page, setPage] = useState(pageQueryParam);

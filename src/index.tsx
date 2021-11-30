@@ -1,8 +1,12 @@
 /* eslint-disable import/first */
 
-import * as Sentry from '@sentry/browser';
+import * as Sentry from '@sentry/react';
+import { Integrations } from '@sentry/tracing';
 
-Sentry.init({ dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526' });
+Sentry.init({
+  dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526',
+  integrations: [new Integrations.BrowserTracing()]
+});
 
 import 'core-js';
 import 'regenerator-runtime/runtime';
