@@ -6,6 +6,7 @@ const config = {
   parserOptions: {},
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
+    'plugin:playwright/playwright-test',
     'plugin:testing-library/react',
     'plugin:jest/recommended',
     'plugin:unicorn/recommended',
