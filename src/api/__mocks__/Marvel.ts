@@ -18,6 +18,8 @@ export function fetchCharacters(offset: number) {
     case 204 /* 204 No Content ;-) */ * config.nbCharactersPerPage:
       characters = characters_offset_10200.data.results;
       break;
+    case 429 /* 429 Too Many Requests */ * config.nbCharactersPerPage:
+      throw new Error('429 Too Many Requests');
     case 500 * config.nbCharactersPerPage:
       throw new Error('500 Internal Server Error');
     default:
