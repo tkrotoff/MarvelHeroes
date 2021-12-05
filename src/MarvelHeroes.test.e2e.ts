@@ -103,6 +103,8 @@ test('Navigation', async () => {
     await expect(await lastHeroCard.$('h5.card-title')).toMatch('Angela (Aldrif Odinsdottir)');
 
     const link = (await lastHeroCard.$('div.card-footer > a'))!;
+    // Error: "Node is either not clickable or not an HTMLElement"
+    // I couldn't find a solution to this, let's switch to Playwright and see
     await link.click();
     // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
     //await page.waitForNavigation();
