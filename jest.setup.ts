@@ -25,6 +25,14 @@ process.on('unhandledRejection', (reason: Error | any, _promise: Promise<any>) =
   throw reason;
 });
 
-(window.fetch as any) = () => {
-  throw new Error('You should mock fetch()');
+window.fetch = (input: RequestInfo) => {
+  const error = `You must mock fetch: '${input.toString()}'`;
+  console.error(error);
+  throw new Error(error);
+};
+
+XMLHttpRequest.prototype.open = (_method: string, url: string) => {
+  const error = `You must mock XMLHttpRequest: '${url}'`;
+  console.error(error);
+  throw new Error(error);
 };
