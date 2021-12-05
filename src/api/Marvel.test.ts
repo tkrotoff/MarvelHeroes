@@ -9,7 +9,7 @@ import * as Marvel from './Marvel';
 
 test('getQueryParams()', () => {
   expect(Marvel.getQueryParams()).toMatch(
-    /^ts=.*&apikey=298bab46381a6daaaee19aa5c8cafea5&hash=.*&limit=50$/
+    /^ts=.*&apikey=298bab46381a6daaaee19aa5c8cafea5&hash=.*$/
   );
 
   expect(Marvel.getQueryParams(100)).toMatch(

@@ -55,14 +55,14 @@ export function getQueryParams(offset?: number) {
     ts,
     apikey: API_PUBLIC,
     hash: md5(ts + API_PRIVATE + API_PUBLIC),
-    limit: 50,
+    limit: offset !== undefined ? 50 : undefined,
     offset
   };
 
   // [How to pass url query params?](https://github.com/github/fetch/issues/256)
-  return Object.keys(params)
-    .filter(key => (params as any)[key] !== undefined)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent((params as any)[key])}`)
+  return (Object.keys(params) as (keyof typeof params)[])
+    .filter(key => params[key] !== undefined)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key]!)}`)
     .join('&');
 }
 
