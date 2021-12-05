@@ -14,11 +14,6 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-
-    // FIXME @types/jest-environment-puppeteer needs to be updated
-    // Error "Namespace 'NodeJS' has no exported member 'Global'"
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/blob/10cd6a8a9c3cbfc61249b97b0c7059d21455ec37/types/jest-environment-puppeteer/package.json#L4
-    "skipLibCheck": true
+    "forceConsistentCasingInFileNames": true
   }
 }

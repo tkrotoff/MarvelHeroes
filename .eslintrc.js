@@ -19,10 +19,7 @@ const config = {
   env: {
     browser: true
   },
-  globals: {
-    // Jest Puppeteer, see https://github.com/smooth-code/jest-puppeteer/blob/v4.0.0/README.md#configure-eslint
-    page: true
-  },
+  globals: {},
 
   rules: {
     'no-console': 'off',
