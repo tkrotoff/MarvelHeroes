@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import * as Marvel from './api/Marvel';
 import { useErrorBoundary } from './utils/useErrorBoundary';
 
-function renderCategory(character: Marvel.Character, category: string) {
+function Category({ character, category }: { character: Marvel.Character; category: string }) {
   return (
     <ul>
       {(character[category] as Marvel.CharacterCategory).items.map(item => (
@@ -14,7 +14,7 @@ function renderCategory(character: Marvel.Character, category: string) {
   );
 }
 
-function renderHero(character: Marvel.Character) {
+function Character({ character }: { character: Marvel.Character }) {
   return (
     <section className="hero">
       <img
@@ -25,11 +25,11 @@ function renderHero(character: Marvel.Character) {
       <h3>{character.name}</h3>
       <p>{character.description}</p>
       <h6>Comics</h6>
-      {renderCategory(character, 'comics')}
+      <Category character={character} category="comics" />
       <h6>Series</h6>
-      {renderCategory(character, 'series')}
+      <Category character={character} category="series" />
       <h6>Stories</h6>
-      {renderCategory(character, 'stories')}
+      <Category character={character} category="stories" />
     </section>
   );
 }
@@ -54,5 +54,5 @@ export function Hero() {
     fetch(id);
   }, [id, errorBoundary]);
 
-  return character !== undefined ? renderHero(character) : <p>Please wait...</p>;
+  return character !== undefined ? <Character character={character} /> : <p>Please wait...</p>;
 }

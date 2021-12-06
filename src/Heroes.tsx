@@ -5,7 +5,7 @@ import * as Marvel from './api/Marvel';
 import { useErrorBoundary } from './utils/useErrorBoundary';
 import { config } from './config';
 
-function renderHeroes(characters: Marvel.Characters) {
+function Characters({ characters }: { characters: Marvel.Characters }) {
   return (
     <div className="card-deck mt-3">
       {characters.map(character => (
@@ -65,5 +65,5 @@ export function Heroes({ page }: Props) {
   if (characters.length === 0) {
     return <p>No results found :(</p>;
   }
-  return renderHeroes(characters);
+  return <Characters characters={characters} />;
 }
