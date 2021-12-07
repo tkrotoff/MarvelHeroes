@@ -3,6 +3,8 @@ import { devices, PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testMatch: /.*\.test\.e2e\.ts$/,
 
+  timeout: process.env.CI === 'true' ? 5 * 60 * 1000 : undefined,
+
   use: {
     headless: true
   },
