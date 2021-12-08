@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
 import { useErrorHandler } from './utils/useErrorHandler';
+import { usePageTitle } from './utils/usePageTitle';
 import { config } from './config';
 
 function Characters({ characters }: { characters: Marvel.Characters }) {
@@ -34,6 +35,8 @@ interface Props {
 }
 
 export function Heroes({ page }: Props) {
+  usePageTitle(`Page ${page}`);
+
   const handleError = useErrorHandler();
 
   const [characters, setCharacters] = useState<Marvel.Characters>();

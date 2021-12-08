@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import * as Marvel from './api/Marvel';
 import { assert } from './utils/assert';
 import { useErrorHandler } from './utils/useErrorHandler';
+import { usePageTitle } from './utils/usePageTitle';
 
 function Category({ character, category }: { character: Marvel.Character; category: string }) {
   return (
@@ -16,6 +17,8 @@ function Category({ character, category }: { character: Marvel.Character; catego
 }
 
 function Character({ character }: { character: Marvel.Character }) {
+  usePageTitle(character.name);
+
   return (
     <section className="hero">
       <img
@@ -36,6 +39,8 @@ function Character({ character }: { character: Marvel.Character }) {
 }
 
 export function Hero() {
+  usePageTitle('...');
+
   const handleError = useErrorHandler();
   const [character, setCharacter] = useState<Marvel.Character>();
 

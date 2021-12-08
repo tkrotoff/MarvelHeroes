@@ -6,6 +6,26 @@ import { Heroes } from './Heroes';
 
 jest.mock('./api/Marvel');
 
+test('page title', async () => {
+  expect(document.title).toEqual('');
+
+  const { rerender } = render(
+    <MemoryRouter>
+      <Heroes page={0} />
+    </MemoryRouter>
+  );
+  expect(document.title).toEqual('Page 0 - Marvel Heroes');
+  await screen.findByText('3-D Man'); // Wait for fetchCharacters request
+
+  rerender(
+    <MemoryRouter>
+      <Heroes page={1} />
+    </MemoryRouter>
+  );
+  expect(document.title).toEqual('Page 1 - Marvel Heroes');
+  await screen.findByText('Anita Blake'); // Wait for fetchCharacters request
+});
+
 const pleaseWait = 'Please wait...';
 
 const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');

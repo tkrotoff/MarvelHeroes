@@ -11,6 +11,22 @@ jest.mock('react-router', () => ({
 }));
 const useParamsMock = useParams as jest.Mock;
 
+test('page title', async () => {
+  expect(document.title).toEqual('');
+
+  useParamsMock.mockReturnValue({ id: '1011334' });
+  const { rerender } = render(<Hero />);
+  expect(document.title).toEqual('... - Marvel Heroes');
+  await screen.findByText('3-D Man');
+  expect(document.title).toEqual('3-D Man - Marvel Heroes');
+
+  useParamsMock.mockReturnValue({ id: '1017100' });
+  rerender(<Hero />);
+  //expect(document.title).toEqual('... - Marvel Heroes');
+  await screen.findByText('A-Bomb (HAS)');
+  expect(document.title).toEqual('A-Bomb (HAS) - Marvel Heroes');
+});
+
 const pleaseWait = 'Please wait...';
 
 const fetchCharacterSpy = jest.spyOn(Marvel, 'fetchCharacter');
