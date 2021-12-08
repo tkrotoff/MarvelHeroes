@@ -14,13 +14,11 @@ const getCharacterApiURL = (id: number) =>
 
 test.beforeEach(async ({ page }) => {
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.goto('http://localhost:8080')
   ]);
 
   await expect(page.locator('text="3-D Man"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   const locator = page.locator('section.card');
   await expect(locator).toHaveCount(50);
@@ -28,108 +26,81 @@ test.beforeEach(async ({ page }) => {
 
 test('page 0, load different heroes', async ({ page }) => {
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharacterApiURL(1011334)),
     page.click('text=3-D ManDetails >> a')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/heroes/1011334');
   await expect(page.locator('h1')).toHaveText('3-D Man');
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
     page.waitForNavigation(),
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.goBack()
   ]);
 
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharacterApiURL(1017100)),
     page.click('text=A-Bomb (HAS)Details >> a')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/heroes/1017100');
   await expect(page.locator('h1')).toHaveText('A-Bomb (HAS)');
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
     page.waitForNavigation(),
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.goBack()
   ]);
 
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharacterApiURL(1009144)),
     page.click('text=A.I.M.Details >> a')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/heroes/1009144');
   await expect(page.locator('h1')).toHaveText('A.I.M.');
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
     page.waitForNavigation(),
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.goBack()
   ]);
 
   // Last card
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharacterApiURL(1017574)),
     page.click('text=Angela (Aldrif Odinsdottir)Details >> a')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/heroes/1017574');
   await expect(page.locator('h1')).toHaveText('Angela (Aldrif Odinsdottir)');
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
     page.waitForNavigation(),
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.goBack()
   ]);
 
   await expect(page.locator('text="3-D Man"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 });
 
 test('Next and Previous buttons', async ({ page }) => {
-  await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
-    page.waitForResponse(getCharactersApiURL(50)),
-    page.click('text="Next ›"')
-  ]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(50)), page.click('text="Next ›"')]);
   await expect(page).toHaveURL('http://localhost:8080/1');
   await expect(page.locator('text="Anita Blake"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
-  await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
-    page.waitForResponse(getCharactersApiURL(100)),
-    page.click('text="Next ›"')
-  ]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(100)), page.click('text="Next ›"')]);
   await expect(page).toHaveURL('http://localhost:8080/2');
   await expect(page.locator('text="Beast"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(50)),
     page.click('text="‹ Previous"')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/1');
   await expect(page.locator('text="Anita Blake"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 
   await Promise.all([
-    page.locator('text="Please wait..."').waitFor(),
     page.waitForResponse(getCharactersApiURL(0)),
     page.click('text="‹ Previous"')
   ]);
   await expect(page).toHaveURL('http://localhost:8080/0');
   await expect(page.locator('text="3-D Man"')).toBeVisible();
-  await expect(page.locator('text="Please wait..."')).not.toBeVisible();
 });
