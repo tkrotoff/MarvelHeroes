@@ -1,117 +1,118 @@
-import { CoverageEntry } from 'puppeteer';
+/* eslint-disable jest/no-done-callback, jest/no-standalone-expect, unicorn/numeric-separators-style */
 
-jest.setTimeout(20000); // 20s
+import { expect, test } from '@playwright/test';
 
-beforeAll(async () => {
-  await Promise.all([page.coverage.startJSCoverage(), page.coverage.startCSSCoverage()]);
-});
+// FIXME Generate coverage for JS and CSS
+// https://github.com/microsoft/playwright/issues/9208
+// https://github.com/microsoft/playwright/issues/7030
 
-beforeEach(async () => {
-  await page.goto('http://localhost:8080');
-});
+const getCharactersApiURL = (offset: number) =>
+  `https://gateway.marvel.com/v1/public/characters?ts=*&apikey=*&hash=*&limit=50&offset=${offset}`;
 
-function computeCoverage(entries: CoverageEntry[]) {
-  let totalBytes = 1; // Cannot be 0 otherwise usedBytes / totalBytes gives a NaN
-  let usedBytes = 0;
-  entries.forEach(entry => {
-    totalBytes += entry.text.length;
-    entry.ranges.forEach(range => {
-      usedBytes += range.end - range.start - 1;
-    });
-  });
-  totalBytes /= 1024;
-  usedBytes /= 1024;
-  return `${Math.round((usedBytes / totalBytes) * 100)}% (${Math.round(usedBytes)}/${Math.round(
-    totalBytes
-  )} KiB)`;
-}
+const getCharacterApiURL = (id: number) =>
+  `https://gateway.marvel.com/v1/public/characters/${id}?ts=*&apikey=*&hash=*`;
 
-afterAll(async () => {
-  const [jsCoverage, cssCoverage] = await Promise.all([
-    page.coverage.stopJSCoverage(),
-    page.coverage.stopCSSCoverage()
+test.beforeEach(async ({ page }) => {
+  await expect(page).toHaveTitle('');
+
+  await Promise.all([
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.goto('http://localhost:8080')
   ]);
 
-  console.log(`JavaScript coverage: ${computeCoverage(jsCoverage)}`);
-  console.log(`CSS coverage: ${computeCoverage(cssCoverage)}`);
+  await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
+  await expect(page.locator('text="3-D Man"')).toBeVisible();
+
+  const locator = page.locator('section.card');
+  await expect(locator).toHaveCount(50);
 });
 
-test('Navigation', async () => {
-  {
-    await page.waitForSelector('section.card > div.card-body > h5.card-title');
+test('page 0, load different heroes', async ({ page }) => {
+  await Promise.all([
+    page.waitForResponse(getCharacterApiURL(1011334)),
+    page.click('text=3-D ManDetails >> a')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/heroes/1011334');
+  await expect(page).toHaveTitle('3-D Man - Marvel Heroes');
+  await expect(page.locator('h1')).toHaveText('3-D Man');
 
-    const heroes = await page.$$('section.card');
-    expect(heroes).toHaveLength(50);
+  await Promise.all([
+    page.waitForNavigation(),
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.goBack()
+  ]);
 
-    const firstHeroCard = heroes[0];
-    expect(await firstHeroCard.$('h5.card-title')).toMatch('3-D Man');
+  await Promise.all([
+    page.waitForResponse(getCharacterApiURL(1017100)),
+    page.click('text=A-Bomb (HAS)Details >> a')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/heroes/1017100');
+  await expect(page).toHaveTitle('A-Bomb (HAS) - Marvel Heroes');
+  await expect(page.locator('h1')).toHaveText('A-Bomb (HAS)');
 
-    const link = (await firstHeroCard.$('div.card-footer > a'))!;
-    await link.click();
-    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
-    //await page.waitForNavigation();
-    await page.waitForSelector('section.hero');
+  await Promise.all([
+    page.waitForNavigation(),
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.goBack()
+  ]);
 
-    const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => node.textContent)).toEqual(''); // No description
-    expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('3-D Man');
-    expect(await hero.$('h3')).toMatch('3-D Man');
-  }
+  await Promise.all([
+    page.waitForResponse(getCharacterApiURL(1009144)),
+    page.click('text=A.I.M.Details >> a')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/heroes/1009144');
+  await expect(page).toHaveTitle('A.I.M. - Marvel Heroes');
+  await expect(page.locator('h1')).toHaveText('A.I.M.');
 
-  await page.goBack();
+  await Promise.all([
+    page.waitForNavigation(),
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.goBack()
+  ]);
 
-  {
-    await page.waitForSelector('section.card > div.card-body > h5.card-title');
+  // Last card
+  await Promise.all([
+    page.waitForResponse(getCharacterApiURL(1017574)),
+    page.click('text=Angela (Aldrif Odinsdottir)Details >> a')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/heroes/1017574');
+  await expect(page).toHaveTitle('Angela (Aldrif Odinsdottir) - Marvel Heroes');
+  await expect(page.locator('h1')).toHaveText('Angela (Aldrif Odinsdottir)');
 
-    const heroes = await page.$$('section.card');
-    expect(heroes).toHaveLength(50);
+  await Promise.all([
+    page.waitForNavigation(),
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.goBack()
+  ]);
 
-    const thirdHeroCard = heroes[2];
-    expect(await thirdHeroCard.$eval('h5.card-title', node => node.textContent)).toEqual('A.I.M.');
-    await expect(await thirdHeroCard.$('h5.card-title')).toMatch('A.I.M.');
+  await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
+  await expect(page.locator('text="3-D Man"')).toBeVisible();
+});
 
-    const link = (await thirdHeroCard.$('div.card-footer > a'))!;
-    await link.click();
-    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
-    //await page.waitForNavigation();
-    await page.waitForSelector('section.hero');
+test('Next and Previous buttons', async ({ page }) => {
+  await Promise.all([page.waitForResponse(getCharactersApiURL(50)), page.click('text="Next ›"')]);
+  await expect(page).toHaveURL('http://localhost:8080/1');
+  await expect(page).toHaveTitle('Page 1 - Marvel Heroes');
+  await expect(page.locator('text="Anita Blake"')).toBeVisible();
 
-    const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => node.textContent)).toEqual(
-      'AIM is a terrorist organization bent on destroying the world.'
-    );
-    await expect(await hero.$('p')).toMatch(
-      'AIM is a terrorist organization bent on destroying the world.'
-    );
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('A.I.M.');
-    await expect(await hero.$('h3')).toMatch('A.I.M.');
-  }
+  await Promise.all([page.waitForResponse(getCharactersApiURL(100)), page.click('text="Next ›"')]);
+  await expect(page).toHaveURL('http://localhost:8080/2');
+  await expect(page).toHaveTitle('Page 2 - Marvel Heroes');
+  await expect(page.locator('text="Beast"')).toBeVisible();
 
-  await page.goBack();
+  await Promise.all([
+    page.waitForResponse(getCharactersApiURL(50)),
+    page.click('text="‹ Previous"')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/1');
+  await expect(page).toHaveTitle('Page 1 - Marvel Heroes');
+  await expect(page.locator('text="Anita Blake"')).toBeVisible();
 
-  {
-    await page.waitForSelector('section.card > div.card-body > h5.card-title');
-
-    const heroes = await page.$$('section.card');
-    expect(heroes).toHaveLength(50);
-
-    const lastHeroCard = heroes[49];
-    expect(await lastHeroCard.$eval('h5.card-title', node => node.textContent)).toEqual(
-      'Angela (Aldrif Odinsdottir)'
-    );
-    await expect(await lastHeroCard.$('h5.card-title')).toMatch('Angela (Aldrif Odinsdottir)');
-
-    const link = (await lastHeroCard.$('div.card-footer > a'))!;
-    await link.click();
-    // [waitForNavigation doesn't work after clicking a link](https://github.com/GoogleChrome/puppeteer/issues/1412)
-    //await page.waitForNavigation();
-    await page.waitForSelector('section.hero');
-
-    const hero = (await page.$('section.hero'))!;
-    expect(await hero.$eval('p', node => node.textContent)).toEqual(''); // No description
-    await expect(await hero.$('p')).toMatch(''); // No description
-    expect(await hero.$eval('h3', node => node.textContent)).toEqual('Angela (Aldrif Odinsdottir)');
-    await expect(await hero.$('h3')).toMatch('Angela (Aldrif Odinsdottir)');
-  }
+  await Promise.all([
+    page.waitForResponse(getCharactersApiURL(0)),
+    page.click('text="‹ Previous"')
+  ]);
+  await expect(page).toHaveURL('http://localhost:8080/0');
+  await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
+  await expect(page.locator('text="3-D Man"')).toBeVisible();
 });

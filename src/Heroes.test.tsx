@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -6,28 +6,48 @@ import { Heroes } from './Heroes';
 
 jest.mock('./api/Marvel');
 
+test('page title', async () => {
+  expect(document.title).toEqual('');
+
+  const { rerender } = render(
+    <MemoryRouter>
+      <Heroes page={0} />
+    </MemoryRouter>
+  );
+  expect(document.title).toEqual('Page 0 - Marvel Heroes');
+  await screen.findByText('3-D Man'); // Wait for fetchCharacters request
+
+  rerender(
+    <MemoryRouter>
+      <Heroes page={1} />
+    </MemoryRouter>
+  );
+  expect(document.title).toEqual('Page 1 - Marvel Heroes');
+  await screen.findByText('Anita Blake'); // Wait for fetchCharacters request
+});
+
 const pleaseWait = 'Please wait...';
 
 const fetchCharactersSpy = jest.spyOn(Marvel, 'fetchCharacters');
 afterEach(fetchCharactersSpy.mockClear);
 
 test('render', async () => {
-  const { getByText, queryByText, rerender } = render(
+  const { rerender } = render(
     <MemoryRouter>
       <Heroes page={0} />
     </MemoryRouter>
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('3-D Man');
-  getByText('A-Bomb (HAS)');
-  getByText('A.I.M.');
-  getByText('Angel (Ultimate)');
-  getByText('Angel (Warren Worthington III)');
-  getByText('Angela (Aldrif Odinsdottir)');
+  screen.getByText('3-D Man');
+  screen.getByText('A-Bomb (HAS)');
+  screen.getByText('A.I.M.');
+  screen.getByText('Angel (Ultimate)');
+  screen.getByText('Angel (Warren Worthington III)');
+  screen.getByText('Angela (Aldrif Odinsdottir)');
 
   rerender(
     <MemoryRouter>
@@ -35,30 +55,30 @@ test('render', async () => {
     </MemoryRouter>
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('Anita Blake');
-  getByText('Anne Marie Hoag');
-  getByText('Annihilus');
-  getByText('Battering Ram');
-  getByText('Battlestar');
-  getByText('Beak');
+  screen.getByText('Anita Blake');
+  screen.getByText('Anne Marie Hoag');
+  screen.getByText('Annihilus');
+  screen.getByText('Battering Ram');
+  screen.getByText('Battlestar');
+  screen.getByText('Beak');
 });
 
 test('render "No results found :("', async () => {
-  const { getByText, queryByText } = render(
+  render(
     <MemoryRouter>
       <Heroes page={204} />
     </MemoryRouter>
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
-  getByText(pleaseWait);
+  screen.getByText(pleaseWait);
   await waitFor(() => {
-    expect(queryByText(pleaseWait)).toEqual(null);
+    expect(screen.queryByText(pleaseWait)).toEqual(null);
   });
-  getByText('No results found :(');
+  screen.getByText('No results found :(');
 });
 
 test('fetchCharacters() error "500 Internal Server Error"', () => {

@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
-import { useErrorBoundary } from './utils/useErrorBoundary';
+import { assert } from './utils/assert';
+import { useErrorHandler } from './utils/useErrorHandler';
+import { usePageTitle } from './utils/usePageTitle';
 
 function Category({ character, category }: { character: Marvel.Character; category: string }) {
   return (
@@ -15,6 +17,8 @@ function Category({ character, category }: { character: Marvel.Character; catego
 }
 
 function Character({ character }: { character: Marvel.Character }) {
+  usePageTitle(character.name);
+
   return (
     <section className="hero">
       <img
@@ -22,7 +26,7 @@ function Character({ character }: { character: Marvel.Character }) {
         alt={character.name}
         className="img-fluid" // Resize image on mobile
       />
-      <h3>{character.name}</h3>
+      <h1>{character.name}</h1>
       <p>{character.description}</p>
       <h6>Comics</h6>
       <Category character={character} category="comics" />
@@ -35,9 +39,13 @@ function Character({ character }: { character: Marvel.Character }) {
 }
 
 export function Hero() {
-  const errorBoundary = useErrorBoundary();
+  usePageTitle('...');
+
+  const handleError = useErrorHandler();
   const [character, setCharacter] = useState<Marvel.Character>();
-  const { id } = useParams<{ id: string }>();
+
+  const { id } = useParams<'id'>();
+  assert(id !== undefined, 'Param id cannot be empty');
 
   useEffect(() => {
     async function fetch(_id: string) {
@@ -47,12 +55,12 @@ export function Hero() {
         const _character = await Marvel.fetchCharacter(_id);
         setCharacter(_character);
       } catch (e) {
-        errorBoundary(e);
+        handleError(e);
       }
     }
 
     fetch(id);
-  }, [id, errorBoundary]);
+  }, [id, handleError]);
 
   return character !== undefined ? <Character character={character} /> : <p>Please wait...</p>;
 }

@@ -1,17 +1,24 @@
-import { Route, Switch } from 'react-router';
+import { Route, Routes } from 'react-router';
 
-import { withErrorBoundary } from './utils/ErrorBoundary';
+import { ErrorBoundary } from './utils/ErrorBoundary';
 import { Hero } from './Hero';
 import { HeroesPagination } from './HeroesPagination';
 import { PageNotFound } from './PageNotFound';
 
 export function Router() {
   return (
-    <Switch>
-      <Route exact path="/:page(\d+)?" component={withErrorBoundary(HeroesPagination)} />
-      <Route path="/heroes/:id(\d+)" component={withErrorBoundary(Hero)} />
+    <ErrorBoundary>
+      <Routes>
+        {/*
+          FIXME https://github.com/remix-run/react-router/issues/8254
+          https://github.com/tkrotoff/MarvelHeroes/blob/58546755072b1afc6324ff07c71d1492faf857b6/src/Router.tsx#L11-L12
+        */}
+        <Route path="/" element={<HeroesPagination />} />
+        <Route path="/:page" element={<HeroesPagination />} />
+        <Route path="/heroes/:id" element={<Hero />} />
 
-      <Route component={PageNotFound} />
-    </Switch>
+        <Route element={<PageNotFound />} />
+      </Routes>
+    </ErrorBoundary>
   );
 }

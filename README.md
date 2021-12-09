@@ -11,7 +11,7 @@ http://marvelheroes.s3-website.eu-west-3.amazonaws.com/ <sup>[1]</sup>
 
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
-- Supports IE >= 10
+- Supports IE >= 10 (broken display but "works")
 - [W3C validator](https://validator.w3.org/) completed
 
 I use this app as a boilerplate and to demo JS web app best practices.
@@ -39,8 +39,8 @@ open http://localhost:8080
 - No Redux, just `useState()`
 - TypeScript with `strict: true`
 - Babel with `@babel/preset-typescript`
-- Jest + react-testing-library + Puppeteer => 100% code coverage
+- Jest + react-testing-library + Playwright => 100% code coverage
 - Fetch API + whatwg-fetch polyfill
 - React Router
 - Prettier + ESLint + stylelint
-- Bootstrap 4 + Purgecss
+- Bootstrap 5 + Purgecss
