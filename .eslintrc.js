@@ -100,8 +100,6 @@ const config = {
     'unicorn/no-array-for-each': 'off',
     // FIXME Activate when ES modules are well supported
     'unicorn/prefer-module': 'off',
-    // FIXME Activate when ES modules are well supported
-    'unicorn/prefer-node-protocol': 'off',
 
     'react/no-unescaped-entities': 'off',
     'react/destructuring-assignment': 'off',

@@ -1,9 +1,9 @@
-# https://github.com/actions/starter-workflows/blob/a85155b04a1b885de7a5021312303fe5c1cb58e4/ci/node.js.yml
+# https://github.com/actions/starter-workflows/blob/f9d17c0062bdfb3d9b4294609989fb01dca2f357/ci/node.js.yml
 
 name: Node.js CI
 
 # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#on
-on: [push, pull_request]
+on: push
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,3 +26,18 @@ jobs:
       - run: npm run build
       - run: npm run test:coverage
       - run: npm run test:e2e
+
+      - name: Upload coverage to Code Climate
+        run: |
+          curl --location https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > cc-test-reporter
+          chmod +x cc-test-reporter
+          ./cc-test-reporter format-coverage --input-type clover coverage/clover.xml
+          ./cc-test-reporter upload-coverage
+        env:
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+
+      - name: Upload coverage to Codecov
+        run: |
+          curl --remote-name https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov --file coverage/clover.xml
