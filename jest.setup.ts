@@ -4,7 +4,7 @@ import 'core-js';
 // it generates "ReferenceError: regeneratorRuntime is not defined"
 import 'regenerator-runtime/runtime';
 
-import assert from 'assert';
+import assert from 'node:assert';
 
 // [console.assert not throwing with v22.4.0](https://github.com/facebook/jest/issues/5634)
 console.assert = assert;

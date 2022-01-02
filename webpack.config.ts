@@ -1,10 +1,10 @@
-import { execSync } from 'child_process';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import glob from 'glob';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import path from 'path';
+import { execSync } from 'node:child_process';
+import path from 'node:path';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
 import webpack from 'webpack';
 
