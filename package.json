@@ -12,7 +12,7 @@
     "build": "node --trace-deprecation node_modules/.bin/webpack --mode=development",
     "build:prod": "webpack --mode=production",
     "build:prod:analyze": "webpack --mode=production --profile --json > stats.json && webpack-bundle-analyzer stats.json build",
-    "test": "NODE_ENV=test jest --verbose",
+    "test": "jest --verbose",
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
     "test:e2e:debug": "PWDEBUG=1 playwright test",
