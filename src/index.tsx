@@ -14,20 +14,21 @@ import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
 import { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Layout } from './Layout';
 import { Router } from './Router';
 import './index.scss';
 
-render(
+const root = createRoot(document.getElementById('app')!);
+
+root.render(
   <StrictMode>
     <BrowserRouter>
       <Layout>
         <Router />
       </Layout>
     </BrowserRouter>
-  </StrictMode>,
-  document.getElementById('app')
+  </StrictMode>
 );
