@@ -15,16 +15,19 @@ export function HeroesPagination() {
     }
   }, [pageQueryParam, page]);
 
-  // [Disabled href tag](https://stackoverflow.com/q/13955667)
-  let prevButtonClasses = 'btn btn-primary';
-  if (page === 0) prevButtonClasses += ' disabled';
-
   return (
     <>
       <h1>Marvel Heroes</h1>
-      <Link to={`/${page - 1}`} className={prevButtonClasses}>
+      <Link
+        to={`/${page - 1}`}
+        className={`btn btn-primary me-2${
+          page === 0
+            ? ' disabled' // [Disabled href tag](https://stackoverflow.com/q/13955667)
+            : ''
+        }`}
+      >
         ‹ Previous
-      </Link>{' '}
+      </Link>
       <Link to={`/${page + 1}`} className="btn btn-primary">
         Next ›
       </Link>
