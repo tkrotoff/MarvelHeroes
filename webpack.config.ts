@@ -1,3 +1,7 @@
+// https://github.com/webpack/webpack-dev-server/tree/v4.8.1#with-typescript
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="node_modules/webpack-dev-server/types/lib/Server.d.ts"/>
+
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import glob from 'glob';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -174,7 +178,7 @@ export default (_webpackEnv: any, argv: any) => {
   // FYI with Rollup (rollup.config.js) no need for this hack
   // "Falsy plugins will be ignored, which can be used to easily activate or deactivate plugins"
   // https://github.com/rollup/rollup/blob/v2.33.3/docs/999-big-list-of-options.md#outputplugins
-  config.plugins = config.plugins!.filter(plugin => plugin);
+  config.plugins = config.plugins!.filter(Boolean);
 
   return config;
 };

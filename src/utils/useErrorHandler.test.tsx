@@ -39,9 +39,10 @@ test('render message + report button if an error occured', async () => {
 
   const mockConsole = jest.spyOn(console, 'error').mockImplementation();
   await act(flushPromises);
-  expect(mockConsole).toHaveBeenCalledTimes(2);
-  const [[error], [componentStack]] = mockConsole.mock.calls;
-  expect(error).toContain('Error: Uncaught [Error: Oops!]');
+  expect(mockConsole).toHaveBeenCalledTimes(3);
+  const [[error1], [error2], [componentStack]] = mockConsole.mock.calls;
+  expect(error1.message).toEqual('Uncaught [Error: Oops!]');
+  expect(error2.message).toEqual('Uncaught [Error: Oops!]');
   expect(componentStack).toContain('The above error occurred in the <MyComponent> component:');
   expect(componentStack).toContain(
     'React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary.'
