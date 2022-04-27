@@ -21,7 +21,7 @@ test.beforeEach(async ({ page }) => {
   ]);
 
   await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
-  await expect(page.locator('text="3-D Man"')).toBeVisible();
+  await expect(page.locator('"3-D Man"')).toBeVisible();
 
   const locator = page.locator('section.card');
   await expect(locator).toHaveCount(50);
@@ -86,33 +86,27 @@ test('page 0, load different heroes', async ({ page }) => {
   ]);
 
   await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
-  await expect(page.locator('text="3-D Man"')).toBeVisible();
+  await expect(page.locator('"3-D Man"')).toBeVisible();
 });
 
 test('Next and Previous buttons', async ({ page }) => {
-  await Promise.all([page.waitForResponse(getCharactersApiURL(50)), page.click('text="Next ›"')]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(50)), page.click('"Next ›"')]);
   await expect(page).toHaveURL('http://localhost:8080/1');
   await expect(page).toHaveTitle('Page 1 - Marvel Heroes');
-  await expect(page.locator('text="Anita Blake"')).toBeVisible();
+  await expect(page.locator('"Anita Blake"')).toBeVisible();
 
-  await Promise.all([page.waitForResponse(getCharactersApiURL(100)), page.click('text="Next ›"')]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(100)), page.click('"Next ›"')]);
   await expect(page).toHaveURL('http://localhost:8080/2');
   await expect(page).toHaveTitle('Page 2 - Marvel Heroes');
-  await expect(page.locator('text="Beast"')).toBeVisible();
+  await expect(page.locator('"Beast"')).toBeVisible();
 
-  await Promise.all([
-    page.waitForResponse(getCharactersApiURL(50)),
-    page.click('text="‹ Previous"')
-  ]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(50)), page.click('"‹ Previous"')]);
   await expect(page).toHaveURL('http://localhost:8080/1');
   await expect(page).toHaveTitle('Page 1 - Marvel Heroes');
-  await expect(page.locator('text="Anita Blake"')).toBeVisible();
+  await expect(page.locator('"Anita Blake"')).toBeVisible();
 
-  await Promise.all([
-    page.waitForResponse(getCharactersApiURL(0)),
-    page.click('text="‹ Previous"')
-  ]);
+  await Promise.all([page.waitForResponse(getCharactersApiURL(0)), page.click('"‹ Previous"')]);
   await expect(page).toHaveURL('http://localhost:8080/0');
   await expect(page).toHaveTitle('Page 0 - Marvel Heroes');
-  await expect(page.locator('text="3-D Man"')).toBeVisible();
+  await expect(page.locator('"3-D Man"')).toBeVisible();
 });
