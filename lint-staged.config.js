@@ -7,7 +7,7 @@ module.exports = {
   '*.{ts,tsx}': [
     // FIXME https://github.com/microsoft/TypeScript/issues/27379
     () => 'tsc',
-    'jest --bail --findRelatedTests'
+    'jest --bail --findRelatedTests --passWithNoTests'
   ],
 
   '*.scss': 'stylelint --cache'

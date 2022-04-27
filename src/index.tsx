@@ -4,8 +4,9 @@ import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
 Sentry.init({
-  dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@sentry.io/1230526',
-  integrations: [new Integrations.BrowserTracing()]
+  dsn: 'https://c8f1d1109acc4e7881162d245f8f681f@o162677.ingest.sentry.io/1230526',
+  integrations: [new Integrations.BrowserTracing()],
+  tracesSampleRate: 1
 });
 
 import 'core-js';
