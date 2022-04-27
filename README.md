@@ -11,7 +11,7 @@ http://marvelheroes.s3-website.eu-west-3.amazonaws.com/ <sup>[1]</sup>
 
 React app that displays the Marvel characters thanks to https://developer.marvel.com/
 
-- Supports IE >= 10 (broken display but "works")
+- Supports IE 11 (broken display but "works")
 - [W3C validator](https://validator.w3.org/) completed
 
 I use this app as a boilerplate and to demo JS web app best practices.
