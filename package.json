@@ -42,7 +42,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@playwright/test": "^1.21.1",
+    "@playwright/test": "^1.27.1",
     "@testing-library/react": "^13.1.1",
     "@types/blueimp-md5": "^2.18.0",
     "@types/copy-webpack-plugin": "^8.0.1",
