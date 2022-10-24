@@ -9,21 +9,27 @@ export function fetchCharacters(offset: number) {
   let characters;
 
   switch (offset) {
-    case 0:
+    case 0: {
       characters = characters_offset_0.data.results;
       break;
-    case 50:
+    }
+    case 50: {
       characters = characters_offset_50.data.results;
       break;
-    case 204 /* 204 No Content ;-) */ * config.nbCharactersPerPage:
+    }
+    case 204 /* 204 No Content ;-) */ * config.nbCharactersPerPage: {
       characters = characters_offset_10200.data.results;
       break;
-    case 429 /* 429 Too Many Requests */ * config.nbCharactersPerPage:
+    }
+    case 429 /* 429 Too Many Requests */ * config.nbCharactersPerPage: {
       throw new Error('429 Too Many Requests');
-    case 500 * config.nbCharactersPerPage:
+    }
+    case 500 * config.nbCharactersPerPage: {
       throw new Error('500 Internal Server Error');
-    default:
+    }
+    default: {
       throw new Error(`Unknown offset: "${offset}"`);
+    }
   }
 
   return Promise.resolve(characters);
@@ -37,19 +43,24 @@ export function fetchCharacter(id: string) {
   let character;
 
   switch (id) {
-    case '1011334':
+    case '1011334': {
       character = character_id_1011334.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
-    case '1017100':
+    }
+    case '1017100': {
       character = character_id_1017100.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
-    case '1009144':
+    }
+    case '1009144': {
       character = character_id_1009144.data.results[0]; // eslint-disable-line prefer-destructuring
       break;
-    case 'unknown':
+    }
+    case 'unknown': {
       throw new Error('404 Not Found');
-    default:
+    }
+    default: {
       throw new Error(`Unknown id: "${id}"`);
+    }
   }
 
   return Promise.resolve(character);

@@ -10,7 +10,7 @@ import assert from 'node:assert';
 // eslint-disable-next-line no-console
 console.assert = assert;
 
-window.fetch = (input: RequestInfo) => {
+window.fetch = (input: RequestInfo | URL) => {
   const error = `You must mock fetch: '${input.toString()}'`;
   console.error(error);
   throw new Error(error);

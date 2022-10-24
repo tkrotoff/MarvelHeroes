@@ -21,7 +21,7 @@ test('getPackageNameFromPath()', () => {
     )
   ).toEqual('@scope/packageName');
 
-  expect(() => getPackageNameFromPath('/invalid/path/packageName')).toThrowError(
+  expect(() => getPackageNameFromPath('/invalid/path/packageName')).toThrow(
     "Could not recognize '/invalid/path/packageName'"
   );
 });
