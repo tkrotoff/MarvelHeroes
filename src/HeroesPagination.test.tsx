@@ -28,8 +28,7 @@ test('render without page query param then change page', async () => {
 
   expect(spy).toHaveBeenCalledTimes(1);
   screen.getByText('Marvel Heroes');
-  const prevLink = screen.getByText('‹ Previous') as HTMLLinkElement;
-  expect(prevLink.href).toEqual('http://localhost/-1');
+  expect((screen.getByText('‹ Previous') as HTMLButtonElement).disabled).toEqual(true);
   const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
   screen.getByText(pleaseWait);
@@ -50,7 +49,7 @@ test('render without page query param then change page', async () => {
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(2);
-  expect(prevLink.href).toEqual('http://localhost/0');
+  expect((screen.getByText('‹ Previous') as HTMLLinkElement).href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
   await waitFor(() => {

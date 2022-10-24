@@ -18,16 +18,15 @@ export function HeroesPagination() {
   return (
     <>
       <h1>Marvel Heroes</h1>
-      <Link
-        to={`/${page - 1}`}
-        className={`btn btn-primary me-2${
-          page === 0
-            ? ' disabled' // [Disabled href tag](https://stackoverflow.com/q/13955667)
-            : ''
-        }`}
-      >
-        ‹ Previous
-      </Link>
+      {page === 0 ? (
+        <button type="button" className="btn btn-primary me-2" disabled>
+          ‹ Previous
+        </button>
+      ) : (
+        <Link to={`/${page - 1}`} className="btn btn-primary me-2">
+          ‹ Previous
+        </Link>
+      )}
       <Link to={`/${page + 1}`} className="btn btn-primary">
         Next ›
       </Link>
