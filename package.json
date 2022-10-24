@@ -22,7 +22,11 @@
     "prepare": "husky install",
     "precommit": "lint-staged --verbose",
     "prepush": "npm run test && npm run test:e2e",
-    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install"
+    "npm:update": "npm run clean:all && npx npm-check-updates --upgrade && npm install",
+    "count-loc:js": "git ls-files | grep --extended-regexp '\\.(jsx?|tsx?)$' | xargs wc -l",
+    "count-loc:js:src": "git ls-files | grep --invert-match --extended-regexp '\\.test(\\.e2e)?\\.(jsx?|tsx?)$' | grep --invert-match '__mocks__' | grep --extended-regexp 'src/.*\\.(jsx?|tsx?)$' | xargs wc -l",
+    "count-loc:js:tests": "git ls-files | grep --extended-regexp '\\.test(\\.e2e)?\\.(jsx?|tsx?)$' | xargs wc -l",
+    "count-loc:css": "git ls-files | grep --extended-regexp '\\.s?css$' | xargs wc -l"
   },
   "dependencies": {
     "@babel/runtime": "^7.19.4",
