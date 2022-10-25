@@ -48,6 +48,7 @@ export function Hero() {
   assert(id !== undefined, 'Param id cannot be empty');
 
   useEffect(() => {
+    // FIXME Race condition https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect
     async function fetch(_id: string) {
       // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacter(undefined);

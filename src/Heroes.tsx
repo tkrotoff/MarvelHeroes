@@ -42,6 +42,7 @@ export function Heroes({ page }: Props) {
   const [characters, setCharacters] = useState<Marvel.Characters>();
 
   useEffect(() => {
+    // FIXME Race condition https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect
     async function fetch(_page: number) {
       // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacters(undefined);
