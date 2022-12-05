@@ -4,20 +4,10 @@ import 'core-js';
 // it generates "ReferenceError: regeneratorRuntime is not defined"
 import 'regenerator-runtime/runtime';
 
-import assert from 'node:assert';
+import { throwOnConsole, throwOnFetch, throwOnXMLHttpRequestOpen } from 'throw-on';
 
-// [console.assert not throwing with v22.4.0](https://github.com/facebook/jest/issues/5634)
-// eslint-disable-next-line no-console
-console.assert = assert;
-
-window.fetch = (input: RequestInfo | URL) => {
-  const error = `You must mock fetch: '${input.toString()}'`;
-  console.error(error);
-  throw new Error(error);
-};
-
-XMLHttpRequest.prototype.open = (_method: string, url: string) => {
-  const error = `You must mock XMLHttpRequest: '${url}'`;
-  console.error(error);
-  throw new Error(error);
-};
+throwOnConsole('assert');
+throwOnConsole('error');
+throwOnConsole('warn');
+throwOnFetch();
+throwOnXMLHttpRequestOpen();

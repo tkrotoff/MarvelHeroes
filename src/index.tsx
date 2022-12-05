@@ -23,6 +23,14 @@ import { Layout } from './Layout';
 import { Router } from './Router';
 import './index.scss';
 
+if (process.env.NODE_ENV !== 'production') {
+  // @ts-ignore
+  const { throwOnConsole } = await import('throw-on');
+  throwOnConsole('assert');
+  throwOnConsole('error');
+  throwOnConsole('warn');
+}
+
 const root = createRoot(document.getElementById('app')!);
 
 root.render(

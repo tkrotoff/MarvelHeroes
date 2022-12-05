@@ -39,6 +39,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.4",
+    "throw-on": "^0.7.0",
     "whatwg-fetch": "^3.6.2",
     "yet-another-abortcontroller-polyfill": "^0.0.4"
   },

@@ -22,6 +22,11 @@ export default (_webpackEnv: any, argv: any) => {
   const output = `[name].${isProd ? 'production.min' : 'development'}`;
 
   const config: webpack.Configuration = {
+    experiments: {
+      // Needed by "await import('throw-on')" inside src/index.tsx
+      topLevelAwait: true
+    },
+
     entry: './src/index.tsx',
 
     output: {
