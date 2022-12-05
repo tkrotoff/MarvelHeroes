@@ -23,7 +23,7 @@ const config = {
   globals: {},
 
   rules: {
-    'no-console': ['error', { allow: ['error'] }],
+    'no-console': ['error', { allow: ['info', 'error'] }],
     'no-underscore-dangle': 'off',
     'no-prototype-builtins': 'off',
     'no-plusplus': 'off',
@@ -74,18 +74,20 @@ const config = {
     ],
     'simple-import-sort/exports': 'error',
 
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v4.1.0/packages/eslint-plugin/docs/rules/no-use-before-define.md
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
 
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v4.1.0/packages/eslint-plugin/docs/rules/no-shadow.md
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
 
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/class-name-casing': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     'unicorn/filename-case': 'off',
