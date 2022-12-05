@@ -63,5 +63,5 @@ export function Hero() {
     fetch(id);
   }, [id, handleError]);
 
-  return character !== undefined ? <Character character={character} /> : <p>Please wait...</p>;
+  return character === undefined ? <p>Please wait...</p> : <Character character={character} />;
 }

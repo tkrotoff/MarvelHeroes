@@ -55,7 +55,7 @@ export function getQueryParams(offset?: number) {
     ts,
     apikey: API_PUBLIC,
     hash: md5(ts + API_PRIVATE + API_PUBLIC),
-    limit: offset !== undefined ? 50 : undefined,
+    limit: offset === undefined ? undefined : 50,
     offset
   };
 
