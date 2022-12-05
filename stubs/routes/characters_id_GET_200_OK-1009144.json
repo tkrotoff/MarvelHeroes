@@ -1,13 +1,13 @@
 {
   "code": 200,
   "status": "Ok",
-  "copyright": "© 2021 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
-  "etag": "dd9da35be5711d2e2aef139b7444953fbf62ba75",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "e1398ba28123f0df5519a2e6b4eebaa59b6a0f2f",
   "data": {
     "offset": 0,
-    "limit": 50,
+    "limit": 20,
     "total": 1,
     "count": 1,
     "results": [
@@ -62,6 +62,10 @@
               "name": "Avengers by Brian Michael Bendis: The Complete Collection Vol. 2 (Trade Paperback)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/103371",
+              "name": "Avengers Unlimited Infinity Comic (2022) #17"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/1170",
               "name": "Avengers Vol. 2: Red Zone (Trade Paperback)"
             },
@@ -98,10 +102,6 @@
               "name": "Indestructible Hulk (2012) #3"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/49865",
-              "name": "Iron Man (2012) #1"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/43944",
               "name": "Iron Man (2012) #1"
             }
@@ -109,7 +109,7 @@
           "returned": 20
         },
         "series": {
-          "available": 34,
+          "available": 35,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009144/series",
           "items": [
             {
@@ -135,6 +135,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23600",
               "name": "Avengers by Brian Michael Bendis: The Complete Collection Vol. 2 (2017)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/35600",
+              "name": "Avengers Unlimited Infinity Comic (2022 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/227",
@@ -187,16 +191,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/189",
               "name": "Marvel Masterworks: Captain America Vol. 1 - 2nd Edition (2003)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1506",
-              "name": "MARVEL MASTERWORKS: CAPTAIN AMERICA VOL. 1 HC (2005)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 54,
+          "available": 55,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009144/stories",
           "items": [
             {

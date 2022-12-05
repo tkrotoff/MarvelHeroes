@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "3a533fcb4acd36124471659a69bd3ba9f3fbe636",
+  "data": { "offset": 25000, "limit": 50, "total": 1562, "count": 0, "results": [] }
+}

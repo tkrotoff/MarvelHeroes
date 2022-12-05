@@ -2,7 +2,14 @@ import md5 from 'blueimp-md5';
 
 const API_PUBLIC = '298bab46381a6daaaee19aa5c8cafea5';
 const API_PRIVATE = 'b0223681fced28de0fe97e6b9cd091dd36a5b71d';
-const BASE_URL = 'https://gateway.marvel.com';
+let BASE_URL = 'https://gateway.marvel.com';
+
+// istanbul ignore next
+if (process.env.NODE_ENV !== 'production') {
+  // Use stub-server (localhost) in development mode
+  // Allows for configurable delays: helps find bugs and possible improvements - add a spinner, disable a submit button...
+  BASE_URL = '';
+}
 
 export interface CharacterCategory {
   available: number;

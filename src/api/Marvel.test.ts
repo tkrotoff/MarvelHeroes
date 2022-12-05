@@ -1,10 +1,8 @@
-/* eslint-disable jest/no-mocks-import */
-
+import character_id_1011334 from '../../stubs/routes/characters_id_GET_200_OK-1011334.json';
+import characters_offset_0 from '../../stubs/routes/characters_offset-0.json';
+import characters_offset_10200 from '../../stubs/routes/characters_offset-10200.json';
 import { fakeFetchResponseError, fakeFetchResponseSuccess } from '../utils/fakeFetchResponse';
 import { config } from '../config';
-import character_id_1011334 from './__mocks__/character_id_1011334.json';
-import characters_offset_0 from './__mocks__/characters_offset_0.json';
-import characters_offset_10200 from './__mocks__/characters_offset_10200.json';
 import * as Marvel from './Marvel';
 
 test('getQueryParams()', () => {

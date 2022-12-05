@@ -1,9 +1,0 @@
-{
-  "code": 200,
-  "status": "Ok",
-  "copyright": "© 2021 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
-  "etag": "83708c36d33f6368a6cf308fe868652633331607",
-  "data": { "offset": 10200, "limit": 50, "total": 1559, "count": 0, "results": [] }
-}

@@ -1,13 +1,13 @@
 {
   "code": 200,
   "status": "Ok",
-  "copyright": "© 2021 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
-  "etag": "988a6c1f74ffda4d807344a0156db4476e9c1d16",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "a0e24d410b8c2da8d79c7da95dd6b4eeeb5b2eea",
   "data": {
     "offset": 0,
-    "limit": 50,
+    "limit": 20,
     "total": 1,
     "count": 1,
     "results": [

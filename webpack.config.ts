@@ -2,6 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="node_modules/webpack-dev-server/types/lib/Server.d.ts"/>
 
+import { stubServer } from '@tkrotoff/stub-server';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import glob from 'glob';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -152,7 +153,13 @@ export default (_webpackEnv: any, argv: any) => {
 
     devServer: {
       // [How to tell webpack dev server to serve index.html for any route](https://stackoverflow.com/q/31945763)
-      historyApiFallback: true
+      historyApiFallback: true,
+
+      setupMiddlewares: (middlewares, devServer) => {
+        const configPath = path.resolve(__dirname, 'stubs/config');
+        stubServer(configPath, devServer.app!);
+        return middlewares;
+      }
     },
 
     // [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)

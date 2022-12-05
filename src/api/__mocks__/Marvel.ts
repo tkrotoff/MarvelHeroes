@@ -1,11 +1,12 @@
-/* eslint-disable import/first */
-
+import character_id_1009144 from '../../../stubs/routes/characters_id_GET_200_OK-1009144.json';
+import character_id_1011334 from '../../../stubs/routes/characters_id_GET_200_OK-1011334.json';
+import character_id_1017100 from '../../../stubs/routes/characters_id_GET_200_OK-1017100.json';
+import characters_offset_0 from '../../../stubs/routes/characters_offset-0.json';
+import characters_offset_50 from '../../../stubs/routes/characters_offset-50.json';
+import characters_offset_100 from '../../../stubs/routes/characters_offset-100.json';
+import characters_offset_150 from '../../../stubs/routes/characters_offset-150.json';
+import characters_offset_10200 from '../../../stubs/routes/characters_offset-10200.json';
 import { config } from '../../config';
-import characters_offset_0 from './characters_offset_0.json';
-import characters_offset_50 from './characters_offset_50.json';
-import characters_offset_100 from './characters_offset_100.json';
-import characters_offset_150 from './characters_offset_150.json';
-import characters_offset_10200 from './characters_offset_10200.json';
 
 export function fetchCharacters(offset: number) {
   let characters;
@@ -15,15 +16,15 @@ export function fetchCharacters(offset: number) {
       characters = characters_offset_0.data.results;
       break;
     }
-    case 50: {
+    case 1 * config.nbCharactersPerPage: {
       characters = characters_offset_50.data.results;
       break;
     }
-    case 100: {
+    case 2 * config.nbCharactersPerPage: {
       characters = characters_offset_100.data.results;
       break;
     }
-    case 150: {
+    case 3 * config.nbCharactersPerPage: {
       characters = characters_offset_150.data.results;
       break;
     }
@@ -38,16 +39,12 @@ export function fetchCharacters(offset: number) {
       throw new Error('500 Internal Server Error');
     }
     default: {
-      throw new Error(`Unknown offset: "${offset}"`);
+      throw new Error(`Unknown offset: '${offset}'`);
     }
   }
 
   return Promise.resolve(characters);
 }
-
-import character_id_1009144 from './character_id_1009144.json';
-import character_id_1011334 from './character_id_1011334.json';
-import character_id_1017100 from './character_id_1017100.json';
 
 export function fetchCharacter(id: string) {
   let character;
@@ -69,7 +66,7 @@ export function fetchCharacter(id: string) {
       throw new Error('404 Not Found');
     }
     default: {
-      throw new Error(`Unknown id: "${id}"`);
+      throw new Error(`Unknown id: '${id}'`);
     }
   }
 
