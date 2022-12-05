@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
@@ -35,6 +35,9 @@ interface Props {
 }
 
 export function Heroes({ page }: Props) {
+  // Could also be a variable outside instead of a ref
+  const controller = useRef<AbortController>();
+
   usePageTitle(`Page ${page}`);
 
   const handleError = useErrorHandler();
@@ -42,19 +45,33 @@ export function Heroes({ page }: Props) {
   const [characters, setCharacters] = useState<Marvel.Characters>();
 
   useEffect(() => {
-    // FIXME Race condition https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect
     async function fetch(_page: number) {
+      controller.current?.abort();
+      controller.current = new AbortController();
+
       // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacters(undefined);
       try {
-        const _characters = await Marvel.fetchCharacters(_page * config.nbCharactersPerPage);
+        const _characters = await Marvel.fetchCharacters(
+          _page * config.nbCharactersPerPage,
+          controller.current
+        );
         setCharacters(_characters);
       } catch (e) {
-        handleError(e);
+        // istanbul ignore next
+        if (e instanceof Error && e.name === 'AbortError') {
+          // Aborting a fetch throws an error
+        } else {
+          handleError(e);
+        }
       }
     }
 
     fetch(page);
+
+    return () => {
+      controller.current?.abort();
+    };
   }, [page, handleError]);
 
   if (characters === undefined) {

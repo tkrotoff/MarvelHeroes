@@ -1,7 +1,8 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
+import { flushPromises } from './utils/flushPromises';
 import { Hero } from './Hero';
 
 jest.mock('./api/Marvel');
@@ -69,4 +70,27 @@ test('fetchCharacter() error', () => {
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
 
   consoleSpy.mockRestore();
+});
+
+test('abort previous requests', async () => {
+  const abortSpy = jest.spyOn(AbortController.prototype, 'abort').mockImplementation();
+
+  useParamsMock.mockReturnValue({ id: '1011334' });
+  const { rerender } = render(<Hero />);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
+  expect(abortSpy).toHaveBeenCalledTimes(0);
+
+  useParamsMock.mockReturnValue({ id: '1017100' });
+  rerender(<Hero />);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(2);
+  expect(abortSpy).toHaveBeenCalledTimes(2);
+
+  useParamsMock.mockReturnValue({ id: '1009144' });
+  rerender(<Hero />);
+  expect(fetchCharacterSpy).toHaveBeenCalledTimes(3);
+  expect(abortSpy).toHaveBeenCalledTimes(4);
+
+  await act(flushPromises);
+
+  abortSpy.mockRestore();
 });

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -39,6 +39,9 @@ function Character({ character }: { character: Marvel.Character }) {
 }
 
 export function Hero() {
+  // Could also be a variable outside instead of a ref
+  const controller = useRef<AbortController>();
+
   usePageTitle('...');
 
   const handleError = useErrorHandler();
@@ -48,19 +51,30 @@ export function Hero() {
   assert(id !== undefined, 'Param id cannot be empty');
 
   useEffect(() => {
-    // FIXME Race condition https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect
     async function fetch(_id: string) {
+      controller.current?.abort();
+      controller.current = new AbortController();
+
       // eslint-disable-next-line unicorn/no-useless-undefined
       setCharacter(undefined);
       try {
-        const _character = await Marvel.fetchCharacter(_id);
+        const _character = await Marvel.fetchCharacter(_id, controller.current);
         setCharacter(_character);
       } catch (e) {
-        handleError(e);
+        // istanbul ignore next
+        if (e instanceof Error && e.name === 'AbortError') {
+          // Aborting a fetch throws an error
+        } else {
+          handleError(e);
+        }
       }
     }
 
     fetch(id);
+
+    return () => {
+      controller.current?.abort();
+    };
   }, [id, handleError]);
 
   return character === undefined ? <p>Please wait...</p> : <Character character={character} />;

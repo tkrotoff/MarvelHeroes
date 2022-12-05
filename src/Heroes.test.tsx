@@ -1,7 +1,8 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
+import { flushPromises } from './utils/flushPromises';
 import { Heroes } from './Heroes';
 
 jest.mock('./api/Marvel');
@@ -109,4 +110,44 @@ test('fetchCharacters() error "429 Too Many Requests"', () => {
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
 
   consoleSpy.mockRestore();
+});
+
+test('abort previous requests', async () => {
+  const abortSpy = jest.spyOn(AbortController.prototype, 'abort').mockImplementation();
+
+  const { rerender } = render(
+    <MemoryRouter>
+      <Heroes page={0} />
+    </MemoryRouter>
+  );
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
+  expect(abortSpy).toHaveBeenCalledTimes(0);
+
+  rerender(
+    <MemoryRouter>
+      <Heroes page={1} />
+    </MemoryRouter>
+  );
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
+  expect(abortSpy).toHaveBeenCalledTimes(2);
+
+  rerender(
+    <MemoryRouter>
+      <Heroes page={2} />
+    </MemoryRouter>
+  );
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(3);
+  expect(abortSpy).toHaveBeenCalledTimes(4);
+
+  rerender(
+    <MemoryRouter>
+      <Heroes page={3} />
+    </MemoryRouter>
+  );
+  expect(fetchCharactersSpy).toHaveBeenCalledTimes(4);
+  expect(abortSpy).toHaveBeenCalledTimes(6);
+
+  await act(flushPromises);
+
+  abortSpy.mockRestore();
 });

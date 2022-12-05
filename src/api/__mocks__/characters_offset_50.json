@@ -1,14 +1,14 @@
 {
   "code": 200,
   "status": "Ok",
-  "copyright": "© 2021 MARVEL",
-  "attributionText": "Data provided by Marvel. © 2021 MARVEL",
-  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2021 MARVEL</a>",
-  "etag": "23cdfd8db6f8cb024d985846d76273d4bdd10d66",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "5b4f7a4b63bd8fe8cede5a94d48d9c0ed27769d6",
   "data": {
     "offset": 50,
     "limit": 50,
-    "total": 1559,
+    "total": 1562,
     "count": 50,
     "results": [
       {
@@ -259,7 +259,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009154",
         "comics": {
-          "available": 65,
+          "available": 66,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009154/comics",
           "items": [
             {
@@ -315,6 +315,10 @@
               "name": "Fantastic Four (1998) #40"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/95800",
+              "name": "Fantastic Four (2018) #41"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/15563",
               "name": "Fantastic Four (1998) #42"
             },
@@ -337,16 +341,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13064",
               "name": "Fantastic Four (1961) #252"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/13065",
-              "name": "Fantastic Four (1961) #253"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 30,
+          "available": 31,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009154/series",
           "items": [
             {
@@ -394,6 +394,10 @@
               "name": "Fantastic Four (1996 - 1997)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24554",
+              "name": "Fantastic Four (2018 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2012",
               "name": "Fantastic Four Annual (1963 - 1994)"
             },
@@ -424,16 +428,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1437",
               "name": "Marvel Masterworks: The Fantastic Four Vol. 8 (2005)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2059",
-              "name": "Paradise X (2002 - 2003)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 82,
+          "available": 83,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009154/stories",
           "items": [
             {
@@ -553,7 +553,7 @@
         "urls": [
           {
             "type": "detail",
-            "url": "http://marvel.com/comics/characters/1009154/annihilus?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
+            "url": "http://marvel.com/characters/154/annihilus?utm_campaign=apiRef&utm_source=298bab46381a6daaaee19aa5c8cafea5"
           },
           {
             "type": "wiki",
@@ -589,7 +589,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/26970",
-              "name": "Uncanny X-Men (1981) #517"
+              "name": "Uncanny X-Men (1963) #517"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/79949",
@@ -616,11 +616,11 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/27567",
-              "name": "X-Men (2019 - Present)"
+              "name": "X-Men (2019 - 2021)"
             }
           ],
           "returned": 4
@@ -689,9 +689,17 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010802",
         "comics": {
-          "available": 42,
+          "available": 44,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010802/comics",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98659",
+              "name": "Ant-Man (2022) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98660",
+              "name": "Ant-Man (2022) #3"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/36765",
               "name": "Ant-Man & the Wasp (2010) #1"
@@ -763,22 +771,18 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/5938",
               "name": "Irredeemable Ant-Man (2006) #5"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/6076",
-              "name": "Irredeemable Ant-Man (2006) #6"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/6210",
-              "name": "Irredeemable Ant-Man (2006) #7"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 13,
+          "available": 14,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010802/series",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34022",
+              "name": "Ant-Man (2022 - Present)"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/13082",
               "name": "Ant-Man & the Wasp (2010 - 2011)"
@@ -805,7 +809,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2423",
-              "name": "Irredeemable Ant-Man Vol. 1: Low-Life (2007)"
+              "name": "IRREDEEMABLE ANT-MAN VOL. 1: LOW-LIFE DIGEST (2007)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/5202",
@@ -832,10 +836,10 @@
               "name": "X-Men: God Loves, Man Kills (2011 - 2019)"
             }
           ],
-          "returned": 13
+          "returned": 14
         },
         "stories": {
-          "available": 41,
+          "available": 43,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010802/stories",
           "items": [
             {
@@ -999,12 +1003,24 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009155",
         "comics": {
-          "available": 38,
+          "available": 41,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009155/comics",
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/47072",
               "name": "Age of Ultron (2013) #10"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98658",
+              "name": "Ant-Man (2022) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98659",
+              "name": "Ant-Man (2022) #2"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98660",
+              "name": "Ant-Man (2022) #3"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/67309",
@@ -1069,29 +1085,21 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/31158",
               "name": "Avengers: The Origin (2010) #5"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/68004",
-              "name": "Color Your Own Ant-Man and the Wasp (Trade Paperback)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/12961",
-              "name": "Fantastic Four (1961) #16"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/65569",
-              "name": "Incredible Hulk Epic Collection: Fall of the Pantheon (Trade Paperback)"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 27,
+          "available": 28,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009155/series",
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/17318",
               "name": "Age of Ultron (2013)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34022",
+              "name": "Ant-Man (2022 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/24323",
@@ -1164,16 +1172,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/25011",
               "name": "Marvel Masterworks: Ant-Man/Giant-Man Vol. 3 (2018)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23692",
-              "name": "Marvel Super Heroes: Larger Than Life (2017)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 41,
+          "available": 44,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009155/stories",
           "items": [
             {
@@ -1316,7 +1320,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010801",
         "comics": {
-          "available": 115,
+          "available": 120,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010801/comics",
           "items": [
             {
@@ -1403,7 +1407,7 @@
           "returned": 20
         },
         "series": {
-          "available": 49,
+          "available": 52,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010801/series",
           "items": [
             {
@@ -1431,6 +1435,10 @@
               "name": "Amazing Spider-Man Annual (1964 - 2018)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34022",
+              "name": "Ant-Man (2022 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/29032",
               "name": "Ant-Man (2020)"
             },
@@ -1455,16 +1463,16 @@
               "name": "Ant-Man: Astonishing Origins (2018)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
+              "name": "Avengers (1963 - 1996)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/9085",
               "name": "Avengers (2010 - 2012)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/354",
               "name": "Avengers (1998 - 2004)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
-              "name": "Avengers (1963 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/24446",
@@ -1481,16 +1489,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/24551",
               "name": "Color Your Own Ant-Man and the Wasp (2018)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23913",
-              "name": "Deadpool Classic Vol. 21: DvX (2018)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 137,
+          "available": 142,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010801/stories",
           "items": [
             {
@@ -1846,7 +1850,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009156",
         "comics": {
-          "available": 123,
+          "available": 126,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009156/comics",
           "items": [
             {
@@ -1902,6 +1906,10 @@
               "name": "Cable (1993) #75"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/94066",
+              "name": "Dark Ages (2021) #6"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/39445",
               "name": "Essential X-Factor Vol. 2 (All-New Edition) (Trade Paperback)"
             },
@@ -1924,16 +1932,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/78389",
               "name": "Excalibur (2019) #8"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/84380",
-              "name": "Excalibur (2019) #12"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 56,
+          "available": 58,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009156/series",
           "items": [
             {
@@ -1951,6 +1955,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/4002",
               "name": "Cable (2008 - 2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/31088",
+              "name": "Dark Ages (2021 - 2022)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/14400",
@@ -1971,6 +1979,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2021",
               "name": "Incredible Hulk (1962 - 1999)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34445",
+              "name": "Life of Wolverine Infinity Comic (2022 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/8138",
@@ -2006,21 +2018,13 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1075",
-              "name": "What If? X-Men Age of Apocalypse (2006)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2425",
-              "name": "WHAT IF?: EVENT HORIZON TPB (2007)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 124,
+          "available": 126,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009156/stories",
           "items": [
             {
@@ -2456,7 +2460,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1017438",
         "comics": {
-          "available": 22,
+          "available": 23,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017438/comics",
           "items": [
             {
@@ -2482,6 +2486,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/3497",
               "name": "ARANA VOL. 3: NIGHT OF THE HUNTER DIGEST (Digest)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/102811",
+              "name": "Arana: Night Of The Hunter (Trade Paperback)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/1589",
@@ -2534,16 +2542,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/37044",
               "name": "Avengers Academy Giant-Size (2010) #1"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/67950",
-              "name": "Captain Marvel: Carol Danvers - The Ms. Marvel Years Vol. 2 (Trade Paperback)"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 8,
+          "available": 9,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017438/series",
           "items": [
             {
@@ -2563,6 +2567,10 @@
               "name": "ARANA VOL. 3: NIGHT OF THE HUNTER DIGEST (2006)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/35459",
+              "name": "Arana: Night Of The Hunter (2022)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/853",
               "name": "Arana: The Heart of the Spider (2005)"
             },
@@ -2579,10 +2587,10 @@
               "name": "Marvel Team-Up (2004 - 2006)"
             }
           ],
-          "returned": 8
+          "returned": 9
         },
         "stories": {
-          "available": 20,
+          "available": 21,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1017438/stories",
           "items": [
             {
@@ -2716,7 +2724,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009158",
         "comics": {
-          "available": 28,
+          "available": 29,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009158/comics",
           "items": [
             {
@@ -2764,6 +2772,10 @@
               "name": "MARVEL MASTERWORKS: THE UNCANNY X-MEN VOL. 6 HC (Hardcover)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/103829",
+              "name": "Murderworld: Avengers (2022) #1"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/64576",
               "name": "Spider-Man/Deadpool (2016) #21"
             },
@@ -2785,25 +2797,21 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13686",
-              "name": "Uncanny X-Men (1981) #145"
+              "name": "Uncanny X-Men (1963) #145"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13687",
-              "name": "Uncanny X-Men (1981) #146"
+              "name": "Uncanny X-Men (1963) #146"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13688",
-              "name": "Uncanny X-Men (1981) #147"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/4100",
-              "name": "Uncanny X-Men Omnibus Vol. 1 (Hardcover)"
+              "name": "Uncanny X-Men (1963) #147"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 19,
+          "available": 20,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009158/series",
           "items": [
             {
@@ -2843,6 +2851,10 @@
               "name": "MARVEL MASTERWORKS: THE UNCANNY X-MEN VOL. 6 HC (2008)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/35694",
+              "name": "Murderworld: Avengers (2022)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/19679",
               "name": "Spider-Man/Deadpool (2016 - 2019)"
             },
@@ -2856,7 +2868,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1723",
@@ -2883,10 +2895,10 @@
               "name": "X-Men: The Complete Age of Apocalypse Epic Book 4 (2006)"
             }
           ],
-          "returned": 19
+          "returned": 20
         },
         "stories": {
-          "available": 29,
+          "available": 30,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009158/stories",
           "items": [
             {
@@ -3099,7 +3111,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009159",
         "comics": {
-          "available": 561,
+          "available": 562,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009159/comics",
           "items": [
             {
@@ -3206,12 +3218,12 @@
               "name": "Archangel (1996)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/744",
-              "name": "Astonishing X-Men (2004 - 2013)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23262",
               "name": "Astonishing X-Men (2017 - 2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/744",
+              "name": "Astonishing X-Men (2004 - 2013)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/26006",
@@ -3238,12 +3250,12 @@
               "name": "Bishop (1994 - 1995)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1995",
-              "name": "Cable (1993 - 2002)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/4002",
               "name": "Cable (2008 - 2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1995",
+              "name": "Cable (1993 - 2002)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/8",
@@ -3494,35 +3506,35 @@
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13751",
-              "name": "Uncanny X-Men (1981) #210"
+              "name": "Uncanny X-Men (1963) #210"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13752",
-              "name": "Uncanny X-Men (1981) #211"
+              "name": "Uncanny X-Men (1963) #211"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13756",
-              "name": "Uncanny X-Men (1981) #215"
+              "name": "Uncanny X-Men (1963) #215"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13760",
-              "name": "Uncanny X-Men (1981) #219"
+              "name": "Uncanny X-Men (1963) #219"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13762",
-              "name": "Uncanny X-Men (1981) #221"
+              "name": "Uncanny X-Men (1963) #221"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13763",
-              "name": "Uncanny X-Men (1981) #222"
+              "name": "Uncanny X-Men (1963) #222"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13781",
-              "name": "Uncanny X-Men (1981) #240"
+              "name": "Uncanny X-Men (1963) #240"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13891",
-              "name": "Uncanny X-Men (1981) #350"
+              "name": "Uncanny X-Men (1963) #350"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/12175",
@@ -3557,7 +3569,7 @@
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2098",
@@ -3727,7 +3739,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/5205",
-              "name": "Ares: God of War (Trade Paperback)"
+              "name": "ARES: GOD OF WAR TPB (Trade Paperback)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/17532",
@@ -3798,15 +3810,15 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1648",
-              "name": "Ares: God of War (2006)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
-              "name": "Avengers (1963 - 1996)"
+              "name": "ARES: GOD OF WAR TPB (2006)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/354",
               "name": "Avengers (1998 - 2004)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
+              "name": "Avengers (1963 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/4864",
@@ -4146,7 +4158,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011298",
         "comics": {
-          "available": 24,
+          "available": 29,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011298/comics",
           "items": [
             {
@@ -4218,22 +4230,22 @@
               "name": "Cable Vol. 2: The Newer Mutants (Trade Paperback)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98481",
+              "name": "The Secret X-Men (2022) #1"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/24131",
-              "name": "Uncanny X-Men (1981) #510"
+              "name": "Uncanny X-Men (1963) #510"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/26970",
-              "name": "Uncanny X-Men (1981) #517"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/41548",
-              "name": "Wolverine & the X-Men: Alpha & Omega (2011) #3"
+              "name": "Uncanny X-Men (1963) #517"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 9,
+          "available": 12,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011298/series",
           "items": [
             {
@@ -4245,12 +4257,12 @@
               "name": "Astonishing X-Men (2004 - 2013)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/28038",
-              "name": "Cable (2020 - Present)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/22386",
               "name": "Cable (2017 - 2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/28038",
+              "name": "Cable (2020 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/31620",
@@ -4261,22 +4273,34 @@
               "name": "Cable Vol. 2: The Newer Mutants (2018)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/33968",
+              "name": "The Secret X-Men (2022)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/15486",
               "name": "Wolverine & the X-Men: Alpha & Omega (2011 - 2012)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/31573",
+              "name": "X-Men Unlimited Infinity Comic (2021 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23016",
               "name": "X-Men: Gold (2017 - 2018)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/36858",
+              "name": "X-Men: Hellfire Gala Confessionals Infinity Comic (2022)"
             }
           ],
-          "returned": 9
+          "returned": 12
         },
         "stories": {
-          "available": 24,
+          "available": 29,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011298/stories",
           "items": [
             {
@@ -4485,9 +4509,13 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009740",
         "comics": {
-          "available": 22,
+          "available": 23,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009740/comics",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/98662",
+              "name": "Captain America (2018)"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/44797",
               "name": "Captain America (2012) #2"
@@ -4563,18 +4591,18 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/39788",
               "name": "CAPTAIN AMERICA: REBORN MGC 1 (2011) #1"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/13537",
-              "name": "Civil War: Captain America (Trade Paperback)"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 9,
+          "available": 10,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009740/series",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/24503",
+              "name": "Captain America (2018 - Present)"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
               "name": "Captain America (1968 - 1996)"
@@ -4612,10 +4640,10 @@
               "name": "X-51 (1999 - 2000)"
             }
           ],
-          "returned": 9
+          "returned": 10
         },
         "stories": {
-          "available": 24,
+          "available": 25,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009740/stories",
           "items": [
             {
@@ -5127,7 +5155,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011758",
         "comics": {
-          "available": 37,
+          "available": 47,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011758/comics",
           "items": [
             {
@@ -5214,7 +5242,7 @@
           "returned": 20
         },
         "series": {
-          "available": 22,
+          "available": 23,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011758/series",
           "items": [
             {
@@ -5294,14 +5322,14 @@
               "name": "MARVEL MASTERWORKS: THE AVENGERS VOL. 3 HC (2004)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23001",
-              "name": "Saga of the Sub-Mariner (1988 - 1989)"
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/37045",
+              "name": "Namor: The Black Tide Infinity Comic (2022 - Present)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 44,
+          "available": 54,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011758/stories",
           "items": [
             {
@@ -5444,7 +5472,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009163",
         "comics": {
-          "available": 78,
+          "available": 82,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009163/comics",
           "items": [
             {
@@ -5472,12 +5500,12 @@
               "name": "Alpha Flight (1983) #2"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/38565",
-              "name": "Alpha Flight (2011) #3"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/12690",
               "name": "Alpha Flight (1983) #3"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/38565",
+              "name": "Alpha Flight (2011) #3"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/12701",
@@ -5531,16 +5559,12 @@
           "returned": 20
         },
         "series": {
-          "available": 17,
+          "available": 18,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009163/series",
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/3614",
               "name": "Age of Apocalypse: The Chosen (1995)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/719",
-              "name": "Alpha Flight (2004 - 2005)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/13907",
@@ -5551,6 +5575,10 @@
               "name": "Alpha Flight (1983 - 1994)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/719",
+              "name": "Alpha Flight (2004 - 2005)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/13260",
               "name": "Chaos War: Alpha Flight (2010)"
             },
@@ -5559,12 +5587,16 @@
               "name": "Hulk (2008 - 2012)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34029",
+              "name": "Marauders (2022 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1440",
               "name": "MARVEL MASTERWORKS: THE UNCANNY X-MEN VOL. 2 HC (2005)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1723",
@@ -5591,22 +5623,22 @@
               "name": "Wolverine (1988 - 2003)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2098",
-              "name": "X-Factor (1986 - 1998)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/28053",
               "name": "X-Factor (2020 - Present)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2098",
+              "name": "X-Factor (1986 - 1998)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1583",
               "name": "X-Men: The Complete Age of Apocalypse Epic Book 2 (2005)"
             }
           ],
-          "returned": 17
+          "returned": 18
         },
         "stories": {
-          "available": 90,
+          "available": 94,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009163/stories",
           "items": [
             {
@@ -5761,7 +5793,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009164",
         "comics": {
-          "available": 41,
+          "available": 47,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009164/comics",
           "items": [
             {
@@ -5802,53 +5834,53 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13683",
-              "name": "Uncanny X-Men (1981) #142"
+              "name": "Uncanny X-Men (1963) #142"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13718",
-              "name": "Uncanny X-Men (1981) #177"
+              "name": "Uncanny X-Men (1963) #177"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13719",
-              "name": "Uncanny X-Men (1981) #178"
+              "name": "Uncanny X-Men (1963) #178"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13740",
-              "name": "Uncanny X-Men (1981) #199"
+              "name": "Uncanny X-Men (1963) #199"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13741",
-              "name": "Uncanny X-Men (1981) #200"
+              "name": "Uncanny X-Men (1963) #200"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13747",
-              "name": "Uncanny X-Men (1981) #206"
+              "name": "Uncanny X-Men (1963) #206"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13766",
-              "name": "Uncanny X-Men (1981) #225"
+              "name": "Uncanny X-Men (1963) #225"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13767",
-              "name": "Uncanny X-Men (1981) #226"
+              "name": "Uncanny X-Men (1963) #226"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13796",
-              "name": "Uncanny X-Men (1981) #255"
+              "name": "Uncanny X-Men (1963) #255"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13942",
-              "name": "Uncanny X-Men (1981) #401"
+              "name": "Uncanny X-Men (1963) #401"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13943",
-              "name": "Uncanny X-Men (1981) #402"
+              "name": "Uncanny X-Men (1963) #402"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 18,
+          "available": 20,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009164/series",
           "items": [
             {
@@ -5885,7 +5917,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/543",
@@ -5912,6 +5944,10 @@
               "name": "X-Men Annual (1970 - 1994)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/31573",
+              "name": "X-Men Unlimited Infinity Comic (2021 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1301",
               "name": "X-Men: Day of the Atom (2005)"
             },
@@ -5922,12 +5958,16 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1318",
               "name": "X-MEN: DREAM'S END TPB (2004)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/36858",
+              "name": "X-Men: Hellfire Gala Confessionals Infinity Comic (2022)"
             }
           ],
-          "returned": 18
+          "returned": 20
         },
         "stories": {
-          "available": 48,
+          "available": 54,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009164/stories",
           "items": [
             {
@@ -6091,9 +6131,25 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009165",
         "comics": {
-          "available": 1963,
+          "available": 2061,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009165/comics",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/102802",
+              "name": "A.X.E.: Avengers (2022) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/102808",
+              "name": "A.X.E.: Eve Of Judgment (2022) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/100366",
+              "name": "A.X.E.: Judgment Day (2022) #1"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/102807",
+              "name": "A.X.E.: Judgment Day (2022) #6"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/77059",
               "name": "Absolute Carnage: Avengers (2019) #1"
@@ -6157,30 +6213,26 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/38524",
               "name": "Age of X: Universe (2011) #1"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/38523",
-              "name": "Age of X: Universe (2011) #2"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/37278",
-              "name": "Alias (2001) #4"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/37255",
-              "name": "Alias Omnibus (Hardcover)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/43473",
-              "name": "All-New X-Men (2012) #8"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 598,
+          "available": 634,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009165/series",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/35453",
+              "name": "A.X.E.: Avengers (2022)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/35456",
+              "name": "A.X.E.: Eve Of Judgment (2022)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34459",
+              "name": "A.X.E.: Judgment Day (2022)"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/27631",
               "name": "Absolute Carnage: Avengers (2019)"
@@ -6230,6 +6282,10 @@
               "name": "ALL-NEW, ALL-DIFFERENT AVENGERS HC (2017)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34554",
+              "name": "All-Out Avengers (2022 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/719",
               "name": "Alpha Flight (2004 - 2005)"
             },
@@ -6244,28 +6300,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2984",
               "name": "Amazing Spider-Man Annual (1964 - 2018)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/24403",
-              "name": "Amazing Spider-Man Epic Collection: Spider-Man No More (2018)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/5376",
-              "name": "Amazing Spider-Man Family (2008 - 2009)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1489",
-              "name": "AMAZING SPIDER-MAN VOL. 10: NEW AVENGERS TPB (2005)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/16312",
-              "name": "Amazing Spider-Man: Ends of the Earth (2012)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 2790,
+          "available": 2892,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009165/stories",
           "items": [
             {
@@ -6436,11 +6476,11 @@
               "name": "Initiative"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/events/333",
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/337",
               "name": "Monsters Unleashed"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/events/337",
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/333",
               "name": "Monsters Unleashed"
             }
           ],
@@ -6749,7 +6789,7 @@
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13969",
-              "name": "Uncanny X-Men (1981) #428"
+              "name": "Uncanny X-Men (1963) #428"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/70097",
@@ -6768,7 +6808,7 @@
           "items": [
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23012",
@@ -6947,6 +6987,10 @@
               "name": "Iron Man (1998 - 2004)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/14764",
+              "name": "Journey Into Mystery (2011 - 2013)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2032",
               "name": "Journey Into Mystery (1952 - 1966)"
             },
@@ -6955,15 +6999,11 @@
               "name": "Journey Into Mystery (1996 - 1998)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/14764",
-              "name": "Journey Into Mystery (2011 - 2013)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/14509",
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/14516",
               "name": "Marvel Masterworks: The Mighty Thor (2011 - Present)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/14516",
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/14509",
               "name": "Marvel Masterworks: The Mighty Thor (2011 - Present)"
             },
             {
@@ -6983,20 +7023,20 @@
               "name": "New Mutants (1983 - 1991)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2083",
-              "name": "Thor (1966 - 1996)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2473",
-              "name": "Thor (2007 - 2011)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/581",
               "name": "Thor (1998 - 2004)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/24308",
               "name": "Thor (2018 - 2019)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2083",
+              "name": "Thor (1966 - 1996)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2473",
+              "name": "Thor (2007 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/8918",
@@ -7162,7 +7202,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009168",
         "comics": {
-          "available": 177,
+          "available": 181,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009168/comics",
           "items": [
             {
@@ -7249,7 +7289,7 @@
           "returned": 20
         },
         "series": {
-          "available": 50,
+          "available": 53,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009168/series",
           "items": [
             {
@@ -7257,12 +7297,12 @@
               "name": "Alpha Flight (1983 - 1994)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23262",
-              "name": "Astonishing X-Men (2017 - 2018)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/3619",
               "name": "Astonishing X-Men (1995)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/23262",
+              "name": "Astonishing X-Men (2017 - 2018)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
@@ -7301,6 +7341,10 @@
               "name": "House of M: Uncanny X-Men (2006)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/33959",
+              "name": "Legion of X (2022 - Present)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/27555",
               "name": "Marauders (2019 - Present)"
             },
@@ -7327,16 +7371,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/249",
               "name": "Marvel Masterworks: The X-Men Vol. III - 2nd Edition (1st) (2003)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1689",
-              "name": "Marvel Masterworks: The X-Men Vol.6 (2006)"
             }
           ],
           "returned": 20
         },
         "stories": {
-          "available": 201,
+          "available": 205,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009168/stories",
           "items": [
             {
@@ -7515,7 +7555,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009596",
         "comics": {
-          "available": 154,
+          "available": 155,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009596/comics",
           "items": [
             {
@@ -7602,7 +7642,7 @@
           "returned": 20
         },
         "series": {
-          "available": 30,
+          "available": 31,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009596/series",
           "items": [
             {
@@ -7630,12 +7670,12 @@
               "name": "MARVEL MASTERWORKS: THE UNCANNY X-MEN VOL. 6 HC (2008)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/2281",
-              "name": "New X-Men (2001 - 2004)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1807",
               "name": "New X-Men (2006)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/2281",
+              "name": "New X-Men (2001 - 2004)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/56",
@@ -7651,15 +7691,11 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/3648",
               "name": "What If? (1989 - 1998)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/28053",
-              "name": "X-Factor (2020 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2098",
@@ -7668,6 +7704,10 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1035",
               "name": "X-Factor (2005 - 2013)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/28053",
+              "name": "X-Factor (2020 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/6689",
@@ -7689,7 +7729,7 @@
           "returned": 20
         },
         "stories": {
-          "available": 177,
+          "available": 178,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009596/stories",
           "items": [
             {
@@ -7852,7 +7892,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011778",
         "comics": {
-          "available": 19,
+          "available": 17,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011778/comics",
           "items": [
             {
@@ -7866,10 +7906,6 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/60974",
               "name": "Doctor Strange (2015) #24"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/64768",
-              "name": "Doctor Strange Epic Collection: Afterlife (Trade Paperback)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/60167",
@@ -7904,10 +7940,6 @@
               "name": "Doctor Strange, Sorcerer Supreme (1988) #86"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/64666",
-              "name": "Doctor Strange, Sorcerer Supreme Omnibus Vol. 1 (Hardcover)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/20089",
               "name": "Doctor Strange (1974) #11"
             },
@@ -7932,23 +7964,19 @@
               "name": "Untold Tales of Spider-Man: Strange Encounter (1998) #1"
             }
           ],
-          "returned": 19
+          "returned": 17
         },
         "series": {
-          "available": 11,
+          "available": 9,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011778/series",
           "items": [
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/3740",
-              "name": "Doctor Strange (1974 - 1988)"
-            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/20457",
               "name": "Doctor Strange (2015 - 2018)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23594",
-              "name": "Doctor Strange Epic Collection: Afterlife (2017)"
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/3740",
+              "name": "Doctor Strange (1974 - 1988)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/22116",
@@ -7961,10 +7989,6 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/3741",
               "name": "Doctor Strange, Sorcerer Supreme (1988 - 1996)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/23555",
-              "name": "Doctor Strange, Sorcerer Supreme Omnibus Vol. 1 (2017)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23007",
@@ -7983,7 +8007,7 @@
               "name": "Untold Tales of Spider-Man: Strange Encounter (1998)"
             }
           ],
-          "returned": 11
+          "returned": 9
         },
         "stories": {
           "available": 21,
@@ -8220,12 +8244,12 @@
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009169/series",
           "items": [
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
-              "name": "Captain America (1968 - 1996)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/485",
               "name": "Captain America (2002 - 2004)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
+              "name": "Captain America (1968 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/22388",
@@ -8281,7 +8305,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/25556",
@@ -8549,16 +8573,16 @@
               "name": "Avengers: Earth's Mightiest Heroes (2004 - 2005)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/832",
+              "name": "Captain America (2004 - 2011)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
               "name": "Captain America (1968 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/485",
               "name": "Captain America (2002 - 2004)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/832",
-              "name": "Captain America (2004 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1612",
@@ -8759,7 +8783,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010906",
         "comics": {
-          "available": 32,
+          "available": 33,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010906/comics",
           "items": [
             {
@@ -8846,7 +8870,7 @@
           "returned": 20
         },
         "series": {
-          "available": 16,
+          "available": 17,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010906/series",
           "items": [
             {
@@ -8894,6 +8918,10 @@
               "name": "Old Man Hawkeye (2018)"
             },
             {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/34200",
+              "name": "Savage Spider-Man (2022)"
+            },
+            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/23020",
               "name": "Secret Empire (2017)"
             },
@@ -8902,22 +8930,22 @@
               "name": "The Punisher (2018 - Present)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/18527",
-              "name": "Thunderbolts (2006 - 2012)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2296",
               "name": "Thunderbolts (1997 - 2003)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/18527",
+              "name": "Thunderbolts (2006 - 2012)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1873",
               "name": "Thunderbolts Presents: Zemo - Born Better (2007)"
             }
           ],
-          "returned": 16
+          "returned": 17
         },
         "stories": {
-          "available": 34,
+          "available": 35,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010906/stories",
           "items": [
             {
@@ -9125,7 +9153,7 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011354",
         "comics": {
-          "available": 5,
+          "available": 4,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011354/comics",
           "items": [
             {
@@ -9143,16 +9171,12 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/26167",
               "name": "Punisher Noir (2009) #3"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/28034",
-              "name": "XXL Eminem/Punisher Comic (2009) #1"
             }
           ],
-          "returned": 5
+          "returned": 4
         },
         "series": {
-          "available": 4,
+          "available": 3,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011354/series",
           "items": [
             {
@@ -9166,13 +9190,9 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/8201",
               "name": "Punisher Noir (2009 - 2010)"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/8995",
-              "name": "XXL Eminem/Punisher Comic (2009)"
             }
           ],
-          "returned": 4
+          "returned": 3
         },
         "stories": {
           "available": 5,
@@ -9312,31 +9332,31 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13682",
-              "name": "Uncanny X-Men (1981)"
+              "name": "Uncanny X-Men (1963)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13875",
-              "name": "Uncanny X-Men (1981) #334"
+              "name": "Uncanny X-Men (1963) #334"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13878",
-              "name": "Uncanny X-Men (1981) #337"
+              "name": "Uncanny X-Men (1963) #337"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13880",
-              "name": "Uncanny X-Men (1981) #339"
+              "name": "Uncanny X-Men (1963) #339"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13884",
-              "name": "Uncanny X-Men (1981) #343"
+              "name": "Uncanny X-Men (1963) #343"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13887",
-              "name": "Uncanny X-Men (1981) #346"
+              "name": "Uncanny X-Men (1963) #346"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/13923",
-              "name": "Uncanny X-Men (1981) #382"
+              "name": "Uncanny X-Men (1963) #382"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/23500",
@@ -9395,7 +9415,7 @@
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
-              "name": "Uncanny X-Men (1981 - 2011)"
+              "name": "Uncanny X-Men (1963 - 2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/6688",
@@ -9430,12 +9450,12 @@
               "name": "X-Men: Blue (2017 - 2018)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/13833",
-              "name": "X-Men: Second Coming (2011)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/9359",
               "name": "X-Men: Second Coming (2010)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/13833",
+              "name": "X-Men: Second Coming (2011)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/9808",
@@ -9604,9 +9624,13 @@
         },
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009172",
         "comics": {
-          "available": 30,
+          "available": 31,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009172/comics",
           "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/comics/106952",
+              "name": "Black Panther: Who Is the Black Panther? Infinity Comic (2022) #8"
+            },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/12800",
               "name": "Captain America (1998) #4"
@@ -9682,25 +9706,25 @@
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/comics/8474",
               "name": "Deadpool (1997) #20"
-            },
-            {
-              "resourceURI": "http://gateway.marvel.com/v1/public/comics/42697",
-              "name": "Gambit (2012) #9"
             }
           ],
           "returned": 20
         },
         "series": {
-          "available": 15,
+          "available": 16,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009172/series",
           "items": [
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
-              "name": "Captain America (1968 - 1996)"
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/36879",
+              "name": "Black Panther: Who Is the Black Panther? Infinity Comic (2022 - Present)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1997",
               "name": "Captain America (1998 - 2002)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1996",
+              "name": "Captain America (1968 - 1996)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/13194",
@@ -9755,10 +9779,10 @@
               "name": "The Unbelievable Gwenpool (2016 - 2018)"
             }
           ],
-          "returned": 15
+          "returned": 16
         },
         "stories": {
-          "available": 36,
+          "available": 37,
           "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009172/stories",
           "items": [
             {
@@ -10246,12 +10270,12 @@
               "name": "New Warriors (2007 - 2009)"
             },
             {
-              "resourceURI": "http://gateway.marvel.com/v1/public/series/1807",
-              "name": "New X-Men (2006)"
-            },
-            {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/2281",
               "name": "New X-Men (2001 - 2004)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/series/1807",
+              "name": "New X-Men (2006)"
             },
             {
               "resourceURI": "http://gateway.marvel.com/v1/public/series/1166",

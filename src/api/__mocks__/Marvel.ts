@@ -3,6 +3,8 @@
 import { config } from '../../config';
 import characters_offset_0 from './characters_offset_0.json';
 import characters_offset_50 from './characters_offset_50.json';
+import characters_offset_100 from './characters_offset_100.json';
+import characters_offset_150 from './characters_offset_150.json';
 import characters_offset_10200 from './characters_offset_10200.json';
 
 export function fetchCharacters(offset: number) {
@@ -15,6 +17,14 @@ export function fetchCharacters(offset: number) {
     }
     case 50: {
       characters = characters_offset_50.data.results;
+      break;
+    }
+    case 100: {
+      characters = characters_offset_100.data.results;
+      break;
+    }
+    case 150: {
+      characters = characters_offset_150.data.results;
       break;
     }
     case 204 /* 204 No Content ;-) */ * config.nbCharactersPerPage: {

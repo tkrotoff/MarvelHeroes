@@ -66,16 +66,20 @@ export function getQueryParams(offset?: number) {
     .join('&');
 }
 
-export async function fetchCharacters(offset: number) {
-  const response = await fetch(`${BASE_URL}/v1/public/characters?${getQueryParams(offset)}`);
+export async function fetchCharacters(offset: number, controller: AbortController) {
+  const response = await fetch(`${BASE_URL}/v1/public/characters?${getQueryParams(offset)}`, {
+    signal: controller.signal
+  });
   // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
   if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
   return data.data.results as Characters;
 }
 
-export async function fetchCharacter(id: string) {
-  const response = await fetch(`${BASE_URL}/v1/public/characters/${id}?${getQueryParams()}`);
+export async function fetchCharacter(id: string, controller: AbortController) {
+  const response = await fetch(`${BASE_URL}/v1/public/characters/${id}?${getQueryParams()}`, {
+    signal: controller.signal
+  });
   // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
   if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
