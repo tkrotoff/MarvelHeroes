@@ -11,6 +11,8 @@ Sentry.init({
 
 import 'core-js';
 import 'regenerator-runtime/runtime';
+import 'event-target-polyfill';
+import 'yet-another-abortcontroller-polyfill';
 import 'whatwg-fetch';
 
 import { StrictMode } from 'react';

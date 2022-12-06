@@ -35,10 +35,12 @@
     "blueimp-md5": "^2.19.0",
     "bootstrap": "^5.2.3",
     "core-js": "^3.26.1",
+    "event-target-polyfill": "^0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.4",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "yet-another-abortcontroller-polyfill": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
