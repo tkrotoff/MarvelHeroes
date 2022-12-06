@@ -25,7 +25,8 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm run test:coverage
-      - run: npm run test:e2e
+      - run: npm run test:e2e:stubs
+      - run: npm run test:e2e:marvel.com
 
       - name: Upload coverage to Code Climate
         run: |

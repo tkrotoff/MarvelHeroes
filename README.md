@@ -33,7 +33,12 @@ I use this app as a boilerplate and to demo some JS web app best practices.
 ## How to run
 
 ```
-npm run start
+npm run start:stubs
+open http://localhost:8080
+```
+
+```
+npm run start:marvel.com
 open http://localhost:8080
 ```
 

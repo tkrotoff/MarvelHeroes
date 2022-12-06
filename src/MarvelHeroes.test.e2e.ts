@@ -9,10 +9,10 @@ test.describe.configure({ mode: 'parallel' });
 // https://github.com/microsoft/playwright/issues/7030
 
 const getCharactersApiURL = (offset: number) =>
-  `https://gateway.marvel.com/v1/public/characters?ts=*&apikey=*&hash=*&limit=50&offset=${offset}`;
+  `http://localhost:8080/v1/public/characters?ts=*&apikey=*&hash=*&limit=50&offset=${offset}`;
 
 const getCharacterApiURL = (id: number) =>
-  `https://gateway.marvel.com/v1/public/characters/${id}?ts=*&apikey=*&hash=*`;
+  `http://localhost:8080/v1/public/characters/${id}?ts=*&apikey=*&hash=*`;
 
 test.beforeEach(async ({ page }) => {
   await expect(page).toHaveTitle('');

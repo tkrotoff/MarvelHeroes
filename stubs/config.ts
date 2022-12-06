@@ -1,27 +1,25 @@
 import { StubServerConfig } from '@tkrotoff/stub-server';
 import path from 'node:path';
 
+type Environments = { [name: string]: { target: string | undefined } };
+
+const environments: Environments = {
+  'marvel.com': { target: 'https://gateway.marvel.com' },
+  stubs: { target: undefined }
+};
+
+const { target } = environments[process.env.API ?? 'stubs'];
+
 const stubsPath = path.resolve(__dirname, 'routes');
 
 export const config: StubServerConfig = {
-  delay: { min: 0, max: 2000 },
+  delay: { min: 0, max: 1000 },
   routes: {
     '/v1/public/characters': {
-      GET: `${stubsPath}/characters_GET.ts`
-    },
-    '/v1/public/characters/1009144': {
-      GET: `${stubsPath}/characters_id_GET_200_OK-1009144.json`
-    },
-    '/v1/public/characters/1011334': {
-      GET: `${stubsPath}/characters_id_GET_200_OK-1011334.json`
-    },
-    '/v1/public/characters/1017100': {
-      GET: `${stubsPath}/characters_id_GET_200_OK-1017100.json`
+      GET: target ?? `${stubsPath}/characters_GET.ts`
     },
     '/v1/public/characters/:id': {
-      GET: req => {
-        throw new Error(`STUB NOT IMPLEMENTED, id: '${req.params.id}'`);
-      }
+      GET: target ?? `${stubsPath}/characters_id_GET.ts`
     }
   }
 };

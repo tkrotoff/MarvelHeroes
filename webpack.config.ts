@@ -157,8 +157,21 @@ export default (_webpackEnv: any, argv: any) => {
 
       setupMiddlewares: (middlewares, devServer) => {
         const configPath = path.resolve(__dirname, 'stubs/config');
-        stubServer(configPath, devServer.app!);
+        stubServer(configPath, devServer.app!, {
+          delay: process.env.STUB_NO_DELAY ? false : undefined
+        });
         return middlewares;
+      },
+
+      client: {
+        overlay: {
+          // Disable size limit warning in browser (still present in terminal) when running "npm run start:prod"
+          //
+          // > WARNING in entrypoint size limit:
+          // > The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB).
+          // > This can impact web performance.
+          warnings: false
+        }
       }
     },
 
