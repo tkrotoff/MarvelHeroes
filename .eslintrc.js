@@ -123,7 +123,28 @@ const config = {
       files: ['*.test.ts', '*.test.tsx'],
       rules: {
         'react/jsx-props-no-spreading': 'off',
-        'react/jsx-boolean-value': 'off'
+        'react/jsx-boolean-value': 'off',
+
+        // Disable all Playwright rules if not *.test.e2e.ts
+        // FIXME https://github.com/eslint/eslint/issues/3419
+        'playwright/max-nested-describe': 'off',
+        'playwright/missing-playwright-await': 'off',
+        'playwright/no-conditional-in-test': 'off',
+        'playwright/no-element-handle': 'off',
+        'playwright/no-eval': 'off',
+        'playwright/no-focused-test': 'off',
+        'playwright/no-force-option': 'off',
+        'playwright/no-page-pause': 'off',
+        'playwright/no-restricted-matchers': 'off',
+        'playwright/no-skipped-test': 'off',
+        'playwright/no-useless-not': 'off',
+        'playwright/no-wait-for-timeout': 'off',
+        'playwright/prefer-lowercase-title': 'off',
+        'playwright/prefer-strict-equal': 'off',
+        'playwright/prefer-to-be': 'off',
+        'playwright/prefer-to-have-length': 'off',
+        'playwright/require-top-level-describe': 'off',
+        'playwright/valid-expect': 'off'
       }
     }
   ]
