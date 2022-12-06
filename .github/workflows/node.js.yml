@@ -1,4 +1,4 @@
-# https://github.com/actions/starter-workflows/blob/f9d17c0062bdfb3d9b4294609989fb01dca2f357/ci/node.js.yml
+# https://github.com/actions/starter-workflows/blob/0a3644524d68072ce9bc7a23882039adae357184/ci/node.js.yml
 
 name: Node.js CI
 
@@ -11,12 +11,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{matrix.node-version}}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
           cache: 'npm'
