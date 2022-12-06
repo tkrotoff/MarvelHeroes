@@ -1,3 +1,4 @@
+import { get } from '@tkrotoff/fetch';
 import md5 from 'blueimp-md5';
 
 const API_PUBLIC = '298bab46381a6daaaee19aa5c8cafea5';
@@ -14,13 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
 export interface CharacterCategory {
   available: number;
   collectionURI: string;
-  items: [
-    {
-      resourceURI: string;
-      name: string;
-      type?: string;
-    }
-  ];
+  items: [{ resourceURI: string; name: string; type?: string }];
   returned: number;
 }
 
@@ -29,22 +24,13 @@ export interface Character {
   name: string;
   description: string;
   modified: string;
-  thumbnail: {
-    path: string;
-    extension: string;
-  };
+  thumbnail: { path: string; extension: string };
   resourceURI: string;
   comics: CharacterCategory;
   series: CharacterCategory;
   stories: CharacterCategory;
   events: CharacterCategory;
-  urls: [
-    {
-      type: string;
-      url: string;
-    }
-  ];
-
+  urls: [{ type: string; url: string }];
   [index: string]:
     | CharacterCategory
     | string
@@ -54,6 +40,8 @@ export interface Character {
 }
 
 export type Characters = Character[];
+
+type Response = { data: { results: Characters } };
 
 export function getQueryParams(offset?: number) {
   const ts = Date.now();
@@ -74,21 +62,15 @@ export function getQueryParams(offset?: number) {
 }
 
 export async function fetchCharacters(offset: number, controller: AbortController) {
-  const response = await fetch(`${BASE_URL}/v1/public/characters?${getQueryParams(offset)}`, {
+  const response = (await get(`${BASE_URL}/v1/public/characters?${getQueryParams(offset)}`, {
     signal: controller.signal
-  });
-  // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
-  if (!response.ok) throw new Error(response.statusText);
-  const data = await response.json();
-  return data.data.results as Characters;
+  }).json()) as Response;
+  return response.data.results;
 }
 
 export async function fetchCharacter(id: string, controller: AbortController) {
-  const response = await fetch(`${BASE_URL}/v1/public/characters/${id}?${getQueryParams()}`, {
+  const response = (await get(`${BASE_URL}/v1/public/characters/${id}?${getQueryParams()}`, {
     signal: controller.signal
-  });
-  // [Handling Failed HTTP Responses With fetch()](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
-  if (!response.ok) throw new Error(response.statusText);
-  const data = await response.json();
-  return data.data.results[0] as Character;
+  }).json()) as Response;
+  return response.data.results[0];
 }

@@ -5,6 +5,10 @@ import 'core-js';
 import 'regenerator-runtime/runtime';
 
 import { throwOnConsole, throwOnFetch, throwOnXMLHttpRequestOpen } from 'throw-on';
+// @ts-ignore
+import { Response as ResponsePolyfill } from 'whatwg-fetch';
+
+globalThis.Response = ResponsePolyfill;
 
 throwOnConsole('assert');
 throwOnConsole('error');

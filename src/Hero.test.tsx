@@ -10,7 +10,7 @@ jest.mock('./api/Marvel');
 jest.mock('react-router', () => ({
   useParams: jest.fn()
 }));
-const useParamsMock = useParams as jest.Mock;
+const useParamsMock = jest.mocked(useParams);
 
 test('page title', async () => {
   expect(document.title).toEqual('');
@@ -18,12 +18,14 @@ test('page title', async () => {
   useParamsMock.mockReturnValue({ id: '1011334' });
   const { rerender } = render(<Hero />);
   expect(document.title).toEqual('... - Marvel Heroes');
+  await act(flushPromises);
   await screen.findByText('3-D Man');
   expect(document.title).toEqual('3-D Man - Marvel Heroes');
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
   //expect(document.title).toEqual('... - Marvel Heroes');
+  await act(flushPromises);
   await screen.findByText('A-Bomb (HAS)');
   expect(document.title).toEqual('A-Bomb (HAS) - Marvel Heroes');
 });
@@ -62,13 +64,18 @@ test('render', async () => {
   screen.getByText('A.I.M.');
 });
 
-test('fetchCharacter() error', () => {
+test('fetchCharacter() error', async () => {
   const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
   useParamsMock.mockReturnValue({ id: 'unknown' });
-  expect(() => render(<Hero />)).toThrow('404 Not Found');
+
+  await expect(async () => {
+    render(<Hero />);
+    await act(flushPromises);
+  }).rejects.toThrow('404');
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
 
+  expect(consoleSpy).toHaveBeenCalledTimes(3);
   consoleSpy.mockRestore();
 });
 

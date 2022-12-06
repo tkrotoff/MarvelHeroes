@@ -82,33 +82,37 @@ test('render "No results found :("', async () => {
   screen.getByText('No results found :(');
 });
 
-test('fetchCharacters() error "500 Internal Server Error"', () => {
+test('fetchCharacters() error "500 Internal Server Error"', async () => {
   const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
-  expect(() =>
+  await expect(async () => {
     render(
       <MemoryRouter>
         <Heroes page={500} />
       </MemoryRouter>
-    )
-  ).toThrow('500 Internal Server Error');
+    );
+    await act(flushPromises);
+  }).rejects.toThrow('500');
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
 
+  expect(consoleSpy).toHaveBeenCalledTimes(3);
   consoleSpy.mockRestore();
 });
 
-test('fetchCharacters() error "429 Too Many Requests"', () => {
+test('fetchCharacters() error "429 Too Many Requests"', async () => {
   const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
-  expect(() =>
+  await expect(async () => {
     render(
       <MemoryRouter>
         <Heroes page={429} />
       </MemoryRouter>
-    )
-  ).toThrow('429 Too Many Requests');
+    );
+    await act(flushPromises);
+  }).rejects.toThrow('429');
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
 
+  expect(consoleSpy).toHaveBeenCalledTimes(3);
   consoleSpy.mockRestore();
 });
 

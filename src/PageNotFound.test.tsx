@@ -6,10 +6,10 @@ import { PageNotFound } from './PageNotFound';
 jest.mock('react-router', () => ({
   useLocation: jest.fn()
 }));
-const useLocationMock = useLocation as jest.Mock;
+const useLocationMock = jest.mocked(useLocation);
 
 test('render', async () => {
-  useLocationMock.mockReturnValue({ pathname: 'unknown' });
+  useLocationMock.mockReturnValue({ pathname: 'unknown' } as ReturnType<typeof useLocation>);
   render(<PageNotFound />);
 
   screen.getByText('Whoops');

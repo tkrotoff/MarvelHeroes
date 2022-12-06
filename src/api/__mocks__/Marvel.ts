@@ -1,3 +1,5 @@
+import { createHttpError, HttpStatus } from '@tkrotoff/fetch';
+
 import character_id_1009144 from '../../../stubs/routes/characters_id_GET_200_OK-1009144.json';
 import character_id_1011334 from '../../../stubs/routes/characters_id_GET_200_OK-1011334.json';
 import character_id_1017100 from '../../../stubs/routes/characters_id_GET_200_OK-1017100.json';
@@ -7,9 +9,12 @@ import characters_offset_100 from '../../../stubs/routes/characters_offset-100.j
 import characters_offset_150 from '../../../stubs/routes/characters_offset-150.json';
 import characters_offset_10200 from '../../../stubs/routes/characters_offset-10200.json';
 import { config } from '../../config';
+import { wait } from '../../utils/wait';
 
-export function fetchCharacters(offset: number) {
+export async function fetchCharacters(offset: number) {
   let characters;
+
+  await wait(0);
 
   switch (offset) {
     case 0: {
@@ -33,21 +38,23 @@ export function fetchCharacters(offset: number) {
       break;
     }
     case 429 /* 429 Too Many Requests */ * config.nbCharactersPerPage: {
-      throw new Error('429 Too Many Requests');
+      throw createHttpError(undefined, HttpStatus._429_TooManyRequests);
     }
     case 500 * config.nbCharactersPerPage: {
-      throw new Error('500 Internal Server Error');
+      throw createHttpError(undefined, HttpStatus._500_InternalServerError);
     }
     default: {
       throw new Error(`Unknown offset: '${offset}'`);
     }
   }
 
-  return Promise.resolve(characters);
+  return characters;
 }
 
-export function fetchCharacter(id: string) {
+export async function fetchCharacter(id: string) {
   let character;
+
+  await wait(0);
 
   switch (id) {
     case '1011334': {
@@ -63,12 +70,12 @@ export function fetchCharacter(id: string) {
       break;
     }
     case 'unknown': {
-      throw new Error('404 Not Found');
+      throw createHttpError(undefined, HttpStatus._404_NotFound);
     }
     default: {
       throw new Error(`Unknown id: '${id}'`);
     }
   }
 
-  return Promise.resolve(character);
+  return character;
 }

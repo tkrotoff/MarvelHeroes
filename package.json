@@ -41,6 +41,7 @@
     "@babel/runtime": "^7.20.6",
     "@sentry/react": "^6.19.7",
     "@sentry/tracing": "^6.19.7",
+    "@tkrotoff/fetch": "^0.15.0",
     "blueimp-md5": "^2.19.0",
     "bootstrap": "^5.2.3",
     "core-js": "^3.26.1",

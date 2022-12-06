@@ -1,3 +1,4 @@
+import { HttpStatus } from '@tkrotoff/fetch';
 import express from 'express';
 import path from 'node:path';
 
@@ -13,11 +14,11 @@ export default async function stub(req: express.Request, res: express.Response) 
 
   try {
     const character = await import(file);
-    res.status(200).send(character);
+    res.status(HttpStatus._200_OK).send(character);
   } catch {
     switch (offset) {
       case 429 /* 429 Too Many Requests */ * config.nbCharactersPerPage: {
-        res.status(429).send();
+        res.status(HttpStatus._429_TooManyRequests).send();
         break;
       }
       default: {
