@@ -189,7 +189,9 @@ export default (_webpackEnv: any, argv: any) => {
           vendors: {
             test: /\/node_modules\//,
             name(module: { context: string }, chunks: { name: string }[]) {
-              const packageName = getPackageNameFromPath(module.context).replace('/', '-');
+              const packageName = getPackageNameFromPath(module.context)
+                .replaceAll('@', '')
+                .replaceAll('/', '_');
               return `${packageName}~${chunks.map(chunk => chunk.name).join('~')}`;
             }
           }
