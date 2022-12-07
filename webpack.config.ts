@@ -16,7 +16,7 @@ import webpack from 'webpack';
 import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
 import myPackage from './package.json';
 
-export default (_webpackEnv: any, argv: any) => {
+export default (webpackEnv: any, argv: any) => {
   // https://github.com/webpack/webpack/issues/6460#issuecomment-364286147
   const isProd = argv.mode === 'production';
 
@@ -155,22 +155,24 @@ export default (_webpackEnv: any, argv: any) => {
       // ["creates a runtime file to be shared for all generated chunks"](https://webpack.js.org/configuration/optimization/#optimizationruntimechunk)
       runtimeChunk: 'single',
 
-      splitChunks: {
-        chunks: 'all',
-        minSize: 0,
-        maxInitialRequests: Number.POSITIVE_INFINITY,
-        cacheGroups: {
-          vendors: {
-            test: /\/node_modules\//,
-            name(module: { context: string }, chunks: { name: string }[]) {
-              const packageName = getPackageNameFromPath(module.context)
-                .replaceAll('@', '')
-                .replaceAll('/', '_');
-              return `${packageName}~${chunks.map(chunk => chunk.name).join('~')}`;
+      splitChunks: webpackEnv.WEBPACK_SERVE
+        ? {
+            chunks: 'all',
+            minSize: 0,
+            maxInitialRequests: Number.POSITIVE_INFINITY,
+            cacheGroups: {
+              vendors: {
+                test: /\/node_modules\//,
+                name(module: { context: string }, chunks: { name: string }[]) {
+                  const packageName = getPackageNameFromPath(module.context)
+                    .replaceAll('@', '')
+                    .replaceAll('/', '_');
+                  return `${packageName}~${chunks.map(chunk => chunk.name).join('~')}`;
+                }
+              }
             }
           }
-        }
-      }
+        : { chunks: 'all' }
     }
   };
 
