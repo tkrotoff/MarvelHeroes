@@ -22,7 +22,9 @@ export default async function stub(req: express.Request, res: express.Response) 
         break;
       }
       default: {
-        throw new Error(`STUB NOT IMPLEMENTED, offset: '${offset}'`);
+        res
+          .status(HttpStatus._500_InternalServerError)
+          .send(`STUB NOT IMPLEMENTED, offset: '${offset}'`);
       }
     }
   }
