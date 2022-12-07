@@ -17,7 +17,7 @@ test('render children if no error', () => {
   screen.getByText('Hello, World!');
 });
 
-describe('if an error occured', () => {
+describe('if an error has occurred', () => {
   test('render message + report button', () => {
     const mockConsole = jest.spyOn(console, 'error').mockImplementation();
 
@@ -63,10 +63,7 @@ describe('if an error occured', () => {
     const button = screen.getByText('Report feedback');
     button.click();
     expect(spyShowReportDialog).toHaveBeenCalledTimes(1);
-    expect(spyShowReportDialog).toHaveBeenCalledWith({
-      eventId: expect.any(String),
-      user: {}
-    });
+    expect(spyShowReportDialog).toHaveBeenCalledWith({ eventId: expect.any(String) });
     spyShowReportDialog.mockRestore();
   });
 });
