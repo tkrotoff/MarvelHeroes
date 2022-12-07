@@ -14,7 +14,5 @@ LICENSE
 build/
 coverage/
 *.txt
-*.xml
 *.png
-*.svg
 *.ico

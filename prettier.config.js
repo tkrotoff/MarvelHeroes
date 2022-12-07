@@ -16,7 +16,12 @@ const config = {
   trailingComma: 'none',
 
   // https://github.com/prettier/prettier/issues/6929
-  arrowParens: 'avoid'
+  arrowParens: 'avoid',
+
+  // https://github.com/prettier/plugin-xml/blob/v2.2.0/README.md#whitespace
+  // FIXME https://github.com/prettier/prettier/issues/5322
+  // @ts-ignore
+  xmlWhitespaceSensitivity: 'ignore'
 };
 
 module.exports = config;
