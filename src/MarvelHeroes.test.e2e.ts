@@ -2,8 +2,6 @@
 
 import { expect, test } from '@playwright/test';
 
-test.describe.configure({ mode: 'parallel' });
-
 // FIXME Generate coverage for JS and CSS
 // https://github.com/microsoft/playwright/issues/9208
 // https://github.com/microsoft/playwright/issues/7030

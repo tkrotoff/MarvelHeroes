@@ -5,6 +5,8 @@ const config: PlaywrightTestConfig = {
 
   timeout: process.env.CI === 'true' ? 5 * 60 * 1000 : undefined,
 
+  fullyParallel: true,
+
   use: {
     headless: true
   },
