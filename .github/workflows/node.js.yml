@@ -20,10 +20,12 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
           cache: 'npm'
+
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run lint
       - run: npm run build
+
       - run: npm run test:coverage
 
       - name: Upload coverage to Code Climate
@@ -43,4 +45,11 @@ jobs:
 
       - run: npm run test:e2e:stubs
       - run: npm run test:e2e:marvel.com
+
       - run: npm run audit
+
+      - name: Upload Lighthouse report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-node-v${{matrix.node-version}}
+          path: lighthouse
