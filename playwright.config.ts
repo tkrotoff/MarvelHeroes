@@ -15,11 +15,16 @@ const config: PlaywrightTestConfig = {
   },
 
   projects: [
+    // Avoid getting "429 Too Many Requests" from marvel.com
     { name: 'Desktop Chrome', use: devices['Desktop Chrome'] },
-    { name: 'Desktop Firefox', use: devices['Desktop Firefox'] },
-    { name: 'Desktop Safari', use: devices['Desktop Safari'] },
-    { name: 'Pixel 4', use: devices['Pixel 4'] },
-    { name: 'iPhone 11', use: devices['iPhone 11'] }
+    ...(process.env.API === 'stubs'
+      ? [
+          { name: 'Desktop Firefox', use: devices['Desktop Firefox'] },
+          { name: 'Desktop Safari', use: devices['Desktop Safari'] },
+          { name: 'Pixel 4', use: devices['Pixel 4'] },
+          { name: 'iPhone 11', use: devices['iPhone 11'] }
+        ]
+      : [])
   ]
 };
 
