@@ -1,4 +1,4 @@
-/* eslint-disable jest/no-done-callback, jest/no-standalone-expect, unicorn/numeric-separators-style */
+/* eslint-disable unicorn/numeric-separators-style */
 
 import { expect, test } from '@playwright/test';
 
