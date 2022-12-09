@@ -1,26 +1,27 @@
 // @ts-check
 
 module.exports = {
+  // https://github.com/babel/babel/issues/12731#issuecomment-819158117
+  sourceType: 'unambiguous',
+
   presets: [
     [
+      // https://babeljs.io/docs/en/babel-preset-env
       '@babel/preset-env',
       {
-        // Cannot use 'usage' otherwise IE 10 fails with "'Set' is undefined"
-        useBuiltIns: 'entry',
+        // It's safe to use 'usage' instead of 'entry' if Babel transpiles node_modules (check webpack.config.ts 'babel-loader' rule)
+        // https://github.com/babel/babel/issues/9419
+        useBuiltIns: 'usage',
 
-        // https://babeljs.io/blog/2019/03/19/7.4.0#core-js-3-7646-https-githubcom-babel-babel-pull-7646
-        corejs: 3,
+        // FIXME https://github.com/babel/babel/discussions/15264
+        include: ['web.dom-exception.constructor'],
+
+        corejs: '3.26',
 
         debug: false
       }
     ],
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic'
-      }
-    ],
+    ['@babel/preset-react', { runtime: 'automatic' }],
     '@babel/preset-typescript'
-  ],
-  plugins: ['@babel/plugin-proposal-class-properties']
+  ]
 };
