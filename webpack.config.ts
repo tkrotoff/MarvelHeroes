@@ -180,8 +180,8 @@ export default (webpackEnv: any, argv: any) => {
       // > This can impact web performance.
       // > Entrypoints: [...]
       //
-      maxAssetSize: 500_000, // Instead of 250_000
-      maxEntrypointSize: 700_000 // Instead of 250_000
+      maxAssetSize: 350_000, // Instead of 250_000
+      maxEntrypointSize: 500_000 // Instead of 250_000
     }
   };
 
