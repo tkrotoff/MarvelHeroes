@@ -7,4 +7,5 @@ node_modules/
 
 build/
 coverage/
+lighthouse/
 stats.json

@@ -148,6 +148,12 @@ const config = {
         'playwright/require-top-level-describe': 'off',
         'playwright/valid-expect': 'off'
       }
+    },
+    {
+      files: ['*.test.e2e.ts', '*.test.audit.ts'],
+      rules: {
+        'testing-library/prefer-screen-queries': 'off'
+      }
     }
   ]
 };

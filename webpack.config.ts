@@ -72,6 +72,8 @@ export default (webpackEnv: any, argv: any) => {
     },
 
     plugins: [
+      new webpack.EnvironmentPlugin(['API']),
+
       isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
 
       isProd &&
@@ -135,17 +137,6 @@ export default (webpackEnv: any, argv: any) => {
           delay: process.env.STUB_NO_DELAY ? false : undefined
         });
         return middlewares;
-      },
-
-      client: {
-        overlay: {
-          // Disable size limit warning in browser (still present in terminal) when running "npm run start:prod"
-          //
-          // > WARNING in entrypoint size limit:
-          // > The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB).
-          // > This can impact web performance.
-          warnings: false
-        }
       }
     },
 
@@ -173,6 +164,24 @@ export default (webpackEnv: any, argv: any) => {
             }
           }
         : { chunks: 'all' }
+    },
+
+    performance: {
+      // Increase size limits to avoid warnings when running "npm run start:prod"
+      // Warning messages cause problems with Lighthouse and E2E tests
+      //
+      // > WARNING in asset size limit:
+      // > The following asset(s) exceed the recommended size limit (244 KiB).
+      // > This can impact web performance.
+      // > Assets: [...]
+      //
+      // > WARNING in entrypoint size limit:
+      // > The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB).
+      // > This can impact web performance.
+      // > Entrypoints: [...]
+      //
+      maxAssetSize: 500_000, // Instead of 250_000
+      maxEntrypointSize: 700_000 // Instead of 250_000
     }
   };
 

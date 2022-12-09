@@ -6,7 +6,7 @@ const API_PRIVATE = 'b0223681fced28de0fe97e6b9cd091dd36a5b71d';
 let BASE_URL = 'https://gateway.marvel.com';
 
 // istanbul ignore next
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' || process.env.API === 'stubs') {
   // Use stub-server (localhost) in development mode
   // Allows for configurable delays: helps find bugs and possible improvements - add a spinner, disable a submit button...
   BASE_URL = '';

@@ -1,8 +1,6 @@
-/* eslint-disable jest/no-done-callback, jest/no-standalone-expect, unicorn/numeric-separators-style */
+/* eslint-disable unicorn/numeric-separators-style */
 
 import { expect, test } from '@playwright/test';
-
-test.describe.configure({ mode: 'parallel' });
 
 // FIXME Generate coverage for JS and CSS
 // https://github.com/microsoft/playwright/issues/9208
