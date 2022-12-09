@@ -9,12 +9,6 @@ Sentry.init({
   tracesSampleRate: 1
 });
 
-import 'core-js';
-import 'regenerator-runtime/runtime';
-import 'event-target-polyfill';
-import 'yet-another-abortcontroller-polyfill';
-import 'whatwg-fetch';
-
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

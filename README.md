@@ -15,7 +15,6 @@ Very simple React app that displays the Marvel characters thanks to https://deve
 - Implementation is 400 LOC (+ 700 LOC of tests)
 - Unit/integration tests written in react-testing-library & Jest
 - E2E tests written in Playwright
-- Supports IE 11 (broken display but "works")
 - [W3C validator](https://validator.w3.org/) completed
 
 I use this app as a boilerplate and to demo some JS web app best practices.
@@ -49,7 +48,7 @@ open http://localhost:8080
 - TypeScript with `strict: true`
 - Babel with `@babel/preset-typescript`
 - Jest + react-testing-library + Playwright => 100% code coverage
-- Fetch API + whatwg-fetch polyfill
+- Fetch API
 - React Router
 - Prettier + ESLint + stylelint
 - Bootstrap 5 + Purgecss
