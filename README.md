@@ -52,3 +52,4 @@ open http://localhost:8080
 - React Router
 - Prettier + ESLint + stylelint
 - Bootstrap 5 + Purgecss
+- Google Lighthouse
