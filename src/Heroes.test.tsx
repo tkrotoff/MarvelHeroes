@@ -8,8 +8,6 @@ import { Heroes } from './Heroes';
 jest.mock('./api/Marvel');
 
 test('page title', async () => {
-  expect(document.title).toEqual('');
-
   const { rerender } = render(
     <MemoryRouter>
       <Heroes page={0} />

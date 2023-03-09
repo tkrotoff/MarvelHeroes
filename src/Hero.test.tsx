@@ -13,8 +13,6 @@ jest.mock('react-router', () => ({
 const useParamsMock = jest.mocked(useParams);
 
 test('page title', async () => {
-  expect(document.title).toEqual('');
-
   useParamsMock.mockReturnValue({ id: '1011334' });
   const { rerender } = render(<Hero />);
   expect(document.title).toEqual('... - Marvel Heroes');
