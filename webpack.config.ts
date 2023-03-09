@@ -10,7 +10,7 @@ import HtmlWebpackTagsPlugin from 'html-webpack-tags-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { execSync } from 'node:child_process';
 import path from 'node:path';
-import PurgecssPlugin from 'purgecss-webpack-plugin';
+import { PurgeCSSPlugin } from 'purgecss-webpack-plugin';
 import webpack from 'webpack';
 
 import { getPackageNameFromPath } from './src/utils/getPackageNameFromPath';
@@ -50,7 +50,7 @@ export default (webpackEnv: any, argv: any) => {
           test: /\.(js|tsx?)$/,
 
           // [Babel should not transpile core-js](https://github.com/zloirock/core-js/issues/514#issuecomment-476533317)
-          exclude: /\/core-js/,
+          exclude: /node_modules\/core-js/,
 
           loader: 'babel-loader'
         },
@@ -77,10 +77,10 @@ export default (webpackEnv: any, argv: any) => {
       isProd && new MiniCssExtractPlugin({ filename: `${output}.css` }),
 
       isProd &&
-        new PurgecssPlugin({
+        new PurgeCSSPlugin({
           paths: glob.sync('src/**/*', { nodir: true }),
-          // https://purgecss.com/safelisting.html
-          safelist: []
+          safelist: [],
+          blocklist: []
         }),
 
       new HtmlWebpackPlugin({
