@@ -1,35 +1,32 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
-import { MemoryRouter, useParams } from 'react-router';
+import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { MemoryRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
-import { HeroesPagination } from './HeroesPagination';
+import { Router } from './Router';
 
 jest.mock('./api/Marvel');
 
-jest.mock('react-router', () => ({
-  ...jest.requireActual('react-router'),
-  useParams: jest.fn()
-}));
-const useParamsMock = jest.mocked(useParams);
-
 const pleaseWait = 'Please wait...';
 
-test('render without page query param then change page', async () => {
+test('render without page query param', async () => {
   const spy = jest.spyOn(Marvel, 'fetchCharacters');
 
-  useParamsMock.mockReturnValue({});
-  const { rerender } = render(
-    <MemoryRouter>
-      <HeroesPagination />
+  render(
+    <MemoryRouter initialEntries={['/']}>
+      <Router />
     </MemoryRouter>
   );
 
   expect(spy).toHaveBeenCalledTimes(1);
   screen.getByText('Marvel Heroes');
-  expect(screen.getByText<HTMLButtonElement>('‹ Previous').disabled).toEqual(true);
+  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
+  expect(prevLink.href).toBeUndefined();
+  expect(prevLink.disabled).toEqual(true);
   const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
   expect(nextLink.href).toEqual('http://localhost/1');
   screen.getByText(pleaseWait);
+
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('3-D Man');
   screen.getByText('A-Bomb (HAS)');
@@ -38,16 +35,30 @@ test('render without page query param then change page', async () => {
   screen.getByText('Angel (Warren Worthington III)');
   screen.getByText('Angela (Aldrif Odinsdottir)');
 
-  useParamsMock.mockReturnValue({ page: '1' });
-  rerender(
-    <MemoryRouter>
-      <HeroesPagination />
+  // FIXME Cannot do a rerender with initialEntries={['/1']}: useParams() inside HeroesPagination is not updated
+  // https://github.com/tkrotoff/MarvelHeroes/blob/dfb842607c421ba1762fc844afcc7916c17a47b4/src/HeroesPagination.test.tsx#L43-L61
+
+  spy.mockRestore();
+});
+
+test('render given a page query param', async () => {
+  const spy = jest.spyOn(Marvel, 'fetchCharacters');
+
+  render(
+    <MemoryRouter initialEntries={['/1']}>
+      <Router />
     </MemoryRouter>
   );
-  expect(spy).toHaveBeenCalledTimes(2);
-  expect(screen.getByText<HTMLLinkElement>('‹ Previous').href).toEqual('http://localhost/0');
+
+  expect(spy).toHaveBeenCalledTimes(1);
+  screen.getByText('Marvel Heroes');
+  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
+  expect(prevLink.href).toEqual('http://localhost/0');
+  expect(prevLink.disabled).toBeUndefined();
+  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
+
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('Anita Blake');
   screen.getByText('Anne Marie Hoag');
@@ -59,30 +70,32 @@ test('render without page query param then change page', async () => {
   spy.mockRestore();
 });
 
-test('render given a page query param', async () => {
-  const spy = jest.spyOn(Marvel, 'fetchCharacters');
-
-  useParamsMock.mockReturnValue({ page: '1' });
+test('click on Previous & Next links', async () => {
   render(
-    <MemoryRouter>
-      <HeroesPagination />
-    </MemoryRouter>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
-  expect(spy).toHaveBeenCalledTimes(1);
-  screen.getByText('Marvel Heroes');
-  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
-  expect(prevLink.href).toEqual('http://localhost/0');
+
+  const prevLink = () => screen.getByText<HTMLLinkElement>('‹ Previous');
   const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
-  expect(nextLink.href).toEqual('http://localhost/2');
-  screen.getByText(pleaseWait);
 
-  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('Anita Blake');
-  screen.getByText('Anne Marie Hoag');
-  screen.getByText('Annihilus');
-  screen.getByText('Battering Ram');
-  screen.getByText('Battlestar');
-  screen.getByText('Beak');
+  await screen.findByText('3-D Man');
+  expect(prevLink().disabled).toEqual(true);
 
-  spy.mockRestore();
+  act(() => nextLink.click());
+  await screen.findByText('Anita Blake');
+  expect(prevLink().disabled).toBeUndefined();
+
+  act(() => nextLink.click());
+  await screen.findByText('Beast');
+  expect(prevLink().disabled).toBeUndefined();
+
+  act(() => prevLink().click());
+  await screen.findByText('Anita Blake');
+  expect(prevLink().disabled).toBeUndefined();
+
+  act(() => prevLink().click());
+  await screen.findByText('3-D Man');
+  expect(prevLink().disabled).toEqual(true);
 });
