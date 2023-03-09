@@ -26,8 +26,8 @@ test('render without page query param then change page', async () => {
 
   expect(spy).toHaveBeenCalledTimes(1);
   screen.getByText('Marvel Heroes');
-  expect((screen.getByText('‹ Previous') as HTMLButtonElement).disabled).toEqual(true);
-  const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
+  expect(screen.getByText<HTMLButtonElement>('‹ Previous').disabled).toEqual(true);
+  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
   expect(nextLink.href).toEqual('http://localhost/1');
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
@@ -45,7 +45,7 @@ test('render without page query param then change page', async () => {
     </MemoryRouter>
   );
   expect(spy).toHaveBeenCalledTimes(2);
-  expect((screen.getByText('‹ Previous') as HTMLLinkElement).href).toEqual('http://localhost/0');
+  expect(screen.getByText<HTMLLinkElement>('‹ Previous').href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
@@ -70,9 +70,9 @@ test('render given a page query param', async () => {
   );
   expect(spy).toHaveBeenCalledTimes(1);
   screen.getByText('Marvel Heroes');
-  const prevLink = screen.getByText('‹ Previous') as HTMLLinkElement;
+  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
   expect(prevLink.href).toEqual('http://localhost/0');
-  const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
+  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
 
