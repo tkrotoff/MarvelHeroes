@@ -16,7 +16,7 @@ module.exports = {
         // FIXME https://github.com/babel/babel/discussions/15264
         include: ['web.dom-exception.constructor'],
 
-        corejs: '3.26',
+        corejs: '3.29',
 
         debug: false
       }
