@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -38,9 +38,7 @@ test('render', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('3-D Man');
   screen.getByText('A-Bomb (HAS)');
   screen.getByText('A.I.M.');
@@ -55,9 +53,7 @@ test('render', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('Anita Blake');
   screen.getByText('Anne Marie Hoag');
   screen.getByText('Annihilus');
@@ -74,9 +70,7 @@ test('render "No results found :("', async () => {
   );
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('No results found :(');
 });
 

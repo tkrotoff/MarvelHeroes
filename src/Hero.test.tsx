@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -38,27 +38,21 @@ test('render', async () => {
   const { rerender } = render(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('3-D Man');
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(2);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('A-Bomb (HAS)');
 
   useParamsMock.mockReturnValue({ id: '1009144' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(3);
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('A.I.M.');
 });
 

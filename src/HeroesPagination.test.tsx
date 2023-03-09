@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter, useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -30,9 +30,7 @@ test('render without page query param then change page', async () => {
   const nextLink = screen.getByText('Next ›') as HTMLLinkElement;
   expect(nextLink.href).toEqual('http://localhost/1');
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('3-D Man');
   screen.getByText('A-Bomb (HAS)');
   screen.getByText('A.I.M.');
@@ -50,9 +48,7 @@ test('render without page query param then change page', async () => {
   expect((screen.getByText('‹ Previous') as HTMLLinkElement).href).toEqual('http://localhost/0');
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('Anita Blake');
   screen.getByText('Anne Marie Hoag');
   screen.getByText('Annihilus');
@@ -80,9 +76,7 @@ test('render given a page query param', async () => {
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
 
-  await waitFor(() => {
-    expect(screen.queryByText(pleaseWait)).toEqual(null);
-  });
+  await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('Anita Blake');
   screen.getByText('Anne Marie Hoag');
   screen.getByText('Annihilus');
