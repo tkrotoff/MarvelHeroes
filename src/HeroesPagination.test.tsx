@@ -1,6 +1,5 @@
 import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
 import { Router } from './Router';
@@ -72,9 +71,9 @@ test('render given a page query param', async () => {
 
 test('click on Previous & Next links', async () => {
   render(
-    <BrowserRouter>
+    <MemoryRouter>
       <Router />
-    </BrowserRouter>
+    </MemoryRouter>
   );
 
   const prevLink = () => screen.getByText<HTMLLinkElement>('‹ Previous');
