@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router';
 import * as Marvel from './api/Marvel';
 import { flushPromises } from './utils/flushPromises';
 import { Heroes } from './Heroes';
+import { Router } from './Router';
 
 jest.mock('./api/Marvel');
 
@@ -72,6 +73,24 @@ test('render "No results found :("', async () => {
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
   screen.getByText('No results found :(');
+});
+
+test('click on Details link', async () => {
+  render(
+    <MemoryRouter>
+      <Router />
+    </MemoryRouter>
+  );
+
+  await screen.findByText('3-D Man');
+
+  const detailsLink = screen.getAllByText<HTMLLinkElement>('Details')[0];
+  act(() => detailsLink.click());
+
+  await screen.findByText('3-D Man');
+  await screen.findByText('Comics');
+  await screen.findByText('Series');
+  await screen.findByText('Stories');
 });
 
 test('fetchCharacters() error "500 Internal Server Error"', async () => {
