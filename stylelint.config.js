@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @type {Partial<import('stylelint').Config>} */
+/** @type {import('stylelint').Config} */
 const config = {
   extends: [
     // /!\ Order matters: the next one overrides rules from the previous one
