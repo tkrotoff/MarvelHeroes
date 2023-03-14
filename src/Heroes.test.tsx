@@ -1,5 +1,6 @@
 import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
 import { flushPromises } from './utils/flushPromises';
@@ -77,11 +78,12 @@ test('render "No results found :("', async () => {
 
 test('click on Details link', async () => {
   render(
-    <MemoryRouter>
+    <BrowserRouter>
       <Router />
-    </MemoryRouter>
+    </BrowserRouter>
   );
 
+  expect(window.location.href).toEqual('http://localhost/');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
   await screen.findByText('3-D Man');
 
@@ -90,6 +92,7 @@ test('click on Details link', async () => {
 
   screen.getByText(pleaseWait);
 
+  expect(window.location.href).toEqual('http://localhost/heroes/1011334');
   expect(document.title).toEqual('... - Marvel Heroes');
   await waitFor(() => expect(document.title).toEqual('3-D Man - Marvel Heroes'));
 

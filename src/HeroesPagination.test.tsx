@@ -1,5 +1,6 @@
 import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
 import { Router } from './Router';
@@ -71,19 +72,21 @@ test('render given a page query param', async () => {
 
 test('click on Previous & Next links', async () => {
   render(
-    <MemoryRouter>
+    <BrowserRouter>
       <Router />
-    </MemoryRouter>
+    </BrowserRouter>
   );
 
   const prevLink = () => screen.getByText<HTMLLinkElement>('‹ Previous');
   const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
 
+  expect(window.location.href).toEqual('http://localhost/');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
   await screen.findByText('3-D Man');
   expect(prevLink().disabled).toEqual(true);
 
   act(() => nextLink.click());
+  expect(window.location.href).toEqual('http://localhost/1');
   expect(document.title).toEqual('Page 1 - Marvel Heroes');
   screen.getByText(pleaseWait);
   await screen.findByText('Anita Blake');
@@ -91,6 +94,7 @@ test('click on Previous & Next links', async () => {
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => nextLink.click());
+  expect(window.location.href).toEqual('http://localhost/2');
   expect(document.title).toEqual('Page 2 - Marvel Heroes');
   screen.getByText(pleaseWait);
   await screen.findByText('Beast');
@@ -98,6 +102,7 @@ test('click on Previous & Next links', async () => {
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => prevLink().click());
+  expect(window.location.href).toEqual('http://localhost/1');
   expect(document.title).toEqual('Page 1 - Marvel Heroes');
   screen.getByText(pleaseWait);
   await screen.findByText('Anita Blake');
@@ -105,6 +110,7 @@ test('click on Previous & Next links', async () => {
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => prevLink().click());
+  expect(window.location.href).toEqual('http://localhost/0');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
   screen.getByText(pleaseWait);
   await screen.findByText('3-D Man');
