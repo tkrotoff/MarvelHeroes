@@ -1,4 +1,4 @@
-import { act, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 
 import * as Marvel from './api/Marvel';
@@ -82,15 +82,23 @@ test('click on Details link', async () => {
     </MemoryRouter>
   );
 
+  expect(document.title).toEqual('Page 0 - Marvel Heroes');
   await screen.findByText('3-D Man');
 
   const detailsLink = screen.getAllByText<HTMLLinkElement>('Details')[0];
   act(() => detailsLink.click());
 
-  await screen.findByText('3-D Man');
-  await screen.findByText('Comics');
-  await screen.findByText('Series');
-  await screen.findByText('Stories');
+  screen.getByText(pleaseWait);
+
+  expect(document.title).toEqual('... - Marvel Heroes');
+  await waitFor(() => expect(document.title).toEqual('3-D Man - Marvel Heroes'));
+
+  expect(screen.queryByText(pleaseWait)).toBeNull();
+
+  screen.getByText('3-D Man');
+  screen.getByText('Comics');
+  screen.getByText('Series');
+  screen.getByText('Stories');
 });
 
 test('fetchCharacters() error "500 Internal Server Error"', async () => {

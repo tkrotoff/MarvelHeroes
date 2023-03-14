@@ -79,22 +79,35 @@ test('click on Previous & Next links', async () => {
   const prevLink = () => screen.getByText<HTMLLinkElement>('‹ Previous');
   const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
 
+  expect(document.title).toEqual('Page 0 - Marvel Heroes');
   await screen.findByText('3-D Man');
   expect(prevLink().disabled).toEqual(true);
 
   act(() => nextLink.click());
+  expect(document.title).toEqual('Page 1 - Marvel Heroes');
+  screen.getByText(pleaseWait);
   await screen.findByText('Anita Blake');
+  expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => nextLink.click());
+  expect(document.title).toEqual('Page 2 - Marvel Heroes');
+  screen.getByText(pleaseWait);
   await screen.findByText('Beast');
+  expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => prevLink().click());
+  expect(document.title).toEqual('Page 1 - Marvel Heroes');
+  screen.getByText(pleaseWait);
   await screen.findByText('Anita Blake');
+  expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
   act(() => prevLink().click());
+  expect(document.title).toEqual('Page 0 - Marvel Heroes');
+  screen.getByText(pleaseWait);
   await screen.findByText('3-D Man');
+  expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toEqual(true);
 });
