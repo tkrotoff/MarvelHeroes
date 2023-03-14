@@ -3,8 +3,8 @@ import { useParams } from 'react-router';
 
 import * as Marvel from './api/Marvel';
 import { assert } from './utils/assert';
+import { setPageTitle } from './utils/setPageTitle';
 import { useErrorHandler } from './utils/useErrorHandler';
-import { usePageTitle } from './utils/usePageTitle';
 
 function Category({ character, category }: { character: Marvel.Character; category: string }) {
   return (
@@ -17,7 +17,7 @@ function Category({ character, category }: { character: Marvel.Character; catego
 }
 
 function Character({ character }: { character: Marvel.Character }) {
-  usePageTitle(character.name);
+  setPageTitle(character.name);
 
   return (
     <section className="hero">
@@ -42,7 +42,7 @@ export function Hero() {
   // Could also be a variable outside instead of a ref
   const controller = useRef<AbortController>();
 
-  usePageTitle('...');
+  setPageTitle('...');
 
   const handleError = useErrorHandler();
   const [character, setCharacter] = useState<Marvel.Character>();

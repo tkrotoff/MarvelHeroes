@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Marvel from './api/Marvel';
+import { setPageTitle } from './utils/setPageTitle';
 import { useErrorHandler } from './utils/useErrorHandler';
-import { usePageTitle } from './utils/usePageTitle';
 import { config } from './config';
 
 function Characters({ characters }: { characters: Marvel.Characters }) {
@@ -38,7 +38,7 @@ export function Heroes({ page }: Props) {
   // Could also be a variable outside instead of a ref
   const controller = useRef<AbortController>();
 
-  usePageTitle(`Page ${page}`);
+  setPageTitle(`Page ${page}`);
 
   const handleError = useErrorHandler();
 
