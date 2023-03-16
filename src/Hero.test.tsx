@@ -17,14 +17,14 @@ test('page title', async () => {
   const { rerender } = render(<Hero />);
   expect(document.title).toEqual('... - Marvel Heroes');
   await act(flushPromises);
-  await screen.findByText('3-D Man');
+  await screen.findByRole('heading', { level: 1, name: '3-D Man' });
   expect(document.title).toEqual('3-D Man - Marvel Heroes');
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
   //expect(document.title).toEqual('... - Marvel Heroes');
   await act(flushPromises);
-  await screen.findByText('A-Bomb (HAS)');
+  await screen.findByRole('heading', { level: 1, name: 'A-Bomb (HAS)' });
   expect(document.title).toEqual('A-Bomb (HAS) - Marvel Heroes');
 });
 
@@ -39,21 +39,21 @@ test('render', async () => {
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(1);
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('3-D Man');
+  screen.getByRole('heading', { level: 1, name: '3-D Man' });
 
   useParamsMock.mockReturnValue({ id: '1017100' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(2);
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('A-Bomb (HAS)');
+  screen.getByRole('heading', { level: 1, name: 'A-Bomb (HAS)' });
 
   useParamsMock.mockReturnValue({ id: '1009144' });
   rerender(<Hero />);
   expect(fetchCharacterSpy).toHaveBeenCalledTimes(3);
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('A.I.M.');
+  screen.getByRole('heading', { level: 1, name: 'A.I.M.' });
 });
 
 test('fetchCharacter() error', async () => {

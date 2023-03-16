@@ -1,6 +1,10 @@
 import { useLocation } from 'react-router';
 
+import { setPageTitle } from './utils/setPageTitle';
+
 export function PageNotFound() {
+  setPageTitle('Page not found');
+
   const location = useLocation();
 
   return (

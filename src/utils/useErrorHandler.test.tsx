@@ -28,7 +28,7 @@ test('render children if no error', () => {
   screen.getByText('Hello, World!');
 });
 
-test('render message + report button if an error occured', async () => {
+test('render message + report button if an error occurred', async () => {
   render(
     <ErrorBoundary>
       <MyComponent throwError={true} />
@@ -49,7 +49,7 @@ test('render message + report button if an error occured', async () => {
   );
   mockConsole.mockRestore();
 
-  screen.getByText('Something went wrong :(');
+  screen.getByRole('heading', { level: 1, name: 'Something went wrong :(' });
   screen.getByText('Error: Oops!');
   screen.getByText('Report feedback');
 });

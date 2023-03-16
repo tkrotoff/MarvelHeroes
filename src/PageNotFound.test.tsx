@@ -12,7 +12,9 @@ test('render', async () => {
   useLocationMock.mockReturnValue({ pathname: 'unknown' } as ReturnType<typeof useLocation>);
   render(<PageNotFound />);
 
-  screen.getByText('Whoops');
+  expect(document.title).toEqual('Page not found - Marvel Heroes');
+
+  screen.getByRole('heading', { level: 1, name: 'Whoops' });
 
   // Tests "Sorry but <em>unknown</em> didn't match any pages"
   screen.getByText("Sorry but didn't match any pages");

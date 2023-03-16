@@ -16,7 +16,7 @@ test('page title', async () => {
     </MemoryRouter>
   );
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
-  await screen.findByText('3-D Man'); // Wait for fetchCharacters request
+  await screen.findByRole('heading', { level: 5, name: '3-D Man' }); // Wait for fetchCharacters request
 
   rerender(
     <MemoryRouter>
@@ -24,7 +24,7 @@ test('page title', async () => {
     </MemoryRouter>
   );
   expect(document.title).toEqual('Page 1 - Marvel Heroes');
-  await screen.findByText('Anita Blake'); // Wait for fetchCharacters request
+  await screen.findByRole('heading', { level: 5, name: 'Anita Blake' }); // Wait for fetchCharacters request
 });
 
 const pleaseWait = 'Please wait...';
@@ -41,12 +41,12 @@ test('render', async () => {
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(1);
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('3-D Man');
-  screen.getByText('A-Bomb (HAS)');
-  screen.getByText('A.I.M.');
-  screen.getByText('Angel (Ultimate)');
-  screen.getByText('Angel (Warren Worthington III)');
-  screen.getByText('Angela (Aldrif Odinsdottir)');
+  screen.getByRole('heading', { level: 5, name: '3-D Man' });
+  screen.getByRole('heading', { level: 5, name: 'A-Bomb (HAS)' });
+  screen.getByRole('heading', { level: 5, name: 'A.I.M.' });
+  screen.getByRole('heading', { level: 5, name: 'Angel (Ultimate)' });
+  screen.getByRole('heading', { level: 5, name: 'Angel (Warren Worthington III)' });
+  screen.getByRole('heading', { level: 5, name: 'Angela (Aldrif Odinsdottir)' });
 
   rerender(
     <MemoryRouter>
@@ -56,12 +56,12 @@ test('render', async () => {
   expect(fetchCharactersSpy).toHaveBeenCalledTimes(2);
   screen.getByText(pleaseWait);
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('Anita Blake');
-  screen.getByText('Anne Marie Hoag');
-  screen.getByText('Annihilus');
-  screen.getByText('Battering Ram');
-  screen.getByText('Battlestar');
-  screen.getByText('Beak');
+  screen.getByRole('heading', { level: 5, name: 'Anita Blake' });
+  screen.getByRole('heading', { level: 5, name: 'Anne Marie Hoag' });
+  screen.getByRole('heading', { level: 5, name: 'Annihilus' });
+  screen.getByRole('heading', { level: 5, name: 'Battering Ram' });
+  screen.getByRole('heading', { level: 5, name: 'Battlestar' });
+  screen.getByRole('heading', { level: 5, name: 'Beak' });
 });
 
 test('render "No results found :("', async () => {
@@ -85,9 +85,9 @@ test('click on Details link', async () => {
 
   expect(window.location.href).toEqual('http://localhost/');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
-  await screen.findByText('3-D Man');
+  await screen.findByRole('heading', { level: 5, name: '3-D Man' });
 
-  const detailsLink = screen.getAllByText<HTMLLinkElement>('Details')[0];
+  const detailsLink = screen.getAllByRole<HTMLAnchorElement>('link', { name: 'Details' })[0];
   act(() => detailsLink.click());
 
   screen.getByText(pleaseWait);
@@ -98,10 +98,10 @@ test('click on Details link', async () => {
 
   expect(screen.queryByText(pleaseWait)).toBeNull();
 
-  screen.getByText('3-D Man');
-  screen.getByText('Comics');
-  screen.getByText('Series');
-  screen.getByText('Stories');
+  await screen.findByRole('heading', { level: 1, name: '3-D Man' });
+  await screen.findByRole('heading', { level: 6, name: 'Comics' });
+  await screen.findByRole('heading', { level: 6, name: 'Series' });
+  await screen.findByRole('heading', { level: 6, name: 'Stories' });
 });
 
 test('fetchCharacters() error "500 Internal Server Error"', async () => {

@@ -26,7 +26,7 @@ describe('if an error has occurred', () => {
         <MyComponent throwError={true} />
       </ErrorBoundary>
     );
-    screen.getByText('Something went wrong :(');
+    screen.getByRole('heading', { level: 1, name: 'Something went wrong :(' });
     screen.getByText('Error: Oops!');
     screen.getByText('Report feedback');
 
@@ -60,7 +60,7 @@ describe('if an error has occurred', () => {
     );
     mockConsole.mockRestore();
 
-    const button = screen.getByText('Report feedback');
+    const button = screen.getByRole<HTMLButtonElement>('button', { name: 'Report feedback' });
     button.click();
     expect(spyShowReportDialog).toHaveBeenCalledTimes(1);
     expect(spyShowReportDialog).toHaveBeenCalledWith({ eventId: expect.any(String) });

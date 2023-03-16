@@ -19,21 +19,21 @@ test('render without page query param', async () => {
   );
 
   expect(spy).toHaveBeenCalledTimes(1);
-  screen.getByText('Marvel Heroes');
-  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
-  expect(prevLink.href).toBeUndefined();
+  screen.getByRole('heading', { level: 1, name: 'Marvel Heroes' });
+  const prevLink = screen.getByRole<HTMLButtonElement>('button', { name: '‹ Previous' });
+  expect((prevLink as unknown as HTMLAnchorElement).href).toBeUndefined();
   expect(prevLink.disabled).toEqual(true);
-  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
+  const nextLink = screen.getByRole<HTMLAnchorElement>('link', { name: 'Next ›' });
   expect(nextLink.href).toEqual('http://localhost/1');
   screen.getByText(pleaseWait);
 
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('3-D Man');
-  screen.getByText('A-Bomb (HAS)');
-  screen.getByText('A.I.M.');
-  screen.getByText('Angel (Ultimate)');
-  screen.getByText('Angel (Warren Worthington III)');
-  screen.getByText('Angela (Aldrif Odinsdottir)');
+  screen.getByRole('heading', { level: 5, name: '3-D Man' });
+  screen.getByRole('heading', { level: 5, name: 'A-Bomb (HAS)' });
+  screen.getByRole('heading', { level: 5, name: 'A.I.M.' });
+  screen.getByRole('heading', { level: 5, name: 'Angel (Ultimate)' });
+  screen.getByRole('heading', { level: 5, name: 'Angel (Warren Worthington III)' });
+  screen.getByRole('heading', { level: 5, name: 'Angela (Aldrif Odinsdottir)' });
 
   // FIXME Cannot do a rerender with initialEntries={['/1']}: useParams() inside HeroesPagination is not updated
   // https://github.com/tkrotoff/MarvelHeroes/blob/dfb842607c421ba1762fc844afcc7916c17a47b4/src/HeroesPagination.test.tsx#L43-L61
@@ -51,21 +51,21 @@ test('render given a page query param', async () => {
   );
 
   expect(spy).toHaveBeenCalledTimes(1);
-  screen.getByText('Marvel Heroes');
-  const prevLink = screen.getByText<HTMLLinkElement>('‹ Previous');
+  screen.getByRole('heading', { level: 1, name: 'Marvel Heroes' });
+  const prevLink = screen.getByRole<HTMLAnchorElement>('link', { name: '‹ Previous' });
   expect(prevLink.href).toEqual('http://localhost/0');
-  expect(prevLink.disabled).toBeUndefined();
-  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
+  expect((prevLink as unknown as HTMLButtonElement).disabled).toBeUndefined();
+  const nextLink = screen.getByRole<HTMLAnchorElement>('link', { name: 'Next ›' });
   expect(nextLink.href).toEqual('http://localhost/2');
   screen.getByText(pleaseWait);
 
   await waitForElementToBeRemoved(() => screen.queryByText(pleaseWait));
-  screen.getByText('Anita Blake');
-  screen.getByText('Anne Marie Hoag');
-  screen.getByText('Annihilus');
-  screen.getByText('Battering Ram');
-  screen.getByText('Battlestar');
-  screen.getByText('Beak');
+  screen.getByRole('heading', { level: 5, name: 'Anita Blake' });
+  screen.getByRole('heading', { level: 5, name: 'Anne Marie Hoag' });
+  screen.getByRole('heading', { level: 5, name: 'Annihilus' });
+  screen.getByRole('heading', { level: 5, name: 'Battering Ram' });
+  screen.getByRole('heading', { level: 5, name: 'Battlestar' });
+  screen.getByRole('heading', { level: 5, name: 'Beak' });
 
   spy.mockRestore();
 });
@@ -77,19 +77,19 @@ test('click on Previous & Next links', async () => {
     </BrowserRouter>
   );
 
-  const prevLink = () => screen.getByText<HTMLLinkElement>('‹ Previous');
-  const nextLink = screen.getByText<HTMLLinkElement>('Next ›');
+  const prevLink = () => screen.getByText<HTMLButtonElement>('‹ Previous');
+  const nextLink = screen.getByRole<HTMLAnchorElement>('link', { name: 'Next ›' });
 
   expect(window.location.href).toEqual('http://localhost/');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
-  await screen.findByText('3-D Man');
+  await screen.findByRole('heading', { level: 5, name: '3-D Man' });
   expect(prevLink().disabled).toEqual(true);
 
   act(() => nextLink.click());
   expect(window.location.href).toEqual('http://localhost/1');
   expect(document.title).toEqual('Page 1 - Marvel Heroes');
   screen.getByText(pleaseWait);
-  await screen.findByText('Anita Blake');
+  await screen.findByRole('heading', { level: 5, name: 'Anita Blake' });
   expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
@@ -97,7 +97,7 @@ test('click on Previous & Next links', async () => {
   expect(window.location.href).toEqual('http://localhost/2');
   expect(document.title).toEqual('Page 2 - Marvel Heroes');
   screen.getByText(pleaseWait);
-  await screen.findByText('Beast');
+  await screen.findByRole('heading', { level: 5, name: 'Beast' });
   expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
@@ -105,7 +105,7 @@ test('click on Previous & Next links', async () => {
   expect(window.location.href).toEqual('http://localhost/1');
   expect(document.title).toEqual('Page 1 - Marvel Heroes');
   screen.getByText(pleaseWait);
-  await screen.findByText('Anita Blake');
+  await screen.findByRole('heading', { level: 5, name: 'Anita Blake' });
   expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toBeUndefined();
 
@@ -113,7 +113,7 @@ test('click on Previous & Next links', async () => {
   expect(window.location.href).toEqual('http://localhost/0');
   expect(document.title).toEqual('Page 0 - Marvel Heroes');
   screen.getByText(pleaseWait);
-  await screen.findByText('3-D Man');
+  await screen.findByRole('heading', { level: 5, name: '3-D Man' });
   expect(screen.queryByText(pleaseWait)).toBeNull();
   expect(prevLink().disabled).toEqual(true);
 });
