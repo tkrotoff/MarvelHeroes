@@ -11,7 +11,10 @@ const config = {
     'stylelint-prettier/recommended'
   ],
 
-  rules: {}
+  rules: {
+    // FIXME Already defined in prettier.config.js, why is it not working?
+    'stylistic/string-quotes': 'single'
+  }
 };
 
 module.exports = config;

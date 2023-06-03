@@ -13,10 +13,7 @@ module.exports = {
         // https://github.com/babel/babel/issues/9419
         useBuiltIns: 'usage',
 
-        // FIXME https://github.com/babel/babel/discussions/15264
-        include: ['web.dom-exception.constructor'],
-
-        corejs: '3.29',
+        corejs: '3.30',
 
         debug: false
       }

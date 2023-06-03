@@ -2,10 +2,11 @@
 // https://getbootstrap.com/docs/5.1/customize/optimize/#lean-sass-imports
 // https://getbootstrap.com/docs/5.1/customize/sass/#remove-from-map
 
-// https://github.com/twbs/bootstrap/blob/v5.2.2/scss/bootstrap.scss#L7-L11
+// https://github.com/twbs/bootstrap/blob/v5.3.0/scss/bootstrap.scss#L7-L12
 
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/variables-dark';
 @import '../node_modules/bootstrap/scss/maps';
 @import '../node_modules/bootstrap/scss/mixins';
 @import '../node_modules/bootstrap/scss/utilities';
